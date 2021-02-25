@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
+import {isArray} from 'lodash';
 import ReactMapGL, { Source, Layer, NavigationControl, WebMercatorViewport } from 'react-map-gl';
 
 const Atlas = ({ viewport, year, geojson, activeBasemap, opacity }) => {
@@ -18,14 +19,14 @@ const Atlas = ({ viewport, year, geojson, activeBasemap, opacity }) => {
       if (style) {
         style.layers = style.layers.map(layer => {
           if (layer.source === 'composite') {
-            const filter =
-              layer.filter && layer.filter[1][0] === 'match' ? layer.filter.slice(0, 2) : ['all'];
+            const filter = layer.filter ? layer.filter.filter(f => isArray(f) && f[0] !== '<=' && f[0] !== '>=') : [];
             return {
               ...layer,
               filter: [
-                ...filter,
+                'all',
                 ['<=', ['get', 'firstyear'], year],
                 ['>=', ['get', 'lastyear'], year],
+                ...filter,
               ],
             };
           }

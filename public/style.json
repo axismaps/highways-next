@@ -43,8 +43,8 @@
             "source-layer": "BoundariesPoly",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2017],
-                [">=", ["get", "LastYear"], 2017],
+                ["<=", ["get", "firstyear"], 2017],
+                [">=", ["get", "lastyear"], 2017],
                 ["match", ["get", "type"], ["County Limit"], true, false]
             ],
             "layout": {},
@@ -69,8 +69,8 @@
             "source-layer": "BoundariesPoly",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2017],
-                [">=", ["get", "LastYear"], 2017],
+                ["<=", ["get", "firstyear"], 2017],
+                [">=", ["get", "lastyear"], 2017],
                 ["match", ["get", "type"], ["County Limit"], true, false]
             ],
             "layout": {},
@@ -95,8 +95,8 @@
             "source-layer": "BoundariesPoly",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2017],
-                [">=", ["get", "LastYear"], 2017],
+                ["<=", ["get", "firstyear"], 2017],
+                [">=", ["get", "lastyear"], 2017],
                 ["match", ["get", "type"], ["County Limit"], true, false]
             ],
             "layout": {"line-join": "round", "visibility": "none"},
@@ -137,8 +137,8 @@
             "source-layer": "BoundariesPoly",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2017],
-                [">=", ["get", "LastYear"], 8888],
+                ["<=", ["get", "firstyear"], 2017],
+                [">=", ["get", "lastyear"], 8888],
                 ["match", ["get", "type"], ["City Limit"], true, false]
             ],
             "layout": {},
@@ -162,8 +162,8 @@
             "source-layer": "BoundariesPoly",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2017],
-                [">=", ["get", "LastYear"], 8888],
+                ["<=", ["get", "firstyear"], 2017],
+                [">=", ["get", "lastyear"], 8888],
                 ["match", ["get", "type"], ["City Limit"], true, false]
             ],
             "layout": {"visibility": "none"},
@@ -177,8 +177,8 @@
             "source-layer": "OpenSpacesPoly",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Park"], true, false]
             ],
             "layout": {},
@@ -203,8 +203,8 @@
             "source-layer": "OpenSpacesPoly",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Field"], true, false]
             ],
             "layout": {},
@@ -229,8 +229,8 @@
             "source-layer": "OpenSpacesPoly",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["University Campus"], true, false]
             ],
             "layout": {},
@@ -264,8 +264,8 @@
             "source-layer": "OpenSpacesPoly",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Graveyard"], true, false]
             ],
             "layout": {},
@@ -290,8 +290,8 @@
             "source-layer": "OpenSpacesPoly",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Golf Course"], true, false]
             ],
             "layout": {},
@@ -316,8 +316,8 @@
             "source-layer": "OpenSpacesPoly",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Camp Site"], true, false]
             ],
             "layout": {},
@@ -342,8 +342,8 @@
             "source-layer": "OpenSpacesPoly",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Dog Park"], true, false]
             ],
             "layout": {},
@@ -368,8 +368,8 @@
             "source-layer": "OpenSpacesPoly",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Ice Rink"], true, false]
             ],
             "layout": {},
@@ -394,8 +394,8 @@
             "source-layer": "OpenSpacesPoly",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Parking Lots"], true, false]
             ],
             "layout": {"visibility": "none"},
@@ -429,8 +429,8 @@
             "source-layer": "OpenSpacesPoly",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Paved Surface"], true, false]
             ],
             "layout": {"visibility": "none"},
@@ -456,8 +456,8 @@
             "source-layer": "HidrographyLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Stream"], true, false]
             ],
             "layout": {"line-cap": "round", "line-join": "round"},
@@ -491,8 +491,8 @@
             "source-layer": "HidrographyLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Bayou"], true, false]
             ],
             "layout": {"line-cap": "round", "line-join": "round"},
@@ -526,8 +526,8 @@
             "source-layer": "HidrographyLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["River"], true, false]
             ],
             "layout": {"line-cap": "round", "line-join": "round"},
@@ -561,8 +561,8 @@
             "source-layer": "HidrographyPoly",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Wetland"], true, false]
             ],
             "layout": {},
@@ -576,8 +576,8 @@
             "source-layer": "HidrographyPoly",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Wetland"], true, false]
             ],
             "layout": {"line-join": "round"},
@@ -620,8 +620,8 @@
             "source-layer": "HidrographyPoly",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Reservoir"], true, false]
             ],
             "layout": {},
@@ -646,8 +646,8 @@
             "source-layer": "HidrographyPoly",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Wetland"], true, false]
             ],
             "layout": {
@@ -670,8 +670,8 @@
             "source-layer": "UtilitiesLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Drain"], true, false]
             ],
             "layout": {"line-cap": "round", "line-join": "round"},
@@ -706,8 +706,8 @@
             "source-layer": "UtilitiesLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Drain", "Ditch"], true, false]
             ],
             "layout": {"line-cap": "round", "line-join": "round"},
@@ -742,8 +742,8 @@
             "source-layer": "UtilitiesLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Canal"], true, false]
             ],
             "layout": {"line-cap": "round", "line-join": "round"},
@@ -778,8 +778,8 @@
             "source-layer": "UtilitiesLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Railroad"], true, false]
             ],
             "layout": {},
@@ -812,8 +812,8 @@
             "source-layer": "UtilitiesLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Railroad"], true, false]
             ],
             "layout": {},
@@ -840,247 +840,6 @@
             }
         },
         {
-            "id": "socioeconomic",
-            "type": "fill",
-            "metadata": {"mapbox:group": "1453c340309ee8f281433908ee9970a5"},
-            "source": "composite",
-            "source-layer": "SocioeconomicPoly",
-            "layout": {"visibility": "none"},
-            "paint": {
-                "fill-color": [
-                    "match",
-                    ["get", "type"],
-                    ["Low"],
-                    "#c7e9c0",
-                    ["Medium Low"],
-                    "#a1d99b",
-                    ["Medium"],
-                    "#74c476",
-                    ["Medium High"],
-                    "#31a354",
-                    ["High"],
-                    "#006d2c",
-                    "#999"
-                ],
-                "fill-opacity": 0.5
-            }
-        },
-        {
-            "id": "household",
-            "type": "fill",
-            "metadata": {"mapbox:group": "1453c340309ee8f281433908ee9970a5"},
-            "source": "composite",
-            "source-layer": "HouseholdPoly",
-            "layout": {"visibility": "none"},
-            "paint": {
-                "fill-color": [
-                    "match",
-                    ["get", "type"],
-                    ["Low"],
-                    "#fdd0a2",
-                    ["Medium Low"],
-                    "#fdae6b",
-                    ["Medium"],
-                    "#fd8d3c",
-                    ["Medium High"],
-                    "#e6550d",
-                    ["High"],
-                    "#a63603",
-                    "#999"
-                ],
-                "fill-opacity": 0.5
-            }
-        },
-        {
-            "id": "housing",
-            "type": "fill",
-            "metadata": {"mapbox:group": "1453c340309ee8f281433908ee9970a5"},
-            "source": "composite",
-            "source-layer": "HousingPoly",
-            "layout": {"visibility": "none"},
-            "paint": {
-                "fill-color": [
-                    "match",
-                    ["get", "type"],
-                    ["Low"],
-                    "#fcbba1",
-                    ["Medium Low"],
-                    "#fc9272",
-                    ["Medium"],
-                    "#fb6a4a",
-                    ["Medium High"],
-                    "#de2d26",
-                    ["High"],
-                    "#a50f15",
-                    "#999"
-                ],
-                "fill-opacity": 0.5
-            }
-        },
-        {
-            "id": "minority",
-            "type": "fill",
-            "metadata": {"mapbox:group": "1453c340309ee8f281433908ee9970a5"},
-            "source": "composite",
-            "source-layer": "MinorityStatus",
-            "layout": {"visibility": "none"},
-            "paint": {
-                "fill-color": [
-                    "match",
-                    ["get", "type"],
-                    ["Low"],
-                    "#dadaeb",
-                    ["Medium Low"],
-                    "#bcbddc",
-                    ["Medium"],
-                    "#9e9ac8",
-                    ["Medium High"],
-                    "#756bb1",
-                    ["High"],
-                    "#54278f",
-                    "#999"
-                ],
-                "fill-opacity": 0.5
-            }
-        },
-        {
-            "id": "overall",
-            "type": "fill",
-            "metadata": {"mapbox:group": "1453c340309ee8f281433908ee9970a5"},
-            "source": "composite",
-            "source-layer": "OverallPoly",
-            "layout": {"visibility": "none"},
-            "paint": {
-                "fill-color": [
-                    "match",
-                    ["get", "type"],
-                    ["Low"],
-                    "#dadaeb",
-                    ["Medium Low"],
-                    "#bcbddc",
-                    ["Medium"],
-                    "#9e9ac8",
-                    ["Medium High"],
-                    "#756bb1",
-                    ["High"],
-                    "#54278f",
-                    "#999"
-                ],
-                "fill-opacity": 0.5,
-                "fill-outline-color": "hsla(0, 0%, 0%, 0)"
-            }
-        },
-        {
-            "id": "10ft",
-            "type": "fill",
-            "metadata": {"mapbox:group": "2637237d17a15fdf3938e8f600186665"},
-            "source": "composite",
-            "source-layer": "FloodPoly",
-            "filter": ["match", ["get", "type"], ["10ft"], true, false],
-            "layout": {"visibility": "none"},
-            "paint": {"fill-color": "hsl(197, 78%, 55%)", "fill-opacity": 0.5}
-        },
-        {
-            "id": "9ft",
-            "type": "fill",
-            "metadata": {"mapbox:group": "2637237d17a15fdf3938e8f600186665"},
-            "source": "composite",
-            "source-layer": "FloodPoly",
-            "filter": ["match", ["get", "type"], ["9ft"], true, false],
-            "layout": {"visibility": "none"},
-            "paint": {"fill-color": "hsl(197, 78%, 55%)", "fill-opacity": 0.5}
-        },
-        {
-            "id": "8ft",
-            "type": "fill",
-            "metadata": {"mapbox:group": "2637237d17a15fdf3938e8f600186665"},
-            "source": "composite",
-            "source-layer": "FloodPoly",
-            "filter": ["match", ["get", "type"], ["8ft"], true, false],
-            "layout": {"visibility": "none"},
-            "paint": {"fill-color": "hsl(197, 78%, 55%)", "fill-opacity": 0.5}
-        },
-        {
-            "id": "7ft",
-            "type": "fill",
-            "metadata": {"mapbox:group": "2637237d17a15fdf3938e8f600186665"},
-            "source": "composite",
-            "source-layer": "FloodPoly",
-            "filter": ["match", ["get", "type"], ["7ft"], true, false],
-            "layout": {"visibility": "none"},
-            "paint": {"fill-color": "hsl(197, 78%, 55%)", "fill-opacity": 0.5}
-        },
-        {
-            "id": "6ft",
-            "type": "fill",
-            "metadata": {"mapbox:group": "2637237d17a15fdf3938e8f600186665"},
-            "source": "composite",
-            "source-layer": "FloodPoly",
-            "filter": ["match", ["get", "type"], ["6ft"], true, false],
-            "layout": {"visibility": "none"},
-            "paint": {"fill-color": "hsl(197, 78%, 55%)", "fill-opacity": 0.5}
-        },
-        {
-            "id": "5ft",
-            "type": "fill",
-            "metadata": {"mapbox:group": "2637237d17a15fdf3938e8f600186665"},
-            "source": "composite",
-            "source-layer": "FloodPoly",
-            "filter": ["match", ["get", "type"], ["5ft"], true, false],
-            "layout": {"visibility": "none"},
-            "paint": {"fill-color": "hsl(197, 78%, 55%)", "fill-opacity": 0.5}
-        },
-        {
-            "id": "4ft",
-            "type": "fill",
-            "metadata": {"mapbox:group": "2637237d17a15fdf3938e8f600186665"},
-            "source": "composite",
-            "source-layer": "FloodPoly",
-            "filter": ["match", ["get", "type"], ["4ft"], true, false],
-            "layout": {"visibility": "none"},
-            "paint": {"fill-color": "hsl(197, 78%, 55%)", "fill-opacity": 0.5}
-        },
-        {
-            "id": "3ft",
-            "type": "fill",
-            "metadata": {"mapbox:group": "2637237d17a15fdf3938e8f600186665"},
-            "source": "composite",
-            "source-layer": "FloodPoly",
-            "filter": ["match", ["get", "type"], ["3ft"], true, false],
-            "layout": {"visibility": "none"},
-            "paint": {"fill-color": "hsl(197, 78%, 55%)", "fill-opacity": 0.5}
-        },
-        {
-            "id": "2ft",
-            "type": "fill",
-            "metadata": {"mapbox:group": "2637237d17a15fdf3938e8f600186665"},
-            "source": "composite",
-            "source-layer": "FloodPoly",
-            "filter": ["match", ["get", "type"], ["2ft"], true, false],
-            "layout": {"visibility": "none"},
-            "paint": {"fill-color": "hsl(197, 78%, 55%)", "fill-opacity": 0.5}
-        },
-        {
-            "id": "1ft",
-            "type": "fill",
-            "metadata": {"mapbox:group": "2637237d17a15fdf3938e8f600186665"},
-            "source": "composite",
-            "source-layer": "FloodPoly",
-            "filter": ["match", ["get", "type"], ["1ft"], true, false],
-            "layout": {"visibility": "none"},
-            "paint": {"fill-color": "hsl(197, 78%, 55%)", "fill-opacity": 0.5}
-        },
-        {
-            "id": "0ft",
-            "type": "fill",
-            "metadata": {"mapbox:group": "2637237d17a15fdf3938e8f600186665"},
-            "source": "composite",
-            "source-layer": "FloodPoly",
-            "filter": ["match", ["get", "type"], ["0ft"], true, false],
-            "layout": {"visibility": "none"},
-            "paint": {"fill-color": "hsl(197, 78%, 55%)", "fill-opacity": 0.5}
-        },
-        {
             "id": "steps",
             "type": "line",
             "metadata": {"mapbox:group": "71a66e813deb3f34bc9ebf761f6f9918"},
@@ -1088,8 +847,8 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Steps"], true, false]
             ],
             "layout": {},
@@ -1124,8 +883,8 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Bridleway"], true, false]
             ],
             "layout": {},
@@ -1160,8 +919,8 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Cycleway"], true, false]
             ],
             "layout": {},
@@ -1196,8 +955,8 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Pedestrian"], true, false]
             ],
             "layout": {"line-cap": "round"},
@@ -1231,8 +990,8 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Track"], true, false]
             ],
             "layout": {"line-cap": "round"},
@@ -1266,8 +1025,8 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Street"], true, false]
             ],
             "layout": {"line-join": "round", "line-cap": "round"},
@@ -1301,8 +1060,8 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Service"], true, false]
             ],
             "layout": {"line-cap": "round", "line-join": "round"},
@@ -1336,8 +1095,8 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Residential"], true, false]
             ],
             "layout": {"line-cap": "round", "line-join": "round"},
@@ -1371,8 +1130,8 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Unclassified"], true, false]
             ],
             "layout": {"line-cap": "round", "line-join": "round"},
@@ -1406,8 +1165,8 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Tertiary"], true, false]
             ],
             "layout": {"line-cap": "round", "line-join": "round"},
@@ -1441,8 +1200,8 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Secondary"], true, false]
             ],
             "layout": {"line-cap": "round", "line-join": "round"},
@@ -1476,8 +1235,8 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Primary"], true, false]
             ],
             "layout": {"line-cap": "round", "line-join": "round"},
@@ -1511,8 +1270,8 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Trunk"], true, false]
             ],
             "layout": {"line-cap": "round", "line-join": "round"},
@@ -1546,9 +1305,9 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
-                ["match", ["get", "type"], ["Motorway"], true, false]
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
+                ["match", ["get", "type"], ["Highway"], true, false]
             ],
             "layout": {"line-cap": "round", "line-join": "round"},
             "paint": {
@@ -1581,8 +1340,8 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Street"], true, false]
             ],
             "layout": {"line-join": "round", "line-cap": "round"},
@@ -1616,8 +1375,8 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Service"], true, false]
             ],
             "layout": {"line-cap": "round", "line-join": "round"},
@@ -1651,8 +1410,8 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Residential"], true, false]
             ],
             "layout": {"line-cap": "round", "line-join": "round"},
@@ -1686,8 +1445,8 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Unclassified"], true, false]
             ],
             "layout": {"line-cap": "round", "line-join": "round"},
@@ -1721,8 +1480,8 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Tertiary"], true, false]
             ],
             "layout": {"line-cap": "round", "line-join": "round"},
@@ -1754,7 +1513,7 @@
             "metadata": {"mapbox:group": "437cde94bc7935d5992ddc37b3fefb42"},
             "source": "composite",
             "source-layer": "RoadsLine",
-            "filter": ["match", ["get", "type"], ["Secondary"], true, false],
+            "filter": ["all", ["match", ["get", "type"], ["Secondary"], true, false]],
             "layout": {"line-cap": "round", "line-join": "round"},
             "paint": {
                 "line-color": "hsl(0, 0%, 100%)",
@@ -1786,8 +1545,8 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Primary"], true, false]
             ],
             "layout": {"line-cap": "round", "line-join": "round"},
@@ -1821,8 +1580,8 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Trunk"], true, false]
             ],
             "layout": {"line-cap": "round", "line-join": "round"},
@@ -1849,39 +1608,49 @@
             }
         },
         {
-            "id": "motorway",
+            "id": "Interstates",
             "type": "line",
-            "metadata": {"mapbox:group": "437cde94bc7935d5992ddc37b3fefb42"},
             "source": "composite",
             "source-layer": "RoadsLine",
-            "minzoom": 9,
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
-                ["match", ["get", "type"], ["Motorway"], true, false]
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
+                [
+                    "match",
+                    ["get", "type"],
+                    ["Interstate"],
+                    true,
+                    false
+                  ]
             ],
-            "layout": {"line-cap": "round", "line-join": "round"},
+            "layout": {},
             "paint": {
-                "line-color": "hsl(0, 0%, 100%)",
-                "line-width": [
-                    "interpolate",
-                    ["exponential", 1.6],
-                    ["zoom"],
-                    9,
-                    0.75,
-                    18,
-                    36
-                ],
-                "line-opacity": [
-                    "interpolate",
-                    ["linear"],
-                    ["zoom"],
-                    5,
-                    0,
-                    5.25,
-                    1
-                ]
+                "line-color": "hsl(223, 0%, 100%)",
+                "line-width": ["interpolate", ["linear"], ["zoom"], 9, 5, 13, 8]
+            }
+        },
+        {
+            "id": "Highways Case",
+            "type": "line",
+            "source": "composite",
+            "source-layer": "RoadsLine",
+            "filter": [
+                "all",
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
+                [
+                    "match",
+                    ["get", "type"],
+                    ["Interstate"],
+                    true,
+                    false
+                  ]
+            ],
+            "layout": {},
+            "paint": {
+                "line-color": "hsl(223, 61%, 55%)",
+                "line-width": ["interpolate", ["linear"], ["zoom"], 9, 2, 13, 4]
             }
         },
         {
@@ -1892,8 +1661,8 @@
             "minzoom": 14,
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012]
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012]
             ],
             "layout": {},
             "paint": {
@@ -1918,12 +1687,12 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Cycleway"], true, false]
             ],
             "layout": {
-                "text-field": ["to-string", ["get", "Name"]],
+                "text-field": ["to-string", ["get", "name"]],
                 "symbol-placement": "line",
                 "text-size": [
                     "interpolate",
@@ -1959,12 +1728,12 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Pedestrian"], true, false]
             ],
             "layout": {
-                "text-field": ["to-string", ["get", "Name"]],
+                "text-field": ["to-string", ["get", "name"]],
                 "symbol-placement": "line",
                 "text-size": [
                     "interpolate",
@@ -2000,12 +1769,12 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Track"], true, false]
             ],
             "layout": {
-                "text-field": ["to-string", ["get", "Name"]],
+                "text-field": ["to-string", ["get", "name"]],
                 "symbol-placement": "line",
                 "text-size": [
                     "interpolate",
@@ -2041,12 +1810,12 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Street"], true, false]
             ],
             "layout": {
-                "text-field": ["to-string", ["get", "Name"]],
+                "text-field": ["to-string", ["get", "name"]],
                 "symbol-placement": "line",
                 "text-size": [
                     "interpolate",
@@ -2082,12 +1851,12 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Service"], true, false]
             ],
             "layout": {
-                "text-field": ["to-string", ["get", "Name"]],
+                "text-field": ["to-string", ["get", "name"]],
                 "symbol-placement": "line",
                 "text-size": [
                     "interpolate",
@@ -2123,12 +1892,12 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Residential"], true, false]
             ],
             "layout": {
-                "text-field": ["to-string", ["get", "Name"]],
+                "text-field": ["to-string", ["get", "name"]],
                 "symbol-placement": "line",
                 "text-size": [
                     "interpolate",
@@ -2164,12 +1933,12 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Unclassified"], true, false]
             ],
             "layout": {
-                "text-field": ["to-string", ["get", "Name"]],
+                "text-field": ["to-string", ["get", "name"]],
                 "symbol-placement": "line",
                 "text-size": [
                     "interpolate",
@@ -2205,12 +1974,12 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Tertiary"], true, false]
             ],
             "layout": {
-                "text-field": ["to-string", ["get", "Name"]],
+                "text-field": ["to-string", ["get", "name"]],
                 "symbol-placement": "line",
                 "text-size": [
                     "interpolate",
@@ -2246,12 +2015,12 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Secondary"], true, false]
             ],
             "layout": {
-                "text-field": ["to-string", ["get", "Name"]],
+                "text-field": ["to-string", ["get", "name"]],
                 "symbol-placement": "line",
                 "text-size": [
                     "interpolate",
@@ -2287,12 +2056,12 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Primary"], true, false]
             ],
             "layout": {
-                "text-field": ["to-string", ["get", "Name"]],
+                "text-field": ["to-string", ["get", "name"]],
                 "symbol-placement": "line",
                 "text-size": [
                     "interpolate",
@@ -2328,12 +2097,12 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Trunk"], true, false]
             ],
             "layout": {
-                "text-field": ["to-string", ["get", "Name"]],
+                "text-field": ["to-string", ["get", "name"]],
                 "symbol-placement": "line",
                 "text-size": [
                     "interpolate",
@@ -2369,12 +2138,12 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
-                ["match", ["get", "type"], ["Motorway"], true, false]
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
+                ["match", ["get", "type"], ["Highway"], true, false]
             ],
             "layout": {
-                "text-field": ["to-string", ["get", "Name"]],
+                "text-field": ["to-string", ["get", "name"]],
                 "symbol-placement": "line",
                 "text-size": [
                     "interpolate",
@@ -2410,8 +2179,8 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Trunk"], true, false]
             ],
             "layout": {
@@ -2461,9 +2230,9 @@
             "source-layer": "RoadsLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
-                ["match", ["get", "type"], ["Motorway"], true, false]
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
+                ["match", ["get", "type"], ["Highway"], true, false]
             ],
             "layout": {
                 "text-size": [
@@ -2512,12 +2281,12 @@
             "source-layer": "HidrographyLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Stream"], true, false]
             ],
             "layout": {
-                "text-field": ["to-string", ["get", "Name"]],
+                "text-field": ["to-string", ["get", "name"]],
                 "symbol-placement": "line",
                 "text-size": [
                     "interpolate",
@@ -2563,12 +2332,12 @@
             "source-layer": "HidrographyLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Bayou"], true, false]
             ],
             "layout": {
-                "text-field": ["to-string", ["get", "Name"]],
+                "text-field": ["to-string", ["get", "name"]],
                 "symbol-placement": "line",
                 "text-size": [
                     "interpolate",
@@ -2614,12 +2383,12 @@
             "source-layer": "HidrographyLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["River"], true, false]
             ],
             "layout": {
-                "text-field": ["to-string", ["get", "Name"]],
+                "text-field": ["to-string", ["get", "name"]],
                 "symbol-placement": "line",
                 "text-size": [
                     "interpolate",
@@ -2665,12 +2434,12 @@
             "source-layer": "UtilitiesLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Drain"], true, false]
             ],
             "layout": {
-                "text-field": ["to-string", ["get", "Name"]],
+                "text-field": ["to-string", ["get", "name"]],
                 "symbol-placement": "line",
                 "text-size": [
                     "interpolate",
@@ -2708,12 +2477,12 @@
             "source-layer": "UtilitiesLine",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Canal"], true, false]
             ],
             "layout": {
-                "text-field": ["to-string", ["get", "Name"]],
+                "text-field": ["to-string", ["get", "name"]],
                 "symbol-placement": "line",
                 "text-size": [
                     "interpolate",
@@ -2752,12 +2521,12 @@
             "minzoom": 11,
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Park"], true, false]
             ],
             "layout": {
-                "text-field": ["to-string", ["get", "Name"]],
+                "text-field": ["to-string", ["get", "name"]],
                 "text-size": [
                     "interpolate",
                     ["exponential", 1.6],
@@ -2802,12 +2571,12 @@
             "minzoom": 11,
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Field"], true, false]
             ],
             "layout": {
-                "text-field": ["to-string", ["get", "Name"]],
+                "text-field": ["to-string", ["get", "name"]],
                 "text-size": [
                     "interpolate",
                     ["exponential", 1.6],
@@ -2851,12 +2620,12 @@
             "source-layer": "OpenSpacesPoly",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["University Campus"], true, false]
             ],
             "layout": {
-                "text-field": ["to-string", ["get", "Name"]],
+                "text-field": ["to-string", ["get", "name"]],
                 "text-size": [
                     "interpolate",
                     ["exponential", 1.6],
@@ -2901,12 +2670,12 @@
             "minzoom": 11,
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Graveyard"], true, false]
             ],
             "layout": {
-                "text-field": ["to-string", ["get", "Name"]],
+                "text-field": ["to-string", ["get", "name"]],
                 "text-size": [
                     "interpolate",
                     ["exponential", 1.6],
@@ -2951,12 +2720,12 @@
             "minzoom": 11,
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Golf Course"], true, false]
             ],
             "layout": {
-                "text-field": ["to-string", ["get", "Name"]],
+                "text-field": ["to-string", ["get", "name"]],
                 "text-size": [
                     "interpolate",
                     ["exponential", 1.6],
@@ -3000,12 +2769,12 @@
             "source-layer": "OpenSpacesPoly",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Camp Site"], true, false]
             ],
             "layout": {
-                "text-field": ["to-string", ["get", "Name"]],
+                "text-field": ["to-string", ["get", "name"]],
                 "text-size": [
                     "interpolate",
                     ["exponential", 1.6],
@@ -3049,12 +2818,12 @@
             "source-layer": "OpenSpacesPoly",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Dog Park"], true, false]
             ],
             "layout": {
-                "text-field": ["to-string", ["get", "Name"]],
+                "text-field": ["to-string", ["get", "name"]],
                 "text-size": [
                     "interpolate",
                     ["exponential", 1.6],
@@ -3098,12 +2867,12 @@
             "source-layer": "OpenSpacesPoly",
             "filter": [
                 "all",
-                ["<=", ["get", "FirstYear"], 2012],
-                [">=", ["get", "LastYear"], 2012],
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Ice Rink"], true, false]
             ],
             "layout": {
-                "text-field": ["to-string", ["get", "Name"]],
+                "text-field": ["to-string", ["get", "name"]],
                 "text-size": [
                     "interpolate",
                     ["exponential", 1.6],
@@ -3131,61 +2900,16 @@
             }
         },
         {
-            "id": "precipitationpoint",
-            "type": "circle",
-            "source": "composite",
-            "source-layer": "PrecipitationPoint",
-            "filter": ["==", ["get", "FirstDate"], 19980901],
-            "layout": {"visibility": "none"},
-            "paint": {
-                "circle-color": [
-                    "match",
-                    ["get", "type"],
-                    ["0 - 10"],
-                    "hsl(0, 64%, 52%)",
-                    ["11 - 20"],
-                    "hsl(115, 53%, 41%)",
-                    "#000000"
-                ],
-                "circle-radius": [
-                    "match",
-                    ["get", "type"],
-                    ["0 - 10"],
-                    200,
-                    ["11 - 20"],
-                    200,
-                    5
-                ],
-                "circle-opacity": 0.17
-            }
-        },
-        {
-            "id": "highways-3fghvo",
-            "type": "line",
-            "source": "composite",
-            "source-layer": "highways-3fghvo",
-            "layout": {},
-            "paint": {
-                "line-color": "hsl(223, 0%, 100%)",
-                "line-width": ["interpolate", ["linear"], ["zoom"], 9, 5, 13, 8]
-            }
-        },
-        {
-            "id": "highways-3fghvo copy",
-            "type": "line",
-            "source": "composite",
-            "source-layer": "highways-3fghvo",
-            "layout": {},
-            "paint": {
-                "line-color": "hsl(223, 61%, 55%)",
-                "line-width": ["interpolate", ["linear"], ["zoom"], 9, 2, 13, 4]
-            }
-        },
-        {
-            "id": "roads-6ygsca copy",
+            "id": "Highway Shield",
             "type": "symbol",
             "source": "composite",
-            "source-layer": "highways-3fghvo",
+            "source-layer": "RoadsLine",
+            "filter": [
+                "all",
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
+                ["match", ["get", "type"], ["Interstate"], true, false]
+            ],
             "layout": {
                 "icon-image": "shield",
                 "icon-size": [
