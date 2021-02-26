@@ -26,7 +26,7 @@ const Timeline = ({ handler }) => {
     handler(year);
   }, [year]);
   return (
-    <Flex py={5} mr={5}>
+    <Flex py={5} pr={5} boxShadow="0 2px 2px rgba(0,0,0,0.25)" pos="relative" zIndex={2}>
       <Flex>
         <IconButton
           icon={<ArrowLeftIcon />}
