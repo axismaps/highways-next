@@ -9,7 +9,7 @@ const Atlas = ({ year, geojson, activeBasemap, opacity }) => {
   const [mapViewport, setMapViewport] = useState({
     latitude: 29.74991,
     longitude: -95.36026,
-    zoom: 9,
+    zoom: 11,
   });
 
   const setMapYear = () => {
