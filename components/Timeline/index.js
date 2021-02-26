@@ -34,7 +34,7 @@ const Timeline = ({ handler }) => {
           borderRadius="50%"
           onClick={() => setYear(Math.max(minYear, Math.round((year - 5) / 5) * 5))}
         />
-        <Heading>{year}</Heading>
+        <Heading w="90px">{year}</Heading>
         <IconButton
           icon={<ArrowRightIcon />}
           mx={5}
