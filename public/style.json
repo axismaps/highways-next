@@ -1104,10 +1104,12 @@
                     "interpolate",
                     ["exponential", 1.6],
                     ["zoom"],
-                    10,
-                    1.5,
+                    11,
+                    1,
+                    12,
+                    3,
                     18,
-                    22
+                    28
                 ],
                 "line-opacity": [
                     "interpolate",
@@ -1139,10 +1141,12 @@
                     "interpolate",
                     ["exponential", 1.6],
                     ["zoom"],
-                    10,
+                    11,
                     1.5,
+                    12,
+                    4,
                     18,
-                    30
+                    40
                 ],
                 "line-opacity": [
                     "interpolate",
@@ -1398,10 +1402,12 @@
                     "interpolate",
                     ["exponential", 1.6],
                     ["zoom"],
-                    10,
+                    11,
                     0.5,
+                    12,
+                    1.5,
                     18,
-                    18
+                    24
                 ],
                 "line-opacity": [
                     "interpolate",
@@ -1409,7 +1415,7 @@
                     ["zoom"],
                     9,
                     0,
-                    9.25,
+                    11,
                     1
                 ]
             }
@@ -1433,10 +1439,12 @@
                     "interpolate",
                     ["exponential", 1.6],
                     ["zoom"],
-                    10,
+                    11,
                     1,
+                    12,
+                    2.5,
                     18,
-                    26
+                    36
                 ],
                 "line-opacity": [
                     "interpolate",
@@ -1503,8 +1511,10 @@
                     "interpolate",
                     ["exponential", 1.6],
                     ["zoom"],
-                    9,
-                    0.75,
+                    11,
+                    1,
+                    12,
+                    2.5,
                     18,
                     36
                 ],
