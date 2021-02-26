@@ -1,12 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import {isArray} from 'lodash';
-import ReactMapGL, { Source, Layer, NavigationControl, WebMercatorViewport } from 'react-map-gl';
+import { isArray } from 'lodash';
+import ReactMapGL, { Source, Layer, NavigationControl } from 'react-map-gl';
 
-const Atlas = ({ viewport, year, geojson, activeBasemap, opacity }) => {
+const Atlas = ({ year, geojson, activeBasemap, opacity }) => {
   const mapRef = useRef(null);
 
-  const [mapViewport, setMapViewport] = useState({latitude: 29.74991, longitude: -95.36026, zoom: 9 });
+  const [mapViewport, setMapViewport] = useState({
+    latitude: 29.74991,
+    longitude: -95.36026,
+    zoom: 9,
+  });
 
   const setMapYear = () => {
     const map = mapRef.current.getMap();
@@ -19,7 +23,9 @@ const Atlas = ({ viewport, year, geojson, activeBasemap, opacity }) => {
       if (style) {
         style.layers = style.layers.map(layer => {
           if (layer.source === 'composite') {
-            const filter = layer.filter ? layer.filter.filter(f => isArray(f) && f[0] !== '<=' && f[0] !== '>=') : [];
+            const filter = layer.filter
+              ? layer.filter.filter(f => isArray(f) && f[0] !== '<=' && f[0] !== '>=')
+              : [];
             return {
               ...layer,
               filter: [
@@ -96,13 +102,6 @@ const Atlas = ({ viewport, year, geojson, activeBasemap, opacity }) => {
 };
 
 Atlas.propTypes = {
-  viewport: PropTypes.shape({
-    longitude: PropTypes.number,
-    latitude: PropTypes.number,
-    zoom: PropTypes.number,
-    bearing: PropTypes.number,
-    pitch: PropTypes.number,
-  }),
   year: PropTypes.number.isRequired,
   activeBasemap: PropTypes.string,
   geojson: PropTypes.shape(),
@@ -110,7 +109,6 @@ Atlas.propTypes = {
 };
 
 Atlas.defaultProps = {
-  viewport: null,
   activeBasemap: null,
   opacity: 0.75,
   geojson: null,
