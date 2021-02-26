@@ -66,6 +66,7 @@ const Timeline = ({ handler }) => {
                 boxSizing="border-box"
                 w={`${100 / (yearRange.length - 1)}%`}
                 pl={1}
+                userSelect="none"
               >
                 {y}
               </Box>
