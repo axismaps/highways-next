@@ -65,21 +65,15 @@ const Atlas = ({ year, geojson, activeBasemap, opacity }) => {
     >
       {activeBasemap && (
         <Source
+          key={activeBasemap}
           type="raster"
-          tiles={[
-            `https://imaginerio-rasters.s3.us-east-1.amazonaws.com/${activeBasemap}/{z}/{x}/{y}.png`,
-          ]}
+          tiles={[`${process.env.NEXT_PUBLIC_RASTER_URL}/${activeBasemap}/{z}/{x}/{y}.png`]}
           scheme="tms"
         >
-          <Layer
-            id="overlay"
-            type="raster"
-            paint={{ 'raster-opacity': opacity }}
-            beforeId="expressway-label"
-          />
+          <Layer id="overlay" type="raster" paint={{ 'raster-opacity': opacity }} />
         </Source>
       )}
-      {geojson && !activeBasemap && (
+      {geojson && (
         <Source type="geojson" data={geojson}>
           <Layer id="selected-fill" type="fill" paint={{ 'fill-color': 'rgba(0,0,0,0.25)' }} />
           <Layer
