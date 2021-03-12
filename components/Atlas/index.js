@@ -6,12 +6,15 @@ import bbox from '@turf/bbox';
 import ReactMapGL, {
   Source,
   Layer,
+  Marker,
   NavigationControl,
   WebMercatorViewport,
   FlyToInterpolator,
 } from 'react-map-gl';
+import { IconButton } from '@chakra-ui/react';
+import { ViewIcon } from '@chakra-ui/icons';
 
-const Atlas = ({ year, geojson, activeBasemap, opacity }) => {
+const Atlas = ({ year, geojson, activeBasemap, opacity, documents, basemapHandler }) => {
   const mapRef = useRef(null);
 
   const [mapViewport, setMapViewport] = useState({
@@ -19,6 +22,7 @@ const Atlas = ({ year, geojson, activeBasemap, opacity }) => {
     longitude: -95.36026,
     zoom: 11,
   });
+  const [viewpoints, setViewpoints] = useState([]);
   const [viewcone, setViewcone] = useState(null);
 
   const setMapYear = () => {
@@ -87,6 +91,12 @@ const Atlas = ({ year, geojson, activeBasemap, opacity }) => {
     }
   }, [activeBasemap]);
 
+  useEffect(() => {
+    const views = documents.find(d => d.title.match(/view/gi));
+    if (views && views.Documents) setViewpoints(views.Documents);
+    else setViewpoints([]);
+  }, [documents]);
+
   const onViewportChange = nextViewport => {
     setMapViewport(nextViewport);
   };
@@ -136,6 +146,21 @@ const Atlas = ({ year, geojson, activeBasemap, opacity }) => {
           />
         </Source>
       )}
+      {viewpoints.map(v => (
+        <Marker key={v.ssid} {...v} offsetLeft={-15} offsetTop={-15}>
+          <IconButton
+            icon={<ViewIcon />}
+            as="div"
+            w="30px"
+            h="30px"
+            minWidth="none"
+            borderRadius="50%"
+            backgroundColor="white"
+            boxShadow="md"
+            onClick={() => basemapHandler(v.ssid)}
+          />
+        </Marker>
+      ))}
       <div style={{ position: 'absolute', left: 15, top: 15 }}>
         <NavigationControl />
       </div>
@@ -148,6 +173,8 @@ Atlas.propTypes = {
   activeBasemap: PropTypes.string,
   geojson: PropTypes.shape(),
   opacity: PropTypes.number,
+  documents: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  basemapHandler: PropTypes.func.isRequired,
 };
 
 Atlas.defaultProps = {
