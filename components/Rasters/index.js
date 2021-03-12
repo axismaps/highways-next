@@ -9,7 +9,7 @@ import Panel from './Panel';
 const fetcher = year =>
   axios.get(`${process.env.NEXT_PUBLIC_SEARCH_API}/documents?year=${year}`).then(res => res.data);
 
-const Rasters = ({ year, basemapHandler }) => {
+const Rasters = ({ year, basemapHandler, activeBasemap }) => {
   const { data, error } = useSWR(year, fetcher);
   if (!data || error) return 'BOO';
   return (
@@ -20,6 +20,7 @@ const Rasters = ({ year, basemapHandler }) => {
           title={d.title}
           documents={d.Documents}
           basemapHandler={basemapHandler}
+          activeBasemap={activeBasemap}
         />
       ))}
     </Box>
@@ -29,6 +30,11 @@ const Rasters = ({ year, basemapHandler }) => {
 Rasters.propTypes = {
   year: PropTypes.number.isRequired,
   basemapHandler: PropTypes.func.isRequired,
+  activeBasemap: PropTypes.string,
+};
+
+Rasters.defaultProps = {
+  activeBasemap: null,
 };
 
 export default Rasters;

@@ -16,7 +16,7 @@ export default function Home() {
       </Heading>
       <Timeline handler={setYear} />
       <Grid w="100%" h="calc(100vh - 125px)" templateColumns="320px 1fr">
-        <Sidebar year={year} basemapHandler={setBasemap} />
+        <Sidebar year={year} activeBasemap={basemap} basemapHandler={setBasemap} />
         <Atlas year={year} activeBasemap={basemap} />
       </Grid>
     </Box>
