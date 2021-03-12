@@ -6,8 +6,8 @@ import { Box, Heading, Grid } from '@chakra-ui/react';
 import styles from './Panel.module.css';
 
 const Panel = ({ title, documents, basemapHandler, activeBasemap }) => (
-  <Box>
-    <Heading size="md" mb="10px">
+  <Box mb={5}>
+    <Heading size="md" mb={2}>
       {title}
     </Heading>
     <Grid
