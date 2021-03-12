@@ -21,10 +21,10 @@ const Legend = ({ layers }) => {
       <Heading size="md" mb={2}>
         Legend
       </Heading>
-      <Box px="15px" py="10px" backgroundColor="white" borderRadius="5px">
+      <Box px="15px" py="10px" backgroundColor="white" borderRadius="5px" boxShadow="md">
         {layers.map(layer => (
           <Box key={layer.id}>
-            <Heading size="sm" mb={1}>
+            <Heading size="sm" mb={2}>
               {layer.title}
             </Heading>
             <Grid templateColumns="45px 1fr" columnGap="10px" rowGap="10px">

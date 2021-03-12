@@ -18,6 +18,7 @@ const Panel = ({ title, documents, basemapHandler, activeBasemap }) => (
       py="10px"
       backgroundColor="white"
       borderRadius="5px"
+      boxShadow="md"
     >
       {documents.map(d => (
         <Box key={d.ssid} w="70px" h="70px" pos="relative" onClick={() => basemapHandler(d.ssid)}>
