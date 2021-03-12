@@ -9,17 +9,27 @@ import Sidebar from '../components/Sidebar';
 import Viewer from '../components/Viewer';
 
 const fetcher = year =>
-  axios.get(`${process.env.NEXT_PUBLIC_SEARCH_API}/documents?year=${year}`).then(res => res.data);
+  Promise.all([
+    axios.get(`${process.env.NEXT_PUBLIC_SEARCH_API}/documents?year=${year}`),
+    axios.get(`${process.env.NEXT_PUBLIC_SEARCH_API}/layers?year=${year}`),
+  ]).then(res => ({
+    documents: res[0].data,
+    layers: res[1].data,
+  }));
 
 export default function Home() {
   const [year, setYear] = useState(1950);
   const [activeBasemap, setActiveBasemap] = useState(null);
   const [opacity, setOpacity] = useState(1);
   const [documents, setDocuments] = useState([]);
+  const [layers, setLayers] = useState([]);
 
   const { data, error } = useSWR(year, fetcher);
   useEffect(() => {
-    if (data && !error) setDocuments(data);
+    if (data && !error) {
+      setDocuments(data.documents);
+      setLayers(data.layers);
+    }
   }, [data, error]);
 
   useEffect(() => {
@@ -38,6 +48,7 @@ export default function Home() {
           activeBasemap={activeBasemap}
           basemapHandler={setActiveBasemap}
           documents={documents}
+          layers={layers}
         />
         <Atlas
           year={year}

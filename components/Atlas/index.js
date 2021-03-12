@@ -14,6 +14,8 @@ import ReactMapGL, {
 import { IconButton } from '@chakra-ui/react';
 import { ViewIcon } from '@chakra-ui/icons';
 
+import mapStyle from './style.json';
+
 const Atlas = ({ year, geojson, activeBasemap, opacity, documents, basemapHandler }) => {
   const mapRef = useRef(null);
 
@@ -109,7 +111,7 @@ const Atlas = ({ year, geojson, activeBasemap, opacity, documents, basemapHandle
     <ReactMapGL
       ref={mapRef}
       mapboxApiAccessToken="pk.eyJ1IjoiYXhpc21hcHMiLCJhIjoieUlmVFRmRSJ9.CpIxovz1TUWe_ecNLFuHNg"
-      mapStyle="/style.json"
+      mapStyle={mapStyle}
       width="100%"
       height="100%"
       onLoad={onMapLoad}
