@@ -1,7 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 import { isArray } from 'lodash';
-import ReactMapGL, { Source, Layer, NavigationControl } from 'react-map-gl';
+import bbox from '@turf/bbox';
+import ReactMapGL, {
+  Source,
+  Layer,
+  NavigationControl,
+  WebMercatorViewport,
+  FlyToInterpolator,
+} from 'react-map-gl';
 
 const Atlas = ({ year, geojson, activeBasemap, opacity }) => {
   const mapRef = useRef(null);
@@ -43,6 +51,32 @@ const Atlas = ({ year, geojson, activeBasemap, opacity }) => {
     }
   };
   useEffect(setMapYear, [year]);
+
+  const fitBounds = geom => {
+    const [minX, minY, maxX, maxY] = bbox(geom);
+    const { longitude, latitude, zoom } = new WebMercatorViewport(mapViewport).fitBounds(
+      [
+        [minX, minY],
+        [maxX, maxY],
+      ],
+      { padding: 20 }
+    );
+    setMapViewport({
+      ...mapViewport,
+      longitude,
+      latitude,
+      zoom,
+      transitionDuration: 1000,
+      transitionInterpolator: new FlyToInterpolator(),
+    });
+  };
+
+  useEffect(async () => {
+    const {
+      data: { features },
+    } = await axios.get(`${process.env.NEXT_PUBLIC_SEARCH_API}/document/${activeBasemap}`);
+    fitBounds(features[0].geometry);
+  }, [activeBasemap]);
 
   const onViewportChange = nextViewport => {
     setMapViewport(nextViewport);
