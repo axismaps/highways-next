@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Image from 'next/image';
-import { Box, Flex, Spacer, Heading, Text, Button } from '@chakra-ui/react';
+import { Box, Flex, Spacer, Heading, Text, Button, Image } from '@chakra-ui/react';
 import { ChevronLeftIcon, ChevronRightIcon, CloseIcon } from '@chakra-ui/icons';
 
 import Opacity from './Opacity';
+import Lightbox from './Lightbox';
 
 const Viewer = ({ documents, activeBasemap, opacityHandler, basemapHandler }) => {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+
   const type = documents.find(d => d.Documents.find(v => v.ssid === activeBasemap));
   const currentIndex = type.Documents.findIndex(t => t.ssid === activeBasemap);
   const document = type.Documents[currentIndex];
@@ -34,11 +36,10 @@ const Viewer = ({ documents, activeBasemap, opacityHandler, basemapHandler }) =>
         <Spacer />
         <CloseIcon onClick={() => basemapHandler(null)} fontSize={12} mt={1} cursor="pointer" />
       </Flex>
-      <Box pos="relative" h="180px" mb={2}>
+      <Box pos="relative" mb={2}>
         <Image
           src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/${document.ssid}/medium.jpg`}
-          layout="fill"
-          objectFit="cover"
+          onClick={() => setLightboxOpen(true)}
         />
       </Box>
       <Text mb={2}>
@@ -58,6 +59,7 @@ const Viewer = ({ documents, activeBasemap, opacityHandler, basemapHandler }) =>
       ) : (
         <Opacity opacityHandler={opacityHandler} />
       )}
+      <Lightbox isOpen={lightboxOpen} onClose={() => setLightboxOpen(false)} document={document} />
     </Box>
   );
 };
