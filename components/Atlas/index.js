@@ -19,6 +19,7 @@ const Atlas = ({ year, geojson, activeBasemap, opacity }) => {
     longitude: -95.36026,
     zoom: 11,
   });
+  const [viewcone, setViewcone] = useState(null);
 
   const setMapYear = () => {
     const map = mapRef.current.getMap();
@@ -59,7 +60,7 @@ const Atlas = ({ year, geojson, activeBasemap, opacity }) => {
         [minX, minY],
         [maxX, maxY],
       ],
-      { padding: 20 }
+      { padding: 100 }
     );
     setMapViewport({
       ...mapViewport,
@@ -76,7 +77,13 @@ const Atlas = ({ year, geojson, activeBasemap, opacity }) => {
       const {
         data: { features },
       } = await axios.get(`${process.env.NEXT_PUBLIC_SEARCH_API}/document/${activeBasemap}`);
-      fitBounds(features[0].geometry);
+      const [feature] = features;
+      fitBounds(feature.geometry);
+      if (feature.properties.type.match(/view/gi)) {
+        setViewcone(feature);
+      } else {
+        setViewcone(null);
+      }
     }
   }, [activeBasemap]);
 
@@ -99,7 +106,7 @@ const Atlas = ({ year, geojson, activeBasemap, opacity }) => {
       onViewportChange={onViewportChange}
       {...mapViewport}
     >
-      {activeBasemap && (
+      {activeBasemap && !viewcone && (
         <Source
           key={activeBasemap}
           type="raster"
@@ -107,6 +114,11 @@ const Atlas = ({ year, geojson, activeBasemap, opacity }) => {
           scheme="tms"
         >
           <Layer id="overlay" type="raster" paint={{ 'raster-opacity': opacity }} />
+        </Source>
+      )}
+      {viewcone && (
+        <Source key={`view${activeBasemap}`} type="geojson" data={viewcone}>
+          <Layer id="viewcone" type="fill" paint={{ 'fill-color': 'rgba(0,0,0,0.25)' }} />
         </Source>
       )}
       {geojson && (
