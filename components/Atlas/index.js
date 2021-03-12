@@ -72,10 +72,12 @@ const Atlas = ({ year, geojson, activeBasemap, opacity }) => {
   };
 
   useEffect(async () => {
-    const {
-      data: { features },
-    } = await axios.get(`${process.env.NEXT_PUBLIC_SEARCH_API}/document/${activeBasemap}`);
-    fitBounds(features[0].geometry);
+    if (activeBasemap) {
+      const {
+        data: { features },
+      } = await axios.get(`${process.env.NEXT_PUBLIC_SEARCH_API}/document/${activeBasemap}`);
+      fitBounds(features[0].geometry);
+    }
   }, [activeBasemap]);
 
   const onViewportChange = nextViewport => {
