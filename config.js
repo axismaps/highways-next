@@ -1,6 +1,6 @@
 const config = {
   minYear: 1836,
-  maxYear: new Date().getFullYear(),
+  maxYear: 2050,
 };
 
 export default config;

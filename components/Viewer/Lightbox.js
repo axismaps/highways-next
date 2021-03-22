@@ -15,7 +15,7 @@ import {
 } from '@chakra-ui/react';
 
 const Lightbox = ({ isOpen, onClose, document }) => (
-  <Modal isOpen={isOpen} onClose={onClose} size="2xl">
+  <Modal isOpen={isOpen} onClose={onClose} size="6xl">
     <ModalOverlay />
     <ModalContent>
       <ModalHeader />
@@ -23,7 +23,7 @@ const Lightbox = ({ isOpen, onClose, document }) => (
       <ModalBody>
         <Image
           maxH="75vh"
-          maxW="75vw"
+          maxW="65vw"
           margin="auto"
           src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/${document.ssid}/full.jpg`}
         />
