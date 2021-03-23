@@ -23,29 +23,35 @@ const Viewer = ({ documents, activeBasemap, opacityHandler, basemapHandler }) =>
   return (
     <Box
       pos="absolute"
-      right="10px"
-      top="120px"
-      w="330px"
+      right={[0, '10px']}
+      top={['auto', '120px']}
+      bottom={[0, 'auto']}
+      w={['100%', '330px']}
       p="20px"
       gridTemplateRows="1fr 1fr 1fr 40px"
       rowGap="20px"
       backgroundColor="white"
+      zIndex={8}
     >
       <Flex mb={2}>
-        <Heading size="sm">{document.title}</Heading>
+        <Heading size="sm" fontSize={[14, 'auto']}>
+          {document.title}
+        </Heading>
         <Spacer />
         <CloseIcon onClick={() => basemapHandler(null)} fontSize={12} mt={1} cursor="pointer" />
       </Flex>
-      <Box pos="relative" mb={2}>
-        <Image
-          src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/${document.ssid}/medium.jpg`}
-          onClick={() => setLightboxOpen(true)}
-        />
+      <Box display={['flex', 'block']} mb={[2, 0]}>
+        <Box pos="relative" mb={2} maxWidth={['25%', 'auto']}>
+          <Image
+            src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/${document.ssid}/medium.jpg`}
+            onClick={() => setLightboxOpen(true)}
+          />
+        </Box>
+        <Text mb={[0, 2]} ml={[2, 0]} fontSize={['0.75em', 'auto']}>
+          Vivamus tempus ante a interdum pulvinar. Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit. Integer.
+        </Text>
       </Box>
-      <Text mb={2}>
-        Vivamus tempus ante a interdum pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Integer.
-      </Text>
       {type.title.match(/view/gi) ? (
         <Flex>
           <Button leftIcon={<ChevronLeftIcon />} w="40%" onClick={() => changeView(-1)}>

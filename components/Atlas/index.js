@@ -11,7 +11,7 @@ import ReactMapGL, {
   WebMercatorViewport,
   FlyToInterpolator,
 } from 'react-map-gl';
-import { IconButton } from '@chakra-ui/react';
+import { Box, IconButton } from '@chakra-ui/react';
 import { ViewIcon } from '@chakra-ui/icons';
 
 import mapStyle from './style.json';
@@ -163,9 +163,9 @@ const Atlas = ({ year, geojson, activeBasemap, opacity, documents, basemapHandle
           />
         </Marker>
       ))}
-      <div style={{ position: 'absolute', left: 15, top: 15 }}>
+      <Box pos="absolute" left={['auto', '15px']} right={['40px', 'auto']} top="15px">
         <NavigationControl />
-      </div>
+      </Box>
     </ReactMapGL>
   );
 };

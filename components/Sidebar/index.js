@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Box, IconButton } from '@chakra-ui/react';
 import { ChevronRightIcon, ChevronLeftIcon } from '@chakra-ui/icons';
@@ -8,6 +8,7 @@ import Legend from '../Legend';
 
 const Sidebar = ({ year, activeBasemap, basemapHandler, documents, layers }) => {
   const [open, setOpen] = useState(false);
+  useEffect(() => setOpen(false), [activeBasemap]);
 
   return (
     <>
@@ -16,7 +17,7 @@ const Sidebar = ({ year, activeBasemap, basemapHandler, documents, layers }) => 
         pos="absolute"
         left={open ? 310 : 0}
         zIndex={10}
-        bottom={8}
+        top={40}
         backgroundColor="#eee"
         borderRadius="0 5px 5px 0"
         size="sm"
