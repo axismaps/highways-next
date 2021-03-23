@@ -27,7 +27,6 @@ const getColor = (layer, type) => {
     [backgroundColor, borderColor] = [backgroundColor, borderColor].map(bColor => {
       if (!bColor) return null;
       let color = bColor;
-      console.log(color);
       if (Array.isArray(color)) color = last(color);
       if (color.match(/^hsl/gi)) color = rgb(color).formatHex();
       return color;

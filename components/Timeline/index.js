@@ -5,6 +5,7 @@ import {
   Flex,
   Box,
   Heading,
+  Text,
   IconButton,
   Slider,
   SliderTrack,
@@ -26,8 +27,16 @@ const Timeline = ({ handler }) => {
     handler(year);
   }, [year]);
   return (
-    <Flex py={5} pr={5} boxShadow="0 2px 2px rgba(0,0,0,0.25)" pos="relative" zIndex={2}>
-      <Flex>
+    <Flex
+      py={[2, 5]}
+      pr={5}
+      pl={[5, 0]}
+      boxShadow="0 2px 2px rgba(0,0,0,0.25)"
+      pos="relative"
+      zIndex={2}
+      display={['block', 'flex']}
+    >
+      <Flex justifyContent="center">
         <IconButton
           icon={<ArrowLeftIcon />}
           mx={5}
@@ -52,6 +61,7 @@ const Timeline = ({ handler }) => {
         max={maxYear}
         onChange={setYear}
         h="40px"
+        mt={[2, 0]}
       >
         <Flex
           pos="relative"
@@ -67,10 +77,14 @@ const Timeline = ({ handler }) => {
                 borderLeft="1px solid black"
                 boxSizing="border-box"
                 w={`${100 / (yearRange.length - 1)}%`}
+                h="27px"
+                lineHeight="27px"
+                mt="-2px"
                 pl={1}
                 userSelect="none"
+                fontSize="0.7em"
               >
-                {y}
+                <Text display={['none', 'block']}>{y}</Text>
               </Box>
             </React.Fragment>
           ))}

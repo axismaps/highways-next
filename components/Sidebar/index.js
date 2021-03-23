@@ -1,21 +1,54 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Box } from '@chakra-ui/react';
+import { Box, IconButton } from '@chakra-ui/react';
+import { ChevronRightIcon, ChevronLeftIcon } from '@chakra-ui/icons';
 
 import Rasters from '../Rasters';
 import Legend from '../Legend';
 
-const Sidebar = ({ year, activeBasemap, basemapHandler, documents, layers }) => (
-  <Box backgroundColor="#eee" p="20px" h="100%" overflow="auto">
-    <Rasters
-      year={year}
-      basemapHandler={basemapHandler}
-      activeBasemap={activeBasemap}
-      documents={documents}
-    />
-    <Legend layers={layers} />
-  </Box>
-);
+const Sidebar = ({ year, activeBasemap, basemapHandler, documents, layers }) => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <IconButton
+        icon={open ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+        pos="absolute"
+        left={open ? 310 : 0}
+        zIndex={10}
+        bottom={8}
+        backgroundColor="#eee"
+        borderRadius="0 5px 5px 0"
+        size="sm"
+        w="25px"
+        minW="none"
+        boxShadow="sm"
+        onClick={() => setOpen(!open)}
+        display={['block', 'none']}
+      />
+      <Box
+        backgroundColor="#eee"
+        p="20px"
+        h={['calc(100vh - 160px)', '100%']}
+        overflowY="auto"
+        overflowX="visible"
+        pos={['absolute', 'static']}
+        boxShadow={['md', 'none']}
+        left={open ? 0 : '-100%'}
+        zIndex={9}
+        transition="all 250ms"
+      >
+        <Rasters
+          year={year}
+          basemapHandler={basemapHandler}
+          activeBasemap={activeBasemap}
+          documents={documents}
+        />
+        <Legend layers={layers} />
+      </Box>
+    </>
+  );
+};
 
 Sidebar.propTypes = {
   year: PropTypes.number.isRequired,

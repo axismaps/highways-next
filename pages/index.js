@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import useSWR from 'swr';
 import axios from 'axios';
+import Head from 'next/head';
 import { Grid, Box, Heading } from '@chakra-ui/react';
 
 import Atlas from '../components/Atlas';
@@ -38,11 +39,19 @@ export default function Home() {
 
   return (
     <Box>
+      <Head>
+        <title>Highways + Waterways</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <Heading fontSize={18} color="#002469" m={5} mb={0}>
         Highways + Waterways
       </Heading>
       <Timeline handler={setYear} />
-      <Grid w="100%" h="calc(100vh - 125px)" templateColumns="320px 1fr">
+      <Grid
+        w="100%"
+        h={['calc(100vh - 160px)', 'calc(100vh - 125px)']}
+        templateColumns={['1fr', '320px 1fr']}
+      >
         <Sidebar
           year={year}
           activeBasemap={activeBasemap}
