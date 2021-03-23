@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { last, findLast } from 'lodash';
+import { rgb } from 'd3';
 import { Box, Grid, Heading, Text } from '@chakra-ui/react';
 
-import hslToRgb from '../../utils/hslToRgb';
 import Line from './Line.svg';
 import style from '../Atlas/style.json';
 
@@ -27,9 +27,9 @@ const getColor = (layer, type) => {
     [backgroundColor, borderColor] = [backgroundColor, borderColor].map(bColor => {
       if (!bColor) return null;
       let color = bColor;
-      if (Array.isArray(color)) color = last(color);
-      if (color.match(/^hsl/gi)) color = hslToRgb(color);
       console.log(color);
+      if (Array.isArray(color)) color = last(color);
+      if (color.match(/^hsl/gi)) color = rgb(color).formatHex();
       return color;
     });
     return {

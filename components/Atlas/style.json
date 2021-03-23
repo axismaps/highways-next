@@ -216,7 +216,6 @@
             ],
             "layout": {},
             "paint": {
-                "fill-outline-color": "hsla(72, 17%, 46%, 0)",
                 "fill-color": [
                     "interpolate",
                     ["linear"],
@@ -242,7 +241,6 @@
             ],
             "layout": {},
             "paint": {
-                "fill-outline-color": "hsla(72, 17%, 46%, 0)",
                 "fill-color": [
                     "interpolate",
                     ["linear"],
@@ -268,7 +266,6 @@
             ],
             "layout": {},
             "paint": {
-                "fill-outline-color": "hsla(72, 17%, 46%, 0)",
                 "fill-opacity": [
                     "interpolate",
                     ["linear"],
@@ -303,7 +300,6 @@
             ],
             "layout": {},
             "paint": {
-                "fill-outline-color": "hsla(72, 17%, 46%, 0)",
                 "fill-color": [
                     "interpolate",
                     ["linear"],
@@ -329,7 +325,6 @@
             ],
             "layout": {},
             "paint": {
-                "fill-outline-color": "hsla(72, 17%, 46%, 0)",
                 "fill-color": [
                     "interpolate",
                     ["linear"],
@@ -355,7 +350,6 @@
             ],
             "layout": {},
             "paint": {
-                "fill-outline-color": "hsla(72, 17%, 46%, 0)",
                 "fill-color": [
                     "interpolate",
                     ["linear"],
@@ -381,7 +375,6 @@
             ],
             "layout": {},
             "paint": {
-                "fill-outline-color": "hsla(72, 17%, 46%, 0)",
                 "fill-color": [
                     "interpolate",
                     ["linear"],
@@ -407,7 +400,6 @@
             ],
             "layout": {},
             "paint": {
-                "fill-outline-color": "hsla(72, 17%, 46%, 0)",
                 "fill-color": [
                     "interpolate",
                     ["linear"],
@@ -433,7 +425,6 @@
             ],
             "layout": {"visibility": "none"},
             "paint": {
-                "fill-outline-color": "hsla(72, 17%, 46%, 0)",
                 "fill-opacity": [
                     "interpolate",
                     ["linear"],
@@ -468,7 +459,6 @@
             ],
             "layout": {"visibility": "none"},
             "paint": {
-                "fill-outline-color": "hsla(72, 17%, 46%, 0)",
                 "fill-opacity": [
                     "interpolate",
                     ["linear"],
@@ -2751,8 +2741,7 @@
                     0,
                     10,
                     1
-                ],
-                "text-halo-color": "hsla(0, 0%, 0%, 0)"
+                ]
             }
         },
         {
@@ -2802,8 +2791,7 @@
                     0,
                     10,
                     1
-                ],
-                "text-halo-color": "hsla(0, 0%, 0%, 0)"
+                ]
             }
         },
         {
