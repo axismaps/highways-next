@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import useSWR from 'swr';
-import axios from 'axios';
 import Head from 'next/head';
 import { Grid, Box, Heading } from '@chakra-ui/react';
 
@@ -12,29 +10,10 @@ import config from '../config';
 
 const { startYear } = config;
 
-const fetcher = year =>
-  Promise.all([
-    axios.get(`${process.env.NEXT_PUBLIC_SEARCH_API}/documents?year=${year}`),
-    axios.get(`${process.env.NEXT_PUBLIC_SEARCH_API}/layers?year=${year}`),
-  ]).then(res => ({
-    documents: res[0].data,
-    layers: res[1].data,
-  }));
-
 export default function Home() {
   const [year, setYear] = useState(startYear);
   const [activeBasemap, setActiveBasemap] = useState(null);
   const [opacity, setOpacity] = useState(1);
-  const [documents, setDocuments] = useState([]);
-  const [layers, setLayers] = useState([]);
-
-  const { data, error } = useSWR(year, fetcher);
-  useEffect(() => {
-    if (data && !error) {
-      setDocuments(data.documents);
-      setLayers(data.layers);
-    }
-  }, [data, error]);
 
   useEffect(() => {
     setActiveBasemap(null);
@@ -55,25 +34,18 @@ export default function Home() {
         h={['calc(100vh - 160px)', 'calc(100vh - 125px)']}
         templateColumns={['1fr', '320px 1fr']}
       >
-        <Sidebar
-          year={year}
-          activeBasemap={activeBasemap}
-          basemapHandler={setActiveBasemap}
-          documents={documents}
-          layers={layers}
-        />
+        <Sidebar year={year} activeBasemap={activeBasemap} basemapHandler={setActiveBasemap} />
         <Atlas
           year={year}
           activeBasemap={activeBasemap}
           basemapHandler={setActiveBasemap}
-          documents={documents}
           opacity={opacity}
         />
       </Grid>
       {activeBasemap && (
         <Viewer
+          year={year}
           activeBasemap={activeBasemap}
-          documents={documents}
           basemapHandler={setActiveBasemap}
           opacityHandler={setOpacity}
         />

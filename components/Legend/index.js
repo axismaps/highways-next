@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import useSWR from 'swr';
+import axios from 'axios';
 import { last, findLast } from 'lodash';
 import { rgb } from 'd3';
 import { Box, Grid, Heading, Text } from '@chakra-ui/react';
@@ -49,7 +51,16 @@ const getColor = (layer, type) => {
   return { backgroundColor: 'white' };
 };
 
-const Legend = ({ layers }) => {
+const fetcher = url => axios.get(url).then(({ data }) => data);
+
+const Legend = ({ year }) => {
+  const { data: layers, error } = useSWR(
+    `${process.env.NEXT_PUBLIC_SEARCH_API}/layers?year=${year}`,
+    fetcher
+  );
+
+  if (!layers || error) return 'LOADING';
+
   return (
     <Box>
       <Heading size="md" mb={2}>
@@ -77,7 +88,7 @@ const Legend = ({ layers }) => {
 };
 
 Legend.propTypes = {
-  layers: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  year: PropTypes.number.isRequired,
 };
 
 export default Legend;

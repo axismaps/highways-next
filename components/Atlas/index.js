@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
+import useSWR from 'swr';
 import axios from 'axios';
 import { isArray } from 'lodash';
 import bbox from '@turf/bbox';
@@ -17,8 +18,14 @@ import { faCamera } from '@fortawesome/free-solid-svg-icons';
 
 import mapStyle from './style.json';
 
-const Atlas = ({ year, geojson, activeBasemap, opacity, documents, basemapHandler }) => {
+const fetcher = url => axios.get(url).then(({ data }) => data);
+
+const Atlas = ({ year, geojson, activeBasemap, opacity, basemapHandler }) => {
   const mapRef = useRef(null);
+  const { data: documents } = useSWR(
+    `${process.env.NEXT_PUBLIC_SEARCH_API}/documents?year=${year}`,
+    fetcher
+  );
 
   const [mapViewport, setMapViewport] = useState({
     latitude: 29.74991,
@@ -97,9 +104,11 @@ const Atlas = ({ year, geojson, activeBasemap, opacity, documents, basemapHandle
   }, [activeBasemap]);
 
   useEffect(() => {
-    const views = documents.find(d => d.title.match(/view/gi));
-    if (views && views.Documents) setViewpoints(views.Documents);
-    else setViewpoints([]);
+    if (documents) {
+      const views = documents.find(d => d.title.match(/view/gi));
+      if (views && views.Documents) setViewpoints(views.Documents);
+      else setViewpoints([]);
+    }
   }, [documents]);
 
   const onViewportChange = nextViewport => {
@@ -178,7 +187,6 @@ Atlas.propTypes = {
   activeBasemap: PropTypes.string,
   geojson: PropTypes.shape(),
   opacity: PropTypes.number,
-  documents: PropTypes.arrayOf(PropTypes.shape()).isRequired,
   basemapHandler: PropTypes.func.isRequired,
 };
 

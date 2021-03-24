@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import useSWR from 'swr';
 import axios from 'axios';
@@ -8,17 +8,35 @@ import { ChevronLeftIcon, ChevronRightIcon, CloseIcon } from '@chakra-ui/icons';
 import Opacity from './Opacity';
 import Lightbox from './Lightbox';
 
-const fetcher = ssid =>
-  axios
-    .get(`${process.env.NEXT_PUBLIC_SEARCH_API}/document/${ssid}`)
-    .then(({ data: { features } }) => features[0].properties);
+const fetcher = url => axios.get(url).then(({ data }) => data);
+const basemapFetcher = url =>
+  axios.get(url).then(({ data: { features } }) => features[0].properties);
 
-const Viewer = ({ documents, activeBasemap, opacityHandler, basemapHandler }) => {
-  const { data: document, error } = useSWR(activeBasemap, fetcher);
+const Viewer = ({ year, activeBasemap, opacityHandler, basemapHandler }) => {
+  const { data: document, error } = useSWR(
+    `${process.env.NEXT_PUBLIC_SEARCH_API}/document/${activeBasemap}`,
+    basemapFetcher
+  );
+  const { data: documents } = useSWR(
+    `${process.env.NEXT_PUBLIC_SEARCH_API}/documents?year=${year}`,
+    fetcher
+  );
+
   const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [type, setType] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(null);
 
-  const type = documents.find(d => d.Documents.find(v => v.ssid === activeBasemap));
-  const currentIndex = type.Documents.findIndex(t => t.ssid === activeBasemap);
+  useEffect(() => {
+    if (documents) {
+      setType(documents.find(d => d.Documents.find(v => v.ssid === activeBasemap)));
+    }
+  }, [documents, activeBasemap]);
+
+  useEffect(() => {
+    if (type) {
+      setCurrentIndex(type.Documents.findIndex(t => t.ssid === activeBasemap));
+    }
+  }, [type, activeBasemap]);
 
   const changeView = step => {
     let nextIndex = currentIndex + step;
@@ -27,7 +45,7 @@ const Viewer = ({ documents, activeBasemap, opacityHandler, basemapHandler }) =>
     basemapHandler(type.Documents[nextIndex].ssid);
   };
 
-  if (!document || error) return 'LOADING';
+  if (!document || !documents || error) return 'LOADING';
 
   return (
     <Box
@@ -81,7 +99,7 @@ const Viewer = ({ documents, activeBasemap, opacityHandler, basemapHandler }) =>
 };
 
 Viewer.propTypes = {
-  documents: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  year: PropTypes.number.isRequired,
   activeBasemap: PropTypes.string.isRequired,
   opacityHandler: PropTypes.func.isRequired,
   basemapHandler: PropTypes.func.isRequired,
