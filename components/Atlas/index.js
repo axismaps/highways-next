@@ -12,7 +12,8 @@ import ReactMapGL, {
   FlyToInterpolator,
 } from 'react-map-gl';
 import { Box, IconButton } from '@chakra-ui/react';
-import { ViewIcon } from '@chakra-ui/icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCamera } from '@fortawesome/free-solid-svg-icons';
 
 import mapStyle from './style.json';
 
@@ -151,7 +152,7 @@ const Atlas = ({ year, geojson, activeBasemap, opacity, documents, basemapHandle
       {viewpoints.map(v => (
         <Marker key={v.ssid} {...v} offsetLeft={-15} offsetTop={-15}>
           <IconButton
-            icon={<ViewIcon />}
+            icon={<FontAwesomeIcon icon={faCamera} />}
             as="div"
             w="30px"
             h="30px"
