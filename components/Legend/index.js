@@ -63,10 +63,10 @@ const Legend = ({ layers }) => {
             </Heading>
             <Grid templateColumns="45px 1fr" columnGap="10px" rowGap="10px">
               {layer.types.map(type => (
-                <>
+                <React.Fragment key={type}>
                   <Box {...getColor(layer, type)} />
                   <Text>{type}</Text>
-                </>
+                </React.Fragment>
               ))}
             </Grid>
           </Box>
