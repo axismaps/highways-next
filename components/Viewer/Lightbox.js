@@ -5,6 +5,8 @@ import {
   Heading,
   Image,
   Text,
+  Button,
+  Spacer,
   Modal,
   ModalOverlay,
   ModalContent,
@@ -17,13 +19,12 @@ import {
 const Lightbox = ({ isOpen, onClose, document }) => (
   <Modal isOpen={isOpen} onClose={onClose} size="6xl">
     <ModalOverlay />
-    <ModalContent>
+    <ModalContent maxW="95vw">
       <ModalHeader />
       <ModalCloseButton />
       <ModalBody>
         <Image
           maxH="75vh"
-          maxW="65vw"
           margin="auto"
           src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/${document.ssid}/full.jpg`}
         />
@@ -31,11 +32,25 @@ const Lightbox = ({ isOpen, onClose, document }) => (
       <ModalFooter justifyContent="flex-start">
         <Box>
           <Heading size="sm">{document.title}</Heading>
-          <Text>
-            Vivamus tempus ante a interdum pulvinar. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Integer.
-          </Text>
+          {document.creator && <Text>{document.creator}</Text>}
+          {document.creditline && (
+            <Text fontStyle="italic" fontSize="0.9em">
+              {document.creditline}
+            </Text>
+          )}
         </Box>
+        {document.artstor && (
+          <>
+            <Spacer />
+            <Button
+              as="a"
+              href={`${process.env.NEXT_PUBLIC_ARTSTOR_URL}/${document.artstor}`}
+              target="_blank"
+            >
+              View on Artstor
+            </Button>
+          </>
+        )}
       </ModalFooter>
     </ModalContent>
   </Modal>
