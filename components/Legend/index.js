@@ -6,6 +6,8 @@ import { last, findLast } from 'lodash';
 import { rgb } from 'd3';
 import { Box, Grid, Heading, Text } from '@chakra-ui/react';
 
+import useDebounce from '../../utils/useDebounce';
+
 import Line from './Line.svg';
 import style from '../Atlas/style.json';
 
@@ -54,8 +56,9 @@ const getColor = (layer, type) => {
 const fetcher = url => axios.get(url).then(({ data }) => data);
 
 const Legend = ({ year }) => {
+  const debouncedYear = useDebounce(year, 500);
   const { data: layers, error } = useSWR(
-    `${process.env.NEXT_PUBLIC_SEARCH_API}/layers?year=${year}`,
+    debouncedYear ? `${process.env.NEXT_PUBLIC_SEARCH_API}/layers?year=${debouncedYear}` : null,
     fetcher
   );
 

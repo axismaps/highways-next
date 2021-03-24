@@ -7,18 +7,20 @@ import { ChevronLeftIcon, ChevronRightIcon, CloseIcon } from '@chakra-ui/icons';
 
 import Opacity from './Opacity';
 import Lightbox from './Lightbox';
+import useDebounce from '../../utils/useDebounce';
 
 const fetcher = url => axios.get(url).then(({ data }) => data);
 const basemapFetcher = url =>
   axios.get(url).then(({ data: { features } }) => features[0].properties);
 
 const Viewer = ({ year, activeBasemap, opacityHandler, basemapHandler }) => {
+  const debouncedYear = useDebounce(year, 500);
   const { data: document, error } = useSWR(
     `${process.env.NEXT_PUBLIC_SEARCH_API}/document/${activeBasemap}`,
     basemapFetcher
   );
   const { data: documents } = useSWR(
-    `${process.env.NEXT_PUBLIC_SEARCH_API}/documents?year=${year}`,
+    debouncedYear ? `${process.env.NEXT_PUBLIC_SEARCH_API}/documents?year=${debouncedYear}` : null,
     fetcher
   );
 

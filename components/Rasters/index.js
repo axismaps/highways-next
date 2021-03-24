@@ -5,15 +5,19 @@ import axios from 'axios';
 import { Box } from '@chakra-ui/react';
 
 import Panel from './Panel';
+import useDebounce from '../../utils/useDebounce';
 
 const fetcher = url => axios.get(url).then(({ data }) => data);
 
 const Rasters = ({ year, basemapHandler, activeBasemap }) => {
+  const debouncedYear = useDebounce(year, 500);
   const { data: documents, error } = useSWR(
-    `${process.env.NEXT_PUBLIC_SEARCH_API}/documents?year=${year}`,
+    debouncedYear ? `${process.env.NEXT_PUBLIC_SEARCH_API}/documents?year=${debouncedYear}` : null,
     fetcher
   );
+
   if (!documents || error) return 'LOADING';
+
   return (
     <Box>
       {documents.map(d => (

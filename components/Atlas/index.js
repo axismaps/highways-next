@@ -16,14 +16,17 @@ import { Box, IconButton } from '@chakra-ui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCamera } from '@fortawesome/free-solid-svg-icons';
 
+import useDebounce from '../../utils/useDebounce';
+
 import mapStyle from './style.json';
 
 const fetcher = url => axios.get(url).then(({ data }) => data);
 
 const Atlas = ({ year, geojson, activeBasemap, opacity, basemapHandler }) => {
   const mapRef = useRef(null);
+  const debouncedYear = useDebounce(year, 500);
   const { data: documents } = useSWR(
-    `${process.env.NEXT_PUBLIC_SEARCH_API}/documents?year=${year}`,
+    debouncedYear ? `${process.env.NEXT_PUBLIC_SEARCH_API}/documents?year=${debouncedYear}` : null,
     fetcher
   );
 
