@@ -8,6 +8,9 @@ import Atlas from '../components/Atlas';
 import Timeline from '../components/Timeline';
 import Sidebar from '../components/Sidebar';
 import Viewer from '../components/Viewer';
+import config from '../config';
+
+const { startYear } = config;
 
 const fetcher = year =>
   Promise.all([
@@ -19,7 +22,7 @@ const fetcher = year =>
   }));
 
 export default function Home() {
-  const [year, setYear] = useState(1950);
+  const [year, setYear] = useState(startYear);
   const [activeBasemap, setActiveBasemap] = useState(null);
   const [opacity, setOpacity] = useState(1);
   const [documents, setDocuments] = useState([]);

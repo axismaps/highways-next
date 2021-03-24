@@ -16,13 +16,13 @@ import { ArrowLeftIcon, ArrowRightIcon } from '@chakra-ui/icons';
 
 import config from '../../config';
 
-const { minYear, maxYear } = config;
+const { minYear, maxYear, startYear } = config;
 const roundedMinYear = Math.ceil(minYear / 10) * 10;
 const roundedMaxYear = Math.floor(maxYear / 10) * 10;
 const yearRange = range(roundedMinYear, roundedMaxYear, 10);
 
 const Timeline = ({ handler }) => {
-  const [year, setYear] = useState(1900);
+  const [year, setYear] = useState(startYear);
   useEffect(() => {
     handler(year);
   }, [year]);

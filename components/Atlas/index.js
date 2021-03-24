@@ -58,7 +58,9 @@ const Atlas = ({ year, geojson, activeBasemap, opacity, documents, basemapHandle
       }
     }
   };
+
   useEffect(setMapYear, [year]);
+  useEffect(setMapYear, []);
 
   const fitBounds = geom => {
     const [minX, minY, maxX, maxY] = bbox(geom);
