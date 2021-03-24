@@ -1076,6 +1076,41 @@
             }
         },
         {
+            "id": "other-case",
+            "type": "line",
+            "metadata": {"mapbox:group": "08a1b920ec22235869d8a3cc2e032162"},
+            "source": "composite",
+            "source-layer": "RoadsLine",
+            "filter": [
+                "all",
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
+                ["match", ["get", "type"], ["Other"], true, false]
+            ],
+            "layout": {"line-cap": "round", "line-join": "round"},
+            "paint": {
+                "line-color": "#bfbfbf",
+                "line-width": [
+                    "interpolate",
+                    ["exponential", 1.6],
+                    ["zoom"],
+                    11,
+                    1.5,
+                    18,
+                    16
+                ],
+                "line-opacity": [
+                    "interpolate",
+                    ["linear"],
+                    ["zoom"],
+                    11.5,
+                    0,
+                    17,
+                    1
+                ]
+            }
+        },
+        {
             "id": "secondary-case",
             "type": "line",
             "metadata": {"mapbox:group": "08a1b920ec22235869d8a3cc2e032162"},
@@ -1354,6 +1389,41 @@
                 ["<=", ["get", "firstyear"], 2012],
                 [">=", ["get", "lastyear"], 2012],
                 ["match", ["get", "type"], ["Tertiary"], true, false]
+            ],
+            "layout": {"line-cap": "round", "line-join": "round"},
+            "paint": {
+                "line-color": "hsl(0, 0%, 100%)",
+                "line-width": [
+                    "interpolate",
+                    ["exponential", 1.6],
+                    ["zoom"],
+                    11,
+                    0.25,
+                    18,
+                    13
+                ],
+                "line-opacity": [
+                    "interpolate",
+                    ["linear"],
+                    ["zoom"],
+                    11,
+                    0,
+                    11.25,
+                    1
+                ]
+            }
+        },
+        {
+            "id": "other",
+            "type": "line",
+            "metadata": {"mapbox:group": "437cde94bc7935d5992ddc37b3fefb42"},
+            "source": "composite",
+            "source-layer": "RoadsLine",
+            "filter": [
+                "all",
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
+                ["match", ["get", "type"], ["Other"], true, false]
             ],
             "layout": {"line-cap": "round", "line-join": "round"},
             "paint": {
