@@ -2777,7 +2777,7 @@
                 ["match", ["get", "type"], ["Trunk"], true, false]
             ],
             "layout": {
-                "text-field": ["to-string", "888"],
+                "text-field": ["to-string", ["get", "namealt"]],
                 "symbol-placement": "line",
                 "text-size": [
                     "interpolate",
@@ -2839,7 +2839,7 @@
                 "icon-image": "default-3",
                 "text-rotation-alignment": "viewport",
                 "icon-rotation-alignment": "viewport",
-                "text-field": ["to-string", "888"],
+                "text-field": ["to-string", ["get", "namealt"]],
                 "symbol-placement": "line"
             },
             "paint": {
