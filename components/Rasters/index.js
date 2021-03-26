@@ -5,6 +5,7 @@ import axios from 'axios';
 import { Box } from '@chakra-ui/react';
 
 import Panel from './Panel';
+import Loading from '../Loading';
 import useDebounce from '../../utils/useDebounce';
 
 const fetcher = url => axios.get(url).then(({ data }) => data);
@@ -16,7 +17,7 @@ const Rasters = ({ year, basemapHandler, activeBasemap }) => {
     fetcher
   );
 
-  if (!documents || error) return 'LOADING';
+  if (!documents || error) return <Loading />;
 
   return (
     <Box>

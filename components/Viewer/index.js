@@ -7,6 +7,7 @@ import { ChevronLeftIcon, ChevronRightIcon, CloseIcon } from '@chakra-ui/icons';
 
 import Opacity from './Opacity';
 import Lightbox from './Lightbox';
+import Loading from '../Loading';
 import useDebounce from '../../utils/useDebounce';
 
 const fetcher = url => axios.get(url).then(({ data }) => data);
@@ -47,7 +48,7 @@ const Viewer = ({ year, activeBasemap, opacityHandler, basemapHandler }) => {
     basemapHandler(type.Documents[nextIndex].ssid);
   };
 
-  if (!document || !documents || error) return 'LOADING';
+  if (!document || !documents || error) return <Loading />;
 
   return (
     <Box

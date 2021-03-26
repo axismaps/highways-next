@@ -6,6 +6,7 @@ import { last, findLast } from 'lodash';
 import { rgb } from 'd3';
 import { Box, Grid, Heading, Text } from '@chakra-ui/react';
 
+import Loading from '../Loading';
 import useDebounce from '../../utils/useDebounce';
 
 import Line from './Line.svg';
@@ -62,7 +63,7 @@ const Legend = ({ year }) => {
     fetcher
   );
 
-  if (!layers || error) return 'LOADING';
+  if (!layers || error) return <Loading />;
 
   return (
     <Box>
