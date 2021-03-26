@@ -2774,7 +2774,8 @@
                 "all",
                 ["<=", ["get", "firstyear"], 2012],
                 [">=", ["get", "lastyear"], 2012],
-                ["match", ["get", "type"], ["Trunk"], true, false]
+                ["match", ["get", "type"], ["Trunk"], true, false],
+                ["has", "namealt"]
             ],
             "layout": {
                 "text-field": ["to-string", ["get", "namealt"]],
@@ -2824,7 +2825,8 @@
                 "all",
                 ["<=", ["get", "firstyear"], 2012],
                 [">=", ["get", "lastyear"], 2012],
-                ["match", ["get", "type"], ["Highway"], true, false]
+                ["match", ["get", "type"], ["Highway"], true, false],
+                ["has", "namealt"]
             ],
             "layout": {
                 "text-size": [
@@ -2873,7 +2875,8 @@
                 "all",
                 ["<=", ["get", "firstyear"], 2012],
                 [">=", ["get", "lastyear"], 2012],
-                ["match", ["get", "type"], ["Interstate"], true, false]
+                ["match", ["get", "type"], ["Interstate"], true, false],
+                ["has", "namealt"]
             ],
             "layout": {
                 "icon-image": "shield",

@@ -17,7 +17,7 @@ const getColor = (layer, type) => {
     l =>
       l.filter &&
       l['source-layer'] === layer.name &&
-      l.filter.find(f => Array.isArray(f) && f[2][0] === type)
+      l.filter.find(f => Array.isArray(f) && f[2] && f[2][0] === type)
   );
   if (!layerStyle.length) layerStyle = style.layers.filter(l => l['source-layer'] === layer.name);
   if (!layerStyle.length) return { backgroundColor: 'white' };
