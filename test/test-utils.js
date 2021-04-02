@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { render } from '@testing-library/react';
 import { SWRConfig } from 'swr';
