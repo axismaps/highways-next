@@ -2100,18 +2100,7 @@
                     0,
                     13,
                     1
-                ],
-                "text-halo-color": "hsl(0, 0%, 100%)",
-                "text-halo-width": [
-                    "interpolate",
-                    ["linear"],
-                    ["zoom"],
-                    10,
-                    1,
-                    18,
-                    2
-                ],
-                "text-halo-blur": 1
+                ]
             }
         },
         {
@@ -2142,7 +2131,7 @@
                 "text-letter-spacing": 0.1
             },
             "paint": {
-                "text-color": "hsl(219, 28%, 38%)",
+                "text-color": "#46597c",
                 "text-opacity": [
                     "interpolate",
                     ["linear"],
@@ -2151,18 +2140,7 @@
                     0,
                     10,
                     1
-                ],
-                "text-halo-color": "hsl(0, 0%, 100%)",
-                "text-halo-width": [
-                    "interpolate",
-                    ["linear"],
-                    ["zoom"],
-                    10,
-                    1,
-                    18,
-                    2
-                ],
-                "text-halo-blur": 1
+                ]
             }
         },
         {
@@ -2202,18 +2180,7 @@
                     0,
                     10,
                     1
-                ],
-                "text-halo-color": "hsl(0, 0%, 100%)",
-                "text-halo-width": [
-                    "interpolate",
-                    ["linear"],
-                    ["zoom"],
-                    10,
-                    1,
-                    18,
-                    2
-                ],
-                "text-halo-blur": 1
+                ]
             }
         },
         {
@@ -2244,7 +2211,7 @@
                 "text-letter-spacing": 0.1
             },
             "paint": {
-                "text-color": "hsl(204, 31%, 41%)",
+                "text-color": "#46597c",
                 "text-opacity": [
                     "interpolate",
                     ["linear"],
@@ -2253,10 +2220,7 @@
                     0,
                     13,
                     1
-                ],
-                "text-halo-color": "hsl(0, 0%, 100%)",
-                "text-halo-width": 2,
-                "text-halo-blur": 1
+                ]
             }
         },
         {
@@ -2287,7 +2251,7 @@
                 "text-letter-spacing": 0.1
             },
             "paint": {
-                "text-color": "hsl(204, 31%, 41%)",
+                "text-color": "#46597c",
                 "text-opacity": [
                     "interpolate",
                     ["linear"],
@@ -2296,10 +2260,7 @@
                     0,
                     10,
                     1
-                ],
-                "text-halo-color": "hsl(0, 0%, 100%)",
-                "text-halo-width": 2,
-                "text-halo-blur": 1
+                ]
             }
         },
         {
