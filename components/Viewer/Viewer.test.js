@@ -9,11 +9,11 @@ import document from '../../__mocks__/document.data';
 import documents from '../../__mocks__/documents.data';
 
 describe('Viewer', () => {
-  it('Renders the viewer image', async () => {
-    const mock = new MockAdapter(axios);
-    mock.onGet(`${process.env.NEXT_PUBLIC_SEARCH_API}/documents?year=1950`).reply(200, documents);
-    mock.onGet(`${process.env.NEXT_PUBLIC_SEARCH_API}/document/SSID25009564`).reply(200, document);
+  const mock = new MockAdapter(axios);
+  mock.onGet(`${process.env.NEXT_PUBLIC_SEARCH_API}/documents?year=1950`).reply(200, documents);
+  mock.onGet(`${process.env.NEXT_PUBLIC_SEARCH_API}/document/SSID25009564`).reply(200, document);
 
+  it('Renders the viewer image', async () => {
     render(
       <Viewer
         activeBasemap="SSID25009564"
@@ -27,10 +27,6 @@ describe('Viewer', () => {
   });
 
   it('matches snapshot', async () => {
-    const mock = new MockAdapter(axios);
-    mock.onGet(`${process.env.NEXT_PUBLIC_SEARCH_API}/document/SSID25009564`).reply(200, document);
-    mock.onGet(`${process.env.NEXT_PUBLIC_SEARCH_API}/documents?year=1950`).reply(200, documents);
-
     render(
       <Viewer
         activeBasemap="SSID25009564"
