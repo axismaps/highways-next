@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import useSWR from 'swr';
 import axios from 'axios';
@@ -26,20 +26,11 @@ const Viewer = ({ year, activeBasemap, opacityHandler, basemapHandler }) => {
   );
 
   const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [type, setType] = useState(null);
-  const [currentIndex, setCurrentIndex] = useState(null);
 
-  useEffect(() => {
-    if (documents) {
-      setType(documents.find(d => d.Documents.find(v => v.ssid === activeBasemap)));
-    }
-  }, [documents, activeBasemap]);
+  if (!document || !documents || error) return <Loading />;
 
-  useEffect(() => {
-    if (type) {
-      setCurrentIndex(type.Documents.findIndex(t => t.ssid === activeBasemap));
-    }
-  }, [type, activeBasemap]);
+  const type = documents.find(d => d.Documents.find(v => v.ssid === activeBasemap));
+  const currentIndex = type.Documents.findIndex(t => t.ssid === activeBasemap);
 
   const changeView = step => {
     let nextIndex = currentIndex + step;
@@ -47,8 +38,6 @@ const Viewer = ({ year, activeBasemap, opacityHandler, basemapHandler }) => {
     else if (nextIndex < 0) nextIndex = type.Documents.length - 1;
     basemapHandler(type.Documents[nextIndex].ssid);
   };
-
-  if (!document || !documents || error) return <Loading />;
 
   return (
     <Box
@@ -58,8 +47,6 @@ const Viewer = ({ year, activeBasemap, opacityHandler, basemapHandler }) => {
       bottom={[0, 'auto']}
       w={['100%', '330px']}
       p="20px"
-      gridTemplateRows="1fr 1fr 1fr 40px"
-      rowGap="20px"
       backgroundColor="white"
       zIndex={8}
     >
