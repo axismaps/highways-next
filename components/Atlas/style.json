@@ -1608,7 +1608,7 @@
             ],
             "layout": {},
             "paint": {
-                "line-color": "hsl(223, 0%, 100%)",
+                "line-color": "hsl(214, 62%, 54%)",
                 "line-width": [
                     "interpolate",
                     ["exponential", 1.6],
@@ -1639,13 +1639,13 @@
             ],
             "layout": {},
             "paint": {
-                "line-color": "hsl(223, 61%, 55%)",
+                "line-color": "hsl(0, 0%, 100%)",
                 "line-width": [
                     "interpolate",
                     ["exponential", 1.6],
                     ["zoom"],
                     9,
-                    0.75,
+                    0.25,
                     18,
                     32
                 ]
