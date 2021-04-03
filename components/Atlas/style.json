@@ -649,16 +649,7 @@
             ],
             "layout": {},
             "paint": {
-                "fill-color": "#a1afc9",
-                "fill-opacity": [
-                    "interpolate",
-                    ["linear"],
-                    ["zoom"],
-                    9,
-                    0,
-                    10,
-                    1
-                ]
+                "fill-color": "#a1afc9"
             }
         },
         {
