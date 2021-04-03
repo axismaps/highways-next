@@ -14,38 +14,44 @@ const getLayerStyle = (layer, type) => {
   return layerStyle;
 };
 
+const getPolygonStyle = layerStyle => {
+  let backgroundColor = layerStyle[0].paint['fill-color'];
+  let borderColor = layerStyle[0].paint['fill-outline-color'];
+  if (!borderColor)
+    borderColor = layerStyle[1]
+      ? layerStyle[1].paint['fill-color']
+      : layerStyle[0].paint['fill-color'];
+
+  [backgroundColor, borderColor] = [backgroundColor, borderColor].map(bColor => {
+    if (!bColor) return null;
+    let color = bColor;
+    if (Array.isArray(color)) color = last(color);
+    if (color.match(/^hsl/gi)) color = rgb(color).formatHex();
+    return color;
+  });
+  return {
+    borderColor,
+    backgroundColor,
+    borderWidth: 2,
+    m: 1,
+  };
+};
+
+const getLineStyle = layerStyle => ({
+  as: Line,
+  color: findLast(layerStyle, lStyle => lStyle.paint['line-color']).paint['line-color'],
+  w: '35px',
+  ml: '5px',
+});
+
 const getColor = (layer, type) => {
   const layerStyle = getLayerStyle(layer, type);
   if (!layerStyle.length) return { backgroundColor: 'white' };
   if (layerStyle[0].paint['fill-color']) {
-    let backgroundColor = layerStyle[0].paint['fill-color'];
-    let borderColor = layerStyle[0].paint['fill-outline-color'];
-    if (!borderColor)
-      borderColor = layerStyle[1]
-        ? layerStyle[1].paint['fill-color']
-        : layerStyle[0].paint['fill-color'];
-
-    [backgroundColor, borderColor] = [backgroundColor, borderColor].map(bColor => {
-      if (!bColor) return null;
-      let color = bColor;
-      if (Array.isArray(color)) color = last(color);
-      if (color.match(/^hsl/gi)) color = rgb(color).formatHex();
-      return color;
-    });
-    return {
-      borderColor,
-      backgroundColor,
-      borderWidth: 2,
-      m: 1,
-    };
+    return getPolygonStyle(layerStyle);
   }
   if (layerStyle[0].paint['line-color']) {
-    return {
-      as: Line,
-      color: findLast(layerStyle, lStyle => lStyle.paint['line-color']).paint['line-color'],
-      w: '35px',
-      ml: '5px',
-    };
+    return getLineStyle(layerStyle);
   }
   return { backgroundColor: 'white' };
 };
