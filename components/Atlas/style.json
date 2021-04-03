@@ -2344,6 +2344,59 @@
             }
         },
         {
+            "id": "university-campus-label",
+            "type": "symbol",
+              "metadata": {
+                "mapbox:group": "82d49f68af211f15d30e335b2b82e21a"
+            },
+            "source": "composite",
+            "source-layer": "OpenSpacesPoly",
+            "minzoom": 11,
+            "filter": [
+                "all",
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
+                [
+                  "match",
+                  ["get", "type"],
+                  ["University Campus"],
+                  true,
+                  false
+                ]
+            ],
+            "layout": {
+                "text-field": [
+                  "to-string",
+                  ["get", "name"]
+                ],
+                "text-size": [
+                  "interpolate",
+                  ["exponential", 1.6],
+                  ["zoom"],
+                  10,
+                  12,
+                  18,
+                  16
+                ],
+                "text-max-width": [
+                  "interpolate",
+                  ["linear"],
+                  ["zoom"],
+                  12,
+                  5,
+                  14,
+                  10
+                ]
+            },
+            "paint": {
+                "text-color": "rgba(78, 72, 35, 1)",
+                "text-halo-color": "hsla(0, 0%, 100%, 0.5)",
+                "text-halo-width": 1,
+                "icon-opacity": 0.7,
+                "text-halo-blur": 2
+            }
+        },
+        {
             "id": "graveyard-label",
             "type": "symbol",
             "metadata": {"mapbox:group": "82d49f68af211f15d30e335b2b82e21a"},
