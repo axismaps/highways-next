@@ -3,7 +3,7 @@ import { rgb } from 'd3';
 import Line from './Line.svg';
 import style from '../Atlas/style.json';
 
-const getColor = (layer, type) => {
+const getLayerStyle = (layer, type) => {
   let layerStyle = style.layers.filter(
     l =>
       l.filter &&
@@ -11,6 +11,11 @@ const getColor = (layer, type) => {
       l.filter.find(f => Array.isArray(f) && f[2] && f[2][0] === type)
   );
   if (!layerStyle.length) layerStyle = style.layers.filter(l => l['source-layer'] === layer.name);
+  return layerStyle;
+};
+
+const getColor = (layer, type) => {
+  const layerStyle = getLayerStyle(layer, type);
   if (!layerStyle.length) return { backgroundColor: 'white' };
   if (layerStyle[0].paint['fill-color']) {
     let backgroundColor = layerStyle[0].paint['fill-color'];
