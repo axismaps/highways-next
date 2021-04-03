@@ -699,7 +699,7 @@
             ],
             "layout": {"line-cap": "round", "line-join": "round"},
             "paint": {
-                "line-color": "#a1b9c9",
+                "line-color": "#a1afc9",
                 "line-width": [
                     "interpolate",
                     ["exponential", 1.9],
@@ -735,7 +735,7 @@
             ],
             "layout": {"line-cap": "round", "line-join": "round"},
             "paint": {
-                "line-color": "#a1b9c9",
+                "line-color": "#a1afc9",
                 "line-width": [
                     "interpolate",
                     ["exponential", 1.9],
@@ -771,7 +771,7 @@
             ],
             "layout": {"line-cap": "round", "line-join": "round"},
             "paint": {
-                "line-color": "#a1b9c9",
+                "line-color": "#a1afc9",
                 "line-width": [
                     "interpolate",
                     ["exponential", 1.9],
