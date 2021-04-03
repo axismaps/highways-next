@@ -14,29 +14,19 @@ jobs:
     name: Tests
     runs-on: ubuntu-latest
     steps:
-
-      # 1: setup node
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
           node-version: 12
-
-      # 2: Checkout repository in the CWD
       - name: Checkout repository
         uses: actions/checkout@v2
-
       - uses: actions/cache@v2
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-
       - run: npm install -g yarn
-
-      # 3: install NPM dependencies
       - name: Install dependencies
         run: yarn
-      
-      # 4: run test command
       - name: Run test command
         run: yarn test
   coverage:
@@ -54,7 +44,6 @@ jobs:
         node-version: '12'
     - run: npm install -g yarn
     - run: yarn install
-    - run: yarn build
     - uses: paambaati/codeclimate-action@v2.7.5
       env:
         CC_TEST_REPORTER_ID: 82a2e54f7658ad1fe30fe06846391e8fa5007111b082e75df4468f84fa503b8d
