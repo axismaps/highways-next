@@ -2295,15 +2295,7 @@
                     5,
                     14,
                     10
-                ],
-                "text-offset": [
-                    "step",
-                    ["zoom"],
-                    ["literal", [0, 0]],
-                    14,
-                    ["literal", [0, -1]]
-                ],
-                "text-anchor": ["step", ["zoom"], "center", 14, "bottom"]
+                ]
             },
             "paint": {
                 "text-color": "hsl(122, 30%, 23%)",
@@ -2345,15 +2337,7 @@
                     5,
                     14,
                     10
-                ],
-                "text-offset": [
-                    "step",
-                    ["zoom"],
-                    ["literal", [0, 0]],
-                    14,
-                    ["literal", [0, -1]]
-                ],
-                "text-anchor": ["step", ["zoom"], "center", 14, "bottom"]
+                ]
             },
             "paint": {
                 "text-color": "hsl(122, 30%, 23%)",
@@ -2395,15 +2379,7 @@
                     5,
                     14,
                     10
-                ],
-                "text-offset": [
-                    "step",
-                    ["zoom"],
-                    ["literal", [0, 0]],
-                    14,
-                    ["literal", [0, -1]]
-                ],
-                "text-anchor": ["step", ["zoom"], "center", 14, "bottom"]
+                ]
             },
             "paint": {
                 "text-color": "hsl(122, 30%, 23%)",
@@ -2445,15 +2421,7 @@
                     5,
                     14,
                     10
-                ],
-                "text-offset": [
-                    "step",
-                    ["zoom"],
-                    ["literal", [0, 0]],
-                    14,
-                    ["literal", [0, -1]]
-                ],
-                "text-anchor": ["step", ["zoom"], "center", 14, "bottom"]
+                ]
             },
             "paint": {
                 "text-color": "#294c2a",
@@ -2494,15 +2462,7 @@
                     5,
                     14,
                     10
-                ],
-                "text-offset": [
-                    "step",
-                    ["zoom"],
-                    ["literal", [0, 0]],
-                    14,
-                    ["literal", [0, -1]]
-                ],
-                "text-anchor": ["step", ["zoom"], "center", 14, "bottom"]
+                ]
             },
             "paint": {
                 "text-color": "hsl(122, 30%, 23%)",
@@ -2543,15 +2503,7 @@
                     5,
                     14,
                     10
-                ],
-                "text-offset": [
-                    "step",
-                    ["zoom"],
-                    ["literal", [0, 0]],
-                    14,
-                    ["literal", [0, -1]]
-                ],
-                "text-anchor": ["step", ["zoom"], "center", 15, "bottom"]
+                ]
             },
             "paint": {
                 "text-color": "hsl(122, 30%, 23%)",
