@@ -1,0 +1,372 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Legend matches snapshot 1`] = `
+<div
+  className="css-0"
+>
+  <h2
+    className="chakra-heading css-wlea3r"
+  >
+    Legend
+  </h2>
+  <div
+    className="css-14z9jvq"
+  >
+    <div
+      className="css-0"
+    >
+      <h2
+        className="chakra-heading css-1oiljpd"
+      >
+        Buildings
+      </h2>
+      <div
+        className="css-3isub8"
+      >
+        <div
+          className="css-1aabom1"
+        />
+        <p
+          className="chakra-text css-0"
+        >
+          Commercial
+        </p>
+        <div
+          className="css-1aabom1"
+        />
+        <p
+          className="chakra-text css-0"
+        >
+          Corporate Office
+        </p>
+        <div
+          className="css-1aabom1"
+        />
+        <p
+          className="chakra-text css-0"
+        >
+          Health
+        </p>
+        <div
+          className="css-1aabom1"
+        />
+        <p
+          className="chakra-text css-0"
+        >
+          Industrial
+        </p>
+        <div
+          className="css-1aabom1"
+        />
+        <p
+          className="chakra-text css-0"
+        >
+          Park Facility
+        </p>
+        <div
+          className="css-1aabom1"
+        />
+        <p
+          className="chakra-text css-0"
+        >
+          Public and Institutional
+        </p>
+        <div
+          className="css-1aabom1"
+        />
+        <p
+          className="chakra-text css-0"
+        >
+          Religious
+        </p>
+        <div
+          className="css-1aabom1"
+        />
+        <p
+          className="chakra-text css-0"
+        >
+          Residential
+        </p>
+        <div
+          className="css-1aabom1"
+        />
+        <p
+          className="chakra-text css-0"
+        >
+          Transportantion and Utility
+        </p>
+      </div>
+    </div>
+    <div
+      className="css-0"
+    >
+      <h2
+        className="chakra-heading css-1oiljpd"
+      >
+        Roads
+      </h2>
+      <div
+        className="css-3isub8"
+      >
+        <svg-mock
+          className="css-763syg"
+        />
+        <p
+          className="chakra-text css-0"
+        >
+          Highway
+        </p>
+        <svg-mock
+          className="css-763syg"
+        />
+        <p
+          className="chakra-text css-0"
+        >
+          Other
+        </p>
+        <svg-mock
+          className="css-763syg"
+        />
+        <p
+          className="chakra-text css-0"
+        >
+          Primary
+        </p>
+        <svg-mock
+          className="css-763syg"
+        />
+        <p
+          className="chakra-text css-0"
+        >
+          Residential
+        </p>
+        <svg-mock
+          className="css-763syg"
+        />
+        <p
+          className="chakra-text css-0"
+        >
+          Secondary
+        </p>
+        <svg-mock
+          className="css-763syg"
+        />
+        <p
+          className="chakra-text css-0"
+        >
+          Tertiary
+        </p>
+      </div>
+    </div>
+    <div
+      className="css-0"
+    >
+      <h2
+        className="chakra-heading css-1oiljpd"
+      >
+        Utilities
+      </h2>
+      <div
+        className="css-3isub8"
+      >
+        <svg-mock
+          className="css-1g0ee85"
+        />
+        <p
+          className="chakra-text css-0"
+        >
+          Canal
+        </p>
+        <svg-mock
+          className="css-1g0ee85"
+        />
+        <p
+          className="chakra-text css-0"
+        >
+          Drain
+        </p>
+        <svg-mock
+          className="css-8hv0vx"
+        />
+        <p
+          className="chakra-text css-0"
+        >
+          Railroad
+        </p>
+      </div>
+    </div>
+    <div
+      className="css-0"
+    >
+      <h2
+        className="chakra-heading css-1oiljpd"
+      >
+        Hidrography
+      </h2>
+      <div
+        className="css-3isub8"
+      >
+        <svg-mock
+          className="css-e9nj70"
+        />
+        <p
+          className="chakra-text css-0"
+        >
+          Bayou
+        </p>
+        <svg-mock
+          className="css-e9nj70"
+        />
+        <p
+          className="chakra-text css-0"
+        >
+          River
+        </p>
+        <svg-mock
+          className="css-e9nj70"
+        />
+        <p
+          className="chakra-text css-0"
+        >
+          Stream
+        </p>
+      </div>
+    </div>
+    <div
+      className="css-0"
+    >
+      <h2
+        className="chakra-heading css-1oiljpd"
+      >
+        Open Spaces
+      </h2>
+      <div
+        className="css-3isub8"
+      >
+        <div
+          className="css-bfh33g"
+        />
+        <p
+          className="chakra-text css-0"
+        >
+          Field
+        </p>
+        <div
+          className="css-bfh33g"
+        />
+        <p
+          className="chakra-text css-0"
+        >
+          Golf Course
+        </p>
+        <div
+          className="css-gihtsx"
+        />
+        <p
+          className="chakra-text css-0"
+        >
+          Graveyard
+        </p>
+        <div
+          className="css-gihtsx"
+        />
+        <p
+          className="chakra-text css-0"
+        >
+          Park
+        </p>
+        <div
+          className="css-1ep5i2v"
+        />
+        <p
+          className="chakra-text css-0"
+        >
+          Square
+        </p>
+      </div>
+    </div>
+    <div
+      className="css-0"
+    >
+      <h2
+        className="chakra-heading css-1oiljpd"
+      >
+        Hidrography
+      </h2>
+      <div
+        className="css-3isub8"
+      >
+        <div
+          className="css-p8iwet"
+        />
+        <p
+          className="chakra-text css-0"
+        >
+          Reservoir
+        </p>
+        <div
+          className="css-1ylr6zp"
+        />
+        <p
+          className="chakra-text css-0"
+        >
+          Wetland
+        </p>
+      </div>
+    </div>
+    <div
+      className="css-0"
+    >
+      <h2
+        className="chakra-heading css-1oiljpd"
+      >
+        Boundaries
+      </h2>
+      <div
+        className="css-3isub8"
+      >
+        <div
+          className="css-7n8q7e"
+        />
+        <p
+          className="chakra-text css-0"
+        >
+          City Limit
+        </p>
+        <div
+          className="css-12toqkv"
+        />
+        <p
+          className="chakra-text css-0"
+        >
+          County Limit
+        </p>
+        <div
+          className="css-12toqkv"
+        />
+        <p
+          className="chakra-text css-0"
+        >
+          County Limits
+        </p>
+        <div
+          className="css-12toqkv"
+        />
+        <p
+          className="chakra-text css-0"
+        >
+          Subwatershed
+        </p>
+        <div
+          className="css-12toqkv"
+        />
+        <p
+          className="chakra-text css-0"
+        >
+          Watershed
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

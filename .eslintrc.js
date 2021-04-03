@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
+    "jest/globals": true,
   },
   extends: [
     'airbnb',
@@ -25,6 +26,7 @@ module.exports = {
   plugins: [
     'react',
     "prettier",
+    "jest",
   ],
   rules: {
     "react/jsx-filename-extension": "off",

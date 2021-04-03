@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import useSWR from 'swr';
 import axios from 'axios';
@@ -8,38 +8,29 @@ import { ChevronLeftIcon, ChevronRightIcon, CloseIcon } from '@chakra-ui/icons';
 import Opacity from './Opacity';
 import Lightbox from './Lightbox';
 import Loading from '../Loading';
-import useDebounce from '../../utils/useDebounce';
+import debounceSWR from '../../utils/debounceSWR';
 
 const fetcher = url => axios.get(url).then(({ data }) => data);
 const basemapFetcher = url =>
   axios.get(url).then(({ data: { features } }) => features[0].properties);
 
 const Viewer = ({ year, activeBasemap, opacityHandler, basemapHandler }) => {
-  const debouncedYear = useDebounce(year, 500);
   const { data: document, error } = useSWR(
     `${process.env.NEXT_PUBLIC_SEARCH_API}/document/${activeBasemap}`,
     basemapFetcher
   );
-  const { data: documents } = useSWR(
-    debouncedYear ? `${process.env.NEXT_PUBLIC_SEARCH_API}/documents?year=${debouncedYear}` : null,
+  const { data: documents } = debounceSWR(
+    year,
+    `${process.env.NEXT_PUBLIC_SEARCH_API}/documents`,
     fetcher
   );
 
   const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [type, setType] = useState(null);
-  const [currentIndex, setCurrentIndex] = useState(null);
 
-  useEffect(() => {
-    if (documents) {
-      setType(documents.find(d => d.Documents.find(v => v.ssid === activeBasemap)));
-    }
-  }, [documents, activeBasemap]);
+  if (!document || !documents || error) return <Loading />;
 
-  useEffect(() => {
-    if (type) {
-      setCurrentIndex(type.Documents.findIndex(t => t.ssid === activeBasemap));
-    }
-  }, [type, activeBasemap]);
+  const type = documents.find(d => d.Documents.find(v => v.ssid === activeBasemap));
+  const currentIndex = type.Documents.findIndex(t => t.ssid === activeBasemap);
 
   const changeView = step => {
     let nextIndex = currentIndex + step;
@@ -48,7 +39,22 @@ const Viewer = ({ year, activeBasemap, opacityHandler, basemapHandler }) => {
     basemapHandler(type.Documents[nextIndex].ssid);
   };
 
-  if (!document || !documents || error) return <Loading />;
+  const getControls = () => {
+    if (type.title.match(/view/gi)) {
+      return (
+        <Flex>
+          <Button leftIcon={<ChevronLeftIcon />} w="40%" onClick={() => changeView(-1)}>
+            Prev
+          </Button>
+          <Spacer />
+          <Button rightIcon={<ChevronRightIcon />} w="40%" onClick={() => changeView(1)}>
+            Next
+          </Button>
+        </Flex>
+      );
+    }
+    return <Opacity opacityHandler={opacityHandler} />;
+  };
 
   return (
     <Box
@@ -58,8 +64,6 @@ const Viewer = ({ year, activeBasemap, opacityHandler, basemapHandler }) => {
       bottom={[0, 'auto']}
       w={['100%', '330px']}
       p="20px"
-      gridTemplateRows="1fr 1fr 1fr 40px"
-      rowGap="20px"
       backgroundColor="white"
       zIndex={8}
     >
@@ -83,19 +87,7 @@ const Viewer = ({ year, activeBasemap, opacityHandler, basemapHandler }) => {
           </Text>
         )}
       </Box>
-      {type.title.match(/view/gi) ? (
-        <Flex>
-          <Button leftIcon={<ChevronLeftIcon />} w="40%" onClick={() => changeView(-1)}>
-            Prev
-          </Button>
-          <Spacer />
-          <Button rightIcon={<ChevronRightIcon />} w="40%" onClick={() => changeView(1)}>
-            Next
-          </Button>
-        </Flex>
-      ) : (
-        <Opacity opacityHandler={opacityHandler} />
-      )}
+      {getControls()}
       <Lightbox isOpen={lightboxOpen} onClose={() => setLightboxOpen(false)} document={document} />
     </Box>
   );
