@@ -1032,6 +1032,53 @@
             }
         },
         {
+            "id": "residential-case",
+            "type": "line",
+            "metadata": {
+                "mapbox:group": "08a1b920ec22235869d8a3cc2e032162"
+            },
+            "source": "composite",
+            "source-layer": "RoadsLine",
+            "filter": [
+                "all",
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
+                [
+                  "match",
+                  ["get", "type"],
+                  ["Residential"],
+                  true,
+                  false
+                ]
+            ],
+            "layout": {
+                "line-cap": "round",
+                "line-join": "round",
+                "visibility": "visible"
+            },
+            "paint": {
+                "line-color": "#bfbfbf",
+                "line-width": [
+                  "interpolate",
+                  ["exponential", 1.6],
+                  ["zoom"],
+                  12,
+                  1.5,
+                  18,
+                  13
+                ],
+                "line-opacity": [
+                  "interpolate",
+                  ["linear"],
+                  ["zoom"],
+                  13.5,
+                  0,
+                  17,
+                  1
+                ]
+            }
+        },
+        {
             "id": "tertiary-case",
             "type": "line",
             "metadata": {"mapbox:group": "08a1b920ec22235869d8a3cc2e032162"},
