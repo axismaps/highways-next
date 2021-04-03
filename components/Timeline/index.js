@@ -26,6 +26,11 @@ const Timeline = ({ handler }) => {
   useEffect(() => {
     handler(year);
   }, [year]);
+
+  const TimelineButton = (icon, newYear) => (
+    <IconButton icon={icon} mx={5} borderRadius="50%" onClick={() => setYear(newYear)} />
+  );
+
   return (
     <Flex
       py={[2, 5]}
@@ -37,20 +42,16 @@ const Timeline = ({ handler }) => {
       display={['block', 'flex']}
     >
       <Flex justifyContent="center">
-        <IconButton
+        <TimelineButton
           icon={<ArrowLeftIcon />}
-          mx={5}
-          borderRadius="50%"
-          onClick={() => setYear(Math.max(minYear, Math.round((year - 5) / 5) * 5))}
+          year={Math.max(minYear, Math.round((year - 5) / 5) * 5)}
         />
         <Heading w="100px" textAlign="center">
           {year}
         </Heading>
-        <IconButton
+        <TimelineButton
           icon={<ArrowRightIcon />}
-          mx={5}
-          borderRadius="50%"
-          onClick={() => setYear(Math.min(maxYear, Math.round((year + 5) / 5) * 5))}
+          year={Math.min(maxYear, Math.round((year + 5) / 5) * 5)}
         />
       </Flex>
       <Slider
