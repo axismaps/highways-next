@@ -8,20 +8,20 @@ import { ChevronLeftIcon, ChevronRightIcon, CloseIcon } from '@chakra-ui/icons';
 import Opacity from './Opacity';
 import Lightbox from './Lightbox';
 import Loading from '../Loading';
-import useDebounce from '../../utils/useDebounce';
+import debounceSWR from '../../utils/debounceSWR';
 
 const fetcher = url => axios.get(url).then(({ data }) => data);
 const basemapFetcher = url =>
   axios.get(url).then(({ data: { features } }) => features[0].properties);
 
 const Viewer = ({ year, activeBasemap, opacityHandler, basemapHandler }) => {
-  const debouncedYear = useDebounce(year, 500);
   const { data: document, error } = useSWR(
     `${process.env.NEXT_PUBLIC_SEARCH_API}/document/${activeBasemap}`,
     basemapFetcher
   );
-  const { data: documents } = useSWR(
-    debouncedYear ? `${process.env.NEXT_PUBLIC_SEARCH_API}/documents?year=${debouncedYear}` : null,
+  const { data: documents } = debounceSWR(
+    year,
+    `${process.env.NEXT_PUBLIC_SEARCH_API}/documents`,
     fetcher
   );
 
@@ -37,6 +37,23 @@ const Viewer = ({ year, activeBasemap, opacityHandler, basemapHandler }) => {
     if (nextIndex >= type.Documents.length) nextIndex = 0;
     else if (nextIndex < 0) nextIndex = type.Documents.length - 1;
     basemapHandler(type.Documents[nextIndex].ssid);
+  };
+
+  const getControls = () => {
+    if (type.title.match(/view/gi)) {
+      return (
+        <Flex>
+          <Button leftIcon={<ChevronLeftIcon />} w="40%" onClick={() => changeView(-1)}>
+            Prev
+          </Button>
+          <Spacer />
+          <Button rightIcon={<ChevronRightIcon />} w="40%" onClick={() => changeView(1)}>
+            Next
+          </Button>
+        </Flex>
+      );
+    }
+    return <Opacity opacityHandler={opacityHandler} />;
   };
 
   return (
@@ -70,19 +87,7 @@ const Viewer = ({ year, activeBasemap, opacityHandler, basemapHandler }) => {
           </Text>
         )}
       </Box>
-      {type.title.match(/view/gi) ? (
-        <Flex>
-          <Button leftIcon={<ChevronLeftIcon />} w="40%" onClick={() => changeView(-1)}>
-            Prev
-          </Button>
-          <Spacer />
-          <Button rightIcon={<ChevronRightIcon />} w="40%" onClick={() => changeView(1)}>
-            Next
-          </Button>
-        </Flex>
-      ) : (
-        <Opacity opacityHandler={opacityHandler} />
-      )}
+      {getControls()}
       <Lightbox isOpen={lightboxOpen} onClose={() => setLightboxOpen(false)} document={document} />
     </Box>
   );
