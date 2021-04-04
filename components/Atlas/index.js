@@ -13,7 +13,7 @@ import mapStyle from './style.json';
 
 const fetcher = url => axios.get(url).then(({ data }) => data);
 
-const Atlas = ({ year, geojson, activeBasemap, opacity, basemapHandler }) => {
+const Atlas = ({ year, activeBasemap, opacity, basemapHandler }) => {
   const mapRef = useRef(null);
   const debouncedYear = useDebounce(year, 500);
   const { data: documents } = useSWR(
@@ -88,21 +88,6 @@ const Atlas = ({ year, geojson, activeBasemap, opacity, basemapHandler }) => {
           <Layer id="viewcone" type="fill" paint={{ 'fill-color': 'rgba(0,0,0,0.25)' }} />
         </Source>
       )}
-      {geojson && (
-        <Source type="geojson" data={geojson}>
-          <Layer id="selected-fill" type="fill" paint={{ 'fill-color': 'rgba(0,0,0,0.25)' }} />
-          <Layer
-            id="selected-case"
-            type="line"
-            paint={{ 'line-width': 6, 'line-color': '#eeeeee' }}
-          />
-          <Layer
-            id="selected-line"
-            type="line"
-            paint={{ 'line-width': 3, 'line-color': '#000000' }}
-          />
-        </Source>
-      )}
       {viewpoints.map(v => (
         <Marker key={v.ssid} {...v} offsetLeft={-15} offsetTop={-15}>
           <IconButton
@@ -128,7 +113,6 @@ const Atlas = ({ year, geojson, activeBasemap, opacity, basemapHandler }) => {
 Atlas.propTypes = {
   year: PropTypes.number.isRequired,
   activeBasemap: PropTypes.string,
-  geojson: PropTypes.shape(),
   opacity: PropTypes.number,
   basemapHandler: PropTypes.func.isRequired,
 };
@@ -136,7 +120,6 @@ Atlas.propTypes = {
 Atlas.defaultProps = {
   activeBasemap: null,
   opacity: 0.75,
-  geojson: null,
 };
 
 export default Atlas;
