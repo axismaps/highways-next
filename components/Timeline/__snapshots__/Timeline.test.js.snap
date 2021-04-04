@@ -1,0 +1,323 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Timeline matches snapshot 1`] = `
+<div
+  className="css-cykgrb"
+>
+  <div
+    className="css-1l4w6pd"
+  >
+    <button
+      className="chakra-button css-orr4bg"
+      onClick={[Function]}
+      type="button"
+    >
+      <svg
+        aria-hidden={true}
+        className="chakra-icon css-onkibi"
+        focusable={false}
+        viewBox="0 0 24 24"
+      >
+        <g
+          fill="currentColor"
+        >
+          <path
+            d="M10.416,12a2.643,2.643,0,0,1,.775-1.875L20.732.584a1.768,1.768,0,0,1,2.5,2.5l-8.739,8.739a.25.25,0,0,0,0,.354l8.739,8.739a1.768,1.768,0,0,1-2.5,2.5l-9.541-9.541A2.643,2.643,0,0,1,10.416,12Z"
+          />
+          <path
+            d="M.25,12a2.643,2.643,0,0,1,.775-1.875L10.566.584a1.768,1.768,0,0,1,2.5,2.5L4.327,11.823a.25.25,0,0,0,0,.354l8.739,8.739a1.768,1.768,0,0,1-2.5,2.5L1.025,13.875A2.643,2.643,0,0,1,.25,12Z"
+          />
+        </g>
+      </svg>
+    </button>
+    <h2
+      className="chakra-heading css-1ondvci"
+    >
+      1950
+    </h2>
+    <button
+      className="chakra-button css-orr4bg"
+      onClick={[Function]}
+      type="button"
+    >
+      <svg
+        aria-hidden={true}
+        className="chakra-icon css-onkibi"
+        focusable={false}
+        viewBox="0 0 24 24"
+      >
+        <g
+          fill="currentColor"
+        >
+          <path
+            d="M13.584,12a2.643,2.643,0,0,1-.775,1.875L3.268,23.416a1.768,1.768,0,0,1-2.5-2.5l8.739-8.739a.25.25,0,0,0,0-.354L.768,3.084a1.768,1.768,0,0,1,2.5-2.5l9.541,9.541A2.643,2.643,0,0,1,13.584,12Z"
+          />
+          <path
+            d="M23.75,12a2.643,2.643,0,0,1-.775,1.875l-9.541,9.541a1.768,1.768,0,0,1-2.5-2.5l8.739-8.739a.25.25,0,0,0,0-.354L10.934,3.084a1.768,1.768,0,0,1,2.5-2.5l9.541,9.541A2.643,2.643,0,0,1,23.75,12Z"
+          />
+        </g>
+      </svg>
+    </button>
+  </div>
+  <div
+    className="chakra-slider css-4bntrk"
+    style={
+      Object {
+        "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+        "outline": 0,
+        "paddingBottom": 0,
+        "paddingTop": 0,
+        "position": "relative",
+        "touchAction": "none",
+        "userSelect": "none",
+      }
+    }
+    tabIndex={-1}
+  >
+    <div
+      className="css-1ftoqar"
+    >
+      <div
+        className="css-15yyujv"
+      >
+        <p
+          className="chakra-text css-1hyfx7x"
+        >
+          1840
+        </p>
+      </div>
+      <div
+        className="css-15yyujv"
+      >
+        <p
+          className="chakra-text css-1hyfx7x"
+        >
+          1850
+        </p>
+      </div>
+      <div
+        className="css-15yyujv"
+      >
+        <p
+          className="chakra-text css-1hyfx7x"
+        >
+          1860
+        </p>
+      </div>
+      <div
+        className="css-15yyujv"
+      >
+        <p
+          className="chakra-text css-1hyfx7x"
+        >
+          1870
+        </p>
+      </div>
+      <div
+        className="css-15yyujv"
+      >
+        <p
+          className="chakra-text css-1hyfx7x"
+        >
+          1880
+        </p>
+      </div>
+      <div
+        className="css-15yyujv"
+      >
+        <p
+          className="chakra-text css-1hyfx7x"
+        >
+          1890
+        </p>
+      </div>
+      <div
+        className="css-15yyujv"
+      >
+        <p
+          className="chakra-text css-1hyfx7x"
+        >
+          1900
+        </p>
+      </div>
+      <div
+        className="css-15yyujv"
+      >
+        <p
+          className="chakra-text css-1hyfx7x"
+        >
+          1910
+        </p>
+      </div>
+      <div
+        className="css-15yyujv"
+      >
+        <p
+          className="chakra-text css-1hyfx7x"
+        >
+          1920
+        </p>
+      </div>
+      <div
+        className="css-15yyujv"
+      >
+        <p
+          className="chakra-text css-1hyfx7x"
+        >
+          1930
+        </p>
+      </div>
+      <div
+        className="css-15yyujv"
+      >
+        <p
+          className="chakra-text css-1hyfx7x"
+        >
+          1940
+        </p>
+      </div>
+      <div
+        className="css-15yyujv"
+      >
+        <p
+          className="chakra-text css-1hyfx7x"
+        >
+          1950
+        </p>
+      </div>
+      <div
+        className="css-15yyujv"
+      >
+        <p
+          className="chakra-text css-1hyfx7x"
+        >
+          1960
+        </p>
+      </div>
+      <div
+        className="css-15yyujv"
+      >
+        <p
+          className="chakra-text css-1hyfx7x"
+        >
+          1970
+        </p>
+      </div>
+      <div
+        className="css-15yyujv"
+      >
+        <p
+          className="chakra-text css-1hyfx7x"
+        >
+          1980
+        </p>
+      </div>
+      <div
+        className="css-15yyujv"
+      >
+        <p
+          className="chakra-text css-1hyfx7x"
+        >
+          1990
+        </p>
+      </div>
+      <div
+        className="css-15yyujv"
+      >
+        <p
+          className="chakra-text css-1hyfx7x"
+        >
+          2000
+        </p>
+      </div>
+      <div
+        className="css-15yyujv"
+      >
+        <p
+          className="chakra-text css-1hyfx7x"
+        >
+          2010
+        </p>
+      </div>
+      <div
+        className="css-15yyujv"
+      >
+        <p
+          className="chakra-text css-1hyfx7x"
+        >
+          2020
+        </p>
+      </div>
+      <div
+        className="css-15yyujv"
+      >
+        <p
+          className="chakra-text css-1hyfx7x"
+        >
+          2030
+        </p>
+      </div>
+      <div
+        className="css-15yyujv"
+      >
+        <p
+          className="chakra-text css-1hyfx7x"
+        >
+          2040
+        </p>
+      </div>
+    </div>
+    <div
+      className="chakra-slider__track css-152to5v"
+      id="slider-track-3"
+      style={
+        Object {
+          "position": "absolute",
+          "top": "50%",
+          "transform": "translateY(-50%)",
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        className="chakra-slider__filled-track css-p8tu8l"
+        style={
+          Object {
+            "left": 0,
+            "position": "absolute",
+            "top": "50%",
+            "transform": "translateY(-50%)",
+            "width": "53.271028037383175%",
+          }
+        }
+      />
+    </div>
+    <div
+      aria-label="slider-ex-1"
+      aria-orientation="horizontal"
+      aria-valuemax={2050}
+      aria-valuemin={1836}
+      aria-valuenow={1950}
+      className="chakra-slider__thumb css-15m60qc"
+      id="slider-thumb-3"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      role="slider"
+      style={
+        Object {
+          "left": "calc(53.271028037383175% - 0px)",
+          "position": "absolute",
+          "touchAction": "none",
+          "userSelect": "none",
+        }
+      }
+      tabIndex={0}
+    />
+    <input
+      type="hidden"
+      value={1950}
+    />
+  </div>
+</div>
+`;
