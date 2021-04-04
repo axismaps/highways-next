@@ -30,7 +30,10 @@ const Atlas = ({ year, geojson, activeBasemap, opacity, basemapHandler }) => {
   const [viewcone, setViewcone] = useState(null);
 
   useEffect(() => {
-    mapRef.current.getMap().setStyle(setStyleYear(year, mapStyle));
+    const map = mapRef.current.getMap();
+    if (map) {
+      map.setStyle(setStyleYear(year, mapStyle));
+    }
   }, [year]);
 
   useEffect(async () => {
