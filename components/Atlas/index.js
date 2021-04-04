@@ -2,22 +2,13 @@ import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import useSWR from 'swr';
 import axios from 'axios';
-import { isArray } from 'lodash';
-import bbox from '@turf/bbox';
-import ReactMapGL, {
-  Source,
-  Layer,
-  Marker,
-  NavigationControl,
-  WebMercatorViewport,
-  FlyToInterpolator,
-} from 'react-map-gl';
+import ReactMapGL, { Source, Layer, Marker, NavigationControl } from 'react-map-gl';
 import { Box, IconButton } from '@chakra-ui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCamera } from '@fortawesome/free-solid-svg-icons';
 
 import useDebounce from '../../utils/useDebounce';
-
+import { setStyleYear, fitBounds } from './mapUtils';
 import mapStyle from './style.json';
 
 const fetcher = url => axios.get(url).then(({ data }) => data);
@@ -38,58 +29,9 @@ const Atlas = ({ year, geojson, activeBasemap, opacity, basemapHandler }) => {
   const [viewpoints, setViewpoints] = useState([]);
   const [viewcone, setViewcone] = useState(null);
 
-  const setMapYear = () => {
-    const map = mapRef.current.getMap();
-    let style = null;
-    try {
-      style = map.getStyle();
-    } catch (err) {
-      style = null;
-    } finally {
-      if (style) {
-        style.layers = style.layers.map(layer => {
-          if (layer.source === 'composite') {
-            const filter = layer.filter
-              ? layer.filter.filter(f => isArray(f) && f[0] !== '<=' && f[0] !== '>=')
-              : [];
-            return {
-              ...layer,
-              filter: [
-                'all',
-                ['<=', ['get', 'firstyear'], year],
-                ['>=', ['get', 'lastyear'], year],
-                ...filter,
-              ],
-            };
-          }
-          return layer;
-        });
-        map.setStyle(style);
-      }
-    }
-  };
-
-  useEffect(setMapYear, [year]);
-  useEffect(setMapYear, []);
-
-  const fitBounds = geom => {
-    const [minX, minY, maxX, maxY] = bbox(geom);
-    const { longitude, latitude, zoom } = new WebMercatorViewport(mapViewport).fitBounds(
-      [
-        [minX, minY],
-        [maxX, maxY],
-      ],
-      { padding: 100 }
-    );
-    setMapViewport({
-      ...mapViewport,
-      longitude,
-      latitude,
-      zoom,
-      transitionDuration: 1000,
-      transitionInterpolator: new FlyToInterpolator(),
-    });
-  };
+  useEffect(() => {
+    mapRef.current.getMap().setStyle(setStyleYear(year, mapStyle));
+  }, [year]);
 
   useEffect(async () => {
     if (activeBasemap) {
@@ -97,7 +39,7 @@ const Atlas = ({ year, geojson, activeBasemap, opacity, basemapHandler }) => {
         data: { features },
       } = await axios.get(`${process.env.NEXT_PUBLIC_SEARCH_API}/document/${activeBasemap}`);
       const [feature] = features;
-      fitBounds(feature.geometry);
+      setMapViewport(fitBounds(feature.geometry, mapViewport));
       if (feature.properties.type.match(/view/gi)) {
         setViewcone(feature);
       } else {
@@ -118,18 +60,13 @@ const Atlas = ({ year, geojson, activeBasemap, opacity, basemapHandler }) => {
     setMapViewport(nextViewport);
   };
 
-  const onMapLoad = () => {
-    setMapYear();
-  };
-
   return (
     <ReactMapGL
       ref={mapRef}
       mapboxApiAccessToken="pk.eyJ1IjoiYXhpc21hcHMiLCJhIjoieUlmVFRmRSJ9.CpIxovz1TUWe_ecNLFuHNg"
-      mapStyle={mapStyle}
+      mapStyle={setStyleYear(year, mapStyle)}
       width="100%"
       height="100%"
-      onLoad={onMapLoad}
       onViewportChange={onViewportChange}
       {...mapViewport}
     >
