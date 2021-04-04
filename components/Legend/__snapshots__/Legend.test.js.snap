@@ -170,7 +170,7 @@ exports[`Legend matches snapshot 1`] = `
         className="css-3isub8"
       >
         <svg-mock
-          className="css-1g0ee85"
+          className="css-e9nj70"
         />
         <p
           className="chakra-text css-0"
@@ -178,7 +178,7 @@ exports[`Legend matches snapshot 1`] = `
           Canal
         </p>
         <svg-mock
-          className="css-1g0ee85"
+          className="css-e9nj70"
         />
         <p
           className="chakra-text css-0"
