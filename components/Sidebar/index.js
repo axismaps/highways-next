@@ -36,7 +36,7 @@ const Sidebar = ({ year, activeBasemap, basemapHandler }) => {
         pos={['absolute', 'static']}
         boxShadow={['md', 'none']}
         left={open ? 0 : '-100%'}
-        zIndex={9}
+        zIndex={1}
         transition="all 250ms"
       >
         <Rasters year={year} basemapHandler={basemapHandler} activeBasemap={activeBasemap} />
