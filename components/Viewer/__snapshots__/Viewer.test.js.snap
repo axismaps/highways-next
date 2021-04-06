@@ -1,22 +1,132 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Viewer matches snapshot 1`] = `
+.emotion-0 {
+  position: absolute;
+  top: auto;
+  top: 120px;
+  width: 100%;
+  width: 330px;
+  padding: 20px;
+  background-color: white;
+  z-index: 8;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 2px;
+}
+
+.emotion-3 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  justify-self: stretch;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+}
+
+.emotion-4 {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  line-height: 1em;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  color: currentColor;
+  vertical-align: middle;
+  font-size: 12px;
+  margin-top: 1px;
+  cursor: pointer;
+}
+
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.emotion-6 {
+  position: relative;
+  margin-bottom: 2px;
+  max-width: 25%;
+  max-width: 100%;
+}
+
+.emotion-8 {
+  font-size: 0.75em;
+  font-size: auto;
+}
+
+.emotion-9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-10 {
+  font-size: 12px;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.emotion-11 {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  margin-right: 2px;
+}
+
+.emotion-12 {
+  overflow: hidden;
+}
+
+.emotion-13 {
+  width: inherit;
+  height: inherit;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: absolute;
+  outline: 0;
+}
+
 <div
-  className="css-revwgf"
+  className="emotion-0"
 >
   <div
-    className="css-1jqq95v"
+    className="emotion-1"
   >
     <h2
-      className="chakra-heading css-1kuy7z7"
+      className="chakra-heading emotion-2"
     >
       Sanborn Map Houston 1950 Vol 15 Key 02
     </h2>
     <div
-      className="css-17xejub"
+      className="emotion-3"
     />
     <svg
-      className="chakra-icon css-1gyjhah"
+      className="chakra-icon emotion-4"
       focusable={false}
       onClick={[Function]}
       viewBox="0 0 24 24"
@@ -28,32 +138,32 @@ exports[`Viewer matches snapshot 1`] = `
     </svg>
   </div>
   <div
-    className="css-1jqq95v"
+    className="emotion-5"
   >
     <div
-      className="css-1i2pf6n"
+      className="emotion-6"
     >
       <img
-        className="chakra-image__placeholder css-0"
+        className="chakra-image__placeholder emotion-7"
         onClick={[Function]}
       />
     </div>
     <p
-      className="chakra-text css-1bmsndy"
+      className="chakra-text emotion-8"
     >
       Sanborn Perris Map Company
     </p>
   </div>
   <div
-    className="css-k008qs"
+    className="emotion-9"
   >
     <p
-      className="chakra-text css-jrrolj"
+      className="chakra-text emotion-10"
     >
       Opacity:
     </p>
     <div
-      className="chakra-slider css-1rmi0bl"
+      className="chakra-slider emotion-11"
       style={
         Object {
           "WebkitTapHighlightColor": "rgba(0,0,0,0)",
@@ -68,7 +178,7 @@ exports[`Viewer matches snapshot 1`] = `
       tabIndex={-1}
     >
       <div
-        className="chakra-slider__track css-i6bazn"
+        className="chakra-slider__track emotion-12"
         id="slider-track-7"
         style={
           Object {
@@ -80,7 +190,7 @@ exports[`Viewer matches snapshot 1`] = `
         }
       >
         <div
-          className="chakra-slider__filled-track css-p8tu8l"
+          className="chakra-slider__filled-track emotion-13"
           style={
             Object {
               "left": 0,
@@ -98,7 +208,7 @@ exports[`Viewer matches snapshot 1`] = `
         aria-valuemax={1}
         aria-valuemin={0}
         aria-valuenow={1}
-        className="chakra-slider__thumb css-lmsxnt"
+        className="chakra-slider__thumb emotion-14"
         id="slider-thumb-7"
         onBlur={[Function]}
         onFocus={[Function]}

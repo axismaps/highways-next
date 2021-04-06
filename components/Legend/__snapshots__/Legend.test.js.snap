@@ -1,367 +1,472 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Legend matches snapshot 1`] = `
+.emotion-1 {
+  margin-bottom: 2px;
+}
+
+.emotion-2 {
+  -webkit-padding-start: 15px;
+  padding-inline-start: 15px;
+  -webkit-padding-end: 15px;
+  padding-inline-end: 15px;
+  padding-bottom: 10px;
+  padding-top: 1px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: md;
+}
+
+.emotion-4 {
+  margin-top: 4px;
+  margin-bottom: 2px;
+}
+
+.emotion-5 {
+  display: grid;
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+  grid-template-columns: 45px 1fr;
+}
+
+.emotion-6 {
+  border-color: #c9b9b1;
+  background-color: #ded4cf;
+  border-width: 2px;
+  margin: 1px;
+}
+
+.emotion-27 {
+  color: hsl(0, 0%, 100%);
+  width: 35px;
+  margin-left: 5px;
+}
+
+.emotion-42 {
+  color: #a1afc9;
+  width: 35px;
+  margin-left: 5px;
+}
+
+.emotion-46 {
+  color: interpolate;
+  color: linear;
+  color: zoom;
+  color: 10px;
+  color: hsl(0, 0%, 75%);
+  color: 18px;
+  color: hsl(0, 0%, 75%);
+  width: 35px;
+  margin-left: 5px;
+}
+
+.emotion-60 {
+  background-color: #b8cfaf;
+  border-width: 2px;
+  margin: 1px;
+}
+
+.emotion-64 {
+  background-color: #dbdece;
+  border-width: 2px;
+  margin: 1px;
+}
+
+.emotion-68 {
+  border-color: #b8cfaf;
+  background-color: #dbdece;
+  border-width: 2px;
+  margin: 1px;
+}
+
+.emotion-73 {
+  border-color: #a1afc9;
+  background-color: #a1afc9;
+  border-width: 2px;
+  margin: 1px;
+}
+
+.emotion-75 {
+  background-color: #a1afc9;
+  border-width: 2px;
+  margin: 1px;
+}
+
+.emotion-80 {
+  border-color: #c9c0bb;
+  background-color: #ebe7e5;
+  border-width: 2px;
+  margin: 1px;
+}
+
+.emotion-82 {
+  border-color: #a99b93;
+  background-color: #e9e4e2;
+  border-width: 2px;
+  margin: 1px;
+}
+
 <div
-  className="css-0"
+  className="emotion-0"
 >
   <h2
-    className="chakra-heading css-wlea3r"
+    className="chakra-heading emotion-1"
   >
     Legend
   </h2>
   <div
-    className="css-14z9jvq"
+    className="emotion-2"
   >
     <div
-      className="css-0"
+      className="emotion-0"
     >
       <h2
-        className="chakra-heading css-1oiljpd"
+        className="chakra-heading emotion-4"
       >
         Buildings
       </h2>
       <div
-        className="css-3isub8"
+        className="emotion-5"
       >
         <div
-          className="css-1aabom1"
+          className="emotion-6"
         />
         <p
-          className="chakra-text css-0"
+          className="chakra-text emotion-0"
         >
           Commercial
         </p>
         <div
-          className="css-1aabom1"
+          className="emotion-6"
         />
         <p
-          className="chakra-text css-0"
+          className="chakra-text emotion-0"
         >
           Corporate Office
         </p>
         <div
-          className="css-1aabom1"
+          className="emotion-6"
         />
         <p
-          className="chakra-text css-0"
+          className="chakra-text emotion-0"
         >
           Health
         </p>
         <div
-          className="css-1aabom1"
+          className="emotion-6"
         />
         <p
-          className="chakra-text css-0"
+          className="chakra-text emotion-0"
         >
           Industrial
         </p>
         <div
-          className="css-1aabom1"
+          className="emotion-6"
         />
         <p
-          className="chakra-text css-0"
+          className="chakra-text emotion-0"
         >
           Park Facility
         </p>
         <div
-          className="css-1aabom1"
+          className="emotion-6"
         />
         <p
-          className="chakra-text css-0"
+          className="chakra-text emotion-0"
         >
           Public and Institutional
         </p>
         <div
-          className="css-1aabom1"
+          className="emotion-6"
         />
         <p
-          className="chakra-text css-0"
+          className="chakra-text emotion-0"
         >
           Religious
         </p>
         <div
-          className="css-1aabom1"
+          className="emotion-6"
         />
         <p
-          className="chakra-text css-0"
+          className="chakra-text emotion-0"
         >
           Residential
         </p>
         <div
-          className="css-1aabom1"
+          className="emotion-6"
         />
         <p
-          className="chakra-text css-0"
+          className="chakra-text emotion-0"
         >
           Transportantion and Utility
         </p>
       </div>
     </div>
     <div
-      className="css-0"
+      className="emotion-0"
     >
       <h2
-        className="chakra-heading css-1oiljpd"
+        className="chakra-heading emotion-4"
       >
         Roads
       </h2>
       <div
-        className="css-3isub8"
+        className="emotion-5"
       >
         <svg-mock
-          className="css-763syg"
+          className="emotion-27"
         />
         <p
-          className="chakra-text css-0"
+          className="chakra-text emotion-0"
         >
           Highway
         </p>
         <svg-mock
-          className="css-763syg"
+          className="emotion-27"
         />
         <p
-          className="chakra-text css-0"
+          className="chakra-text emotion-0"
         >
           Other
         </p>
         <svg-mock
-          className="css-763syg"
+          className="emotion-27"
         />
         <p
-          className="chakra-text css-0"
+          className="chakra-text emotion-0"
         >
           Primary
         </p>
         <svg-mock
-          className="css-763syg"
+          className="emotion-27"
         />
         <p
-          className="chakra-text css-0"
+          className="chakra-text emotion-0"
         >
           Residential
         </p>
         <svg-mock
-          className="css-763syg"
+          className="emotion-27"
         />
         <p
-          className="chakra-text css-0"
+          className="chakra-text emotion-0"
         >
           Secondary
         </p>
         <svg-mock
-          className="css-763syg"
+          className="emotion-27"
         />
         <p
-          className="chakra-text css-0"
+          className="chakra-text emotion-0"
         >
           Tertiary
         </p>
       </div>
     </div>
     <div
-      className="css-0"
+      className="emotion-0"
     >
       <h2
-        className="chakra-heading css-1oiljpd"
+        className="chakra-heading emotion-4"
       >
         Utilities
       </h2>
       <div
-        className="css-3isub8"
+        className="emotion-5"
       >
         <svg-mock
-          className="css-e9nj70"
+          className="emotion-42"
         />
         <p
-          className="chakra-text css-0"
+          className="chakra-text emotion-0"
         >
           Canal
         </p>
         <svg-mock
-          className="css-e9nj70"
+          className="emotion-42"
         />
         <p
-          className="chakra-text css-0"
+          className="chakra-text emotion-0"
         >
           Drain
         </p>
         <svg-mock
-          className="css-8hv0vx"
+          className="emotion-46"
         />
         <p
-          className="chakra-text css-0"
+          className="chakra-text emotion-0"
         >
           Railroad
         </p>
       </div>
     </div>
     <div
-      className="css-0"
+      className="emotion-0"
     >
       <h2
-        className="chakra-heading css-1oiljpd"
+        className="chakra-heading emotion-4"
       >
         Hidrography
       </h2>
       <div
-        className="css-3isub8"
+        className="emotion-5"
       >
         <svg-mock
-          className="css-e9nj70"
+          className="emotion-42"
         />
         <p
-          className="chakra-text css-0"
+          className="chakra-text emotion-0"
         >
           Bayou
         </p>
         <svg-mock
-          className="css-e9nj70"
+          className="emotion-42"
         />
         <p
-          className="chakra-text css-0"
+          className="chakra-text emotion-0"
         >
           River
         </p>
         <svg-mock
-          className="css-e9nj70"
+          className="emotion-42"
         />
         <p
-          className="chakra-text css-0"
+          className="chakra-text emotion-0"
         >
           Stream
         </p>
       </div>
     </div>
     <div
-      className="css-0"
+      className="emotion-0"
     >
       <h2
-        className="chakra-heading css-1oiljpd"
+        className="chakra-heading emotion-4"
       >
         Open Spaces
       </h2>
       <div
-        className="css-3isub8"
+        className="emotion-5"
       >
         <div
-          className="css-bfh33g"
+          className="emotion-60"
         />
         <p
-          className="chakra-text css-0"
+          className="chakra-text emotion-0"
         >
           Field
         </p>
         <div
-          className="css-bfh33g"
+          className="emotion-60"
         />
         <p
-          className="chakra-text css-0"
+          className="chakra-text emotion-0"
         >
           Golf Course
         </p>
         <div
-          className="css-gihtsx"
+          className="emotion-64"
         />
         <p
-          className="chakra-text css-0"
+          className="chakra-text emotion-0"
         >
           Graveyard
         </p>
         <div
-          className="css-gihtsx"
+          className="emotion-64"
         />
         <p
-          className="chakra-text css-0"
+          className="chakra-text emotion-0"
         >
           Park
         </p>
         <div
-          className="css-1ep5i2v"
+          className="emotion-68"
         />
         <p
-          className="chakra-text css-0"
+          className="chakra-text emotion-0"
         >
           Square
         </p>
       </div>
     </div>
     <div
-      className="css-0"
+      className="emotion-0"
     >
       <h2
-        className="chakra-heading css-1oiljpd"
+        className="chakra-heading emotion-4"
       >
         Hidrography
       </h2>
       <div
-        className="css-3isub8"
+        className="emotion-5"
       >
         <div
-          className="css-p8iwet"
+          className="emotion-73"
         />
         <p
-          className="chakra-text css-0"
+          className="chakra-text emotion-0"
         >
           Reservoir
         </p>
         <div
-          className="css-1ylr6zp"
+          className="emotion-75"
         />
         <p
-          className="chakra-text css-0"
+          className="chakra-text emotion-0"
         >
           Wetland
         </p>
       </div>
     </div>
     <div
-      className="css-0"
+      className="emotion-0"
     >
       <h2
-        className="chakra-heading css-1oiljpd"
+        className="chakra-heading emotion-4"
       >
         Boundaries
       </h2>
       <div
-        className="css-3isub8"
+        className="emotion-5"
       >
         <div
-          className="css-7n8q7e"
+          className="emotion-80"
         />
         <p
-          className="chakra-text css-0"
+          className="chakra-text emotion-0"
         >
           City Limit
         </p>
         <div
-          className="css-12toqkv"
+          className="emotion-82"
         />
         <p
-          className="chakra-text css-0"
+          className="chakra-text emotion-0"
         >
           County Limit
         </p>
         <div
-          className="css-12toqkv"
+          className="emotion-82"
         />
         <p
-          className="chakra-text css-0"
+          className="chakra-text emotion-0"
         >
           County Limits
         </p>
         <div
-          className="css-12toqkv"
+          className="emotion-82"
         />
         <p
-          className="chakra-text css-0"
+          className="chakra-text emotion-0"
         >
           Subwatershed
         </p>
         <div
-          className="css-12toqkv"
+          className="emotion-82"
         />
         <p
-          className="chakra-text css-0"
+          className="chakra-text emotion-0"
         >
           Watershed
         </p>
