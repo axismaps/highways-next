@@ -9,7 +9,10 @@ import { faCamera } from '@fortawesome/free-solid-svg-icons';
 
 import useDebounce from '../../utils/useDebounce';
 import { setStyleYear, fitBounds } from './mapUtils';
-import mapStyle from './style.json';
+import originalStyle from './style.json';
+import config from '../../config';
+
+const mapStyle = setStyleYear(config.startYear, originalStyle);
 
 const fetcher = url => axios.get(url).then(({ data }) => data);
 
@@ -45,9 +48,9 @@ const Atlas = ({ year, activeBasemap, opacity, basemapHandler }) => {
       setMapViewport(fitBounds(feature.geometry, mapViewport));
       if (feature.properties.type.match(/view/gi)) {
         setViewcone(feature);
-      } else {
-        setViewcone(null);
       }
+    } else {
+      setViewcone(null);
     }
   }, [activeBasemap]);
 
@@ -67,7 +70,7 @@ const Atlas = ({ year, activeBasemap, opacity, basemapHandler }) => {
     <ReactMapGL
       ref={mapRef}
       mapboxApiAccessToken="pk.eyJ1IjoiYXhpc21hcHMiLCJhIjoieUlmVFRmRSJ9.CpIxovz1TUWe_ecNLFuHNg"
-      mapStyle={setStyleYear(year, mapStyle)}
+      mapStyle={mapStyle}
       width="100%"
       height="100%"
       onViewportChange={onViewportChange}
@@ -89,7 +92,7 @@ const Atlas = ({ year, activeBasemap, opacity, basemapHandler }) => {
         </Source>
       )}
       {viewpoints.map(v => (
-        <Marker key={v.ssid} {...v} offsetLeft={-15} offsetTop={-15}>
+        <Marker key={`marker${v.ssid}`} {...v} offsetLeft={-15} offsetTop={-15}>
           <IconButton
             icon={<FontAwesomeIcon icon={faCamera} />}
             as="div"
@@ -99,7 +102,9 @@ const Atlas = ({ year, activeBasemap, opacity, basemapHandler }) => {
             borderRadius="50%"
             backgroundColor="white"
             boxShadow="md"
-            onClick={() => basemapHandler(v.ssid)}
+            onClick={() => {
+              if (v.ssid !== activeBasemap) basemapHandler(v.ssid);
+            }}
           />
         </Marker>
       ))}
