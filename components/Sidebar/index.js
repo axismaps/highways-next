@@ -13,15 +13,15 @@ const Sidebar = ({ year, activeBasemap, basemapHandler }) => {
   return (
     <>
       <IconButton
-        icon={open ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+        icon={open ? <ChevronLeftIcon fontSize={24} /> : <ChevronRightIcon fontSize={24} />}
         pos="absolute"
-        left={open ? 310 : 0}
+        left={open ? 300 : 0}
         zIndex={10}
         top={40}
         backgroundColor="#eee"
         borderRadius="0 5px 5px 0"
-        size="sm"
-        w="25px"
+        size="lg"
+        w="30px"
         minW="none"
         boxShadow="sm"
         onClick={() => setOpen(!open)}
@@ -30,7 +30,7 @@ const Sidebar = ({ year, activeBasemap, basemapHandler }) => {
       <Box
         backgroundColor="#eee"
         p="20px"
-        h={['calc(100vh - 160px)', '100%']}
+        h={['calc(100vh - 146px)', '100%']}
         overflowY="auto"
         overflowX="visible"
         pos={['absolute', 'static']}
