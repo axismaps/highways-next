@@ -30,7 +30,7 @@ const Sidebar = ({ year, activeBasemap, basemapHandler }) => {
       <Box
         backgroundColor="#eee"
         p="20px"
-        h={['calc(100vh - 146px)', '100%']}
+        h={['calc(100vh - 149px)', '100%']}
         overflowY="auto"
         overflowX="visible"
         pos={['absolute', 'static']}

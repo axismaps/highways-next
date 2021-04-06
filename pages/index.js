@@ -20,7 +20,7 @@ const Home = () => {
     setActiveBasemap(null);
   }, [year]);
 
-  const responsiveHeight = ['calc(100vh - 146px)', 'calc(100vh - 125px)'];
+  const responsiveHeight = ['calc(100vh - 149px)', 'calc(100vh - 125px)'];
 
   return (
     <Box>
@@ -36,7 +36,7 @@ const Home = () => {
         <Sidebar year={year} activeBasemap={activeBasemap} basemapHandler={setActiveBasemap} />
         <SizeMe monitorHeight>
           {({ size }) => (
-            <Box h={responsiveHeight} w={['100%', 'calc(100vw - 320px)']}>
+            <Box h={responsiveHeight} w={['100vw', 'calc(100vw - 320px)']}>
               <Atlas
                 size={size}
                 year={year}
