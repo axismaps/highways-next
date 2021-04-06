@@ -20,28 +20,23 @@ const Home = () => {
     setActiveBasemap(null);
   }, [year]);
 
+  const responsiveHeight = ['calc(100vh - 146px)', 'calc(100vh - 125px)'];
+
   return (
     <Box>
       <Head>
         <title>Highways + Waterways</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Heading fontSize={18} color="#002469" m={5} mb={0}>
+      <Heading fontSize={18} color="#002469" m={[2, 5]} mb={0} textAlign={['center', 'left']}>
         Highways + Waterways
       </Heading>
       <Timeline handler={setYear} />
-      <Grid
-        w="100%"
-        h={['calc(100vh - 160px)', 'calc(100vh - 125px)']}
-        templateColumns={['1fr', '320px 1fr']}
-      >
+      <Grid w="100%" h={responsiveHeight} templateColumns={['1fr', '320px 1fr']}>
         <Sidebar year={year} activeBasemap={activeBasemap} basemapHandler={setActiveBasemap} />
         <SizeMe monitorHeight>
           {({ size }) => (
-            <Box
-              h={['calc(100vh - 160px)', 'calc(100vh - 125px)']}
-              w={['100%', 'calc(100vw - 320px)']}
-            >
+            <Box h={responsiveHeight} w={['100%', 'calc(100vw - 320px)']}>
               <Atlas
                 size={size}
                 year={year}
