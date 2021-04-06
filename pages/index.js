@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
+import { SizeMe } from 'react-sizeme';
 import { Grid, Box, Heading } from '@chakra-ui/react';
 
 import Atlas from '../components/Atlas';
@@ -10,7 +11,7 @@ import config from '../config';
 
 const { startYear } = config;
 
-export default function Home() {
+const Home = () => {
   const [year, setYear] = useState(startYear);
   const [activeBasemap, setActiveBasemap] = useState(null);
   const [opacity, setOpacity] = useState(1);
@@ -35,12 +36,22 @@ export default function Home() {
         templateColumns={['1fr', '320px 1fr']}
       >
         <Sidebar year={year} activeBasemap={activeBasemap} basemapHandler={setActiveBasemap} />
-        <Atlas
-          year={year}
-          activeBasemap={activeBasemap}
-          basemapHandler={setActiveBasemap}
-          opacity={opacity}
-        />
+        <SizeMe monitorHeight>
+          {({ size }) => (
+            <Box
+              h={['calc(100vh - 160px)', 'calc(100vh - 125px)']}
+              w={['100%', 'calc(100vw - 320px)']}
+            >
+              <Atlas
+                size={size}
+                year={year}
+                activeBasemap={activeBasemap}
+                basemapHandler={setActiveBasemap}
+                opacity={opacity}
+              />
+            </Box>
+          )}
+        </SizeMe>
       </Grid>
       {activeBasemap && (
         <Viewer
@@ -52,4 +63,6 @@ export default function Home() {
       )}
     </Box>
   );
-}
+};
+
+export default Home;
