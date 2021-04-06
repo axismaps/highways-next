@@ -1,20 +1,165 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Timeline matches snapshot 1`] = `
+.emotion-0 {
+  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-right: 5px;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.25);
+  position: relative;
+  z-index: 2;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transition: all 250ms;
+  transition: all 250ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: relative;
+  white-space: nowrap;
+  vertical-align: middle;
+  outline: none;
+  width: auto;
+  padding: 0px;
+  border-radius: 50%;
+  -webkit-margin-start: 5px;
+  margin-inline-start: 5px;
+  -webkit-margin-end: 5px;
+  margin-inline-end: 5px;
+}
+
+.emotion-3 {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  line-height: 1em;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  color: currentColor;
+  vertical-align: middle;
+}
+
+.emotion-4 {
+  width: 100px;
+  text-align: center;
+}
+
+.emotion-7 {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  height: 40px;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  top: -12px;
+  z-index: 1;
+  width: 100%;
+  padding-left: 1.8691588785046727%;
+  padding-right: 0%;
+}
+
+.emotion-9 {
+  border-left: 1px solid black;
+  box-sizing: border-box;
+  width: 5%;
+  height: 27px;
+  line-height: 27px;
+  margin-top: -2px;
+  padding-left: 1px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 0.7em;
+}
+
+.emotion-10 {
+  display: none;
+  display: block;
+}
+
+.emotion-51 {
+  overflow: hidden;
+  height: 30px;
+}
+
+.emotion-52 {
+  width: inherit;
+  height: inherit;
+}
+
+.emotion-53 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: absolute;
+  outline: 0;
+  height: 100%;
+  width: 16px;
+}
+
 <div
-  className="css-cykgrb"
+  className="emotion-0"
 >
   <div
-    className="css-1l4w6pd"
+    className="emotion-1"
   >
     <button
-      className="chakra-button css-orr4bg"
+      className="chakra-button emotion-2"
       onClick={[Function]}
       type="button"
     >
       <svg
         aria-hidden={true}
-        className="chakra-icon css-onkibi"
+        className="chakra-icon emotion-3"
         focusable={false}
         viewBox="0 0 24 24"
       >
@@ -31,18 +176,18 @@ exports[`Timeline matches snapshot 1`] = `
       </svg>
     </button>
     <h2
-      className="chakra-heading css-1ondvci"
+      className="chakra-heading emotion-4"
     >
       1950
     </h2>
     <button
-      className="chakra-button css-orr4bg"
+      className="chakra-button emotion-2"
       onClick={[Function]}
       type="button"
     >
       <svg
         aria-hidden={true}
-        className="chakra-icon css-onkibi"
+        className="chakra-icon emotion-3"
         focusable={false}
         viewBox="0 0 24 24"
       >
@@ -60,7 +205,7 @@ exports[`Timeline matches snapshot 1`] = `
     </button>
   </div>
   <div
-    className="chakra-slider css-4bntrk"
+    className="chakra-slider emotion-7"
     style={
       Object {
         "WebkitTapHighlightColor": "rgba(0,0,0,0)",
@@ -75,200 +220,200 @@ exports[`Timeline matches snapshot 1`] = `
     tabIndex={-1}
   >
     <div
-      className="css-1ftoqar"
+      className="emotion-8"
     >
       <div
-        className="css-15yyujv"
+        className="emotion-9"
       >
         <p
-          className="chakra-text css-1hyfx7x"
+          className="chakra-text emotion-10"
         >
           1840
         </p>
       </div>
       <div
-        className="css-15yyujv"
+        className="emotion-9"
       >
         <p
-          className="chakra-text css-1hyfx7x"
+          className="chakra-text emotion-10"
         >
           1850
         </p>
       </div>
       <div
-        className="css-15yyujv"
+        className="emotion-9"
       >
         <p
-          className="chakra-text css-1hyfx7x"
+          className="chakra-text emotion-10"
         >
           1860
         </p>
       </div>
       <div
-        className="css-15yyujv"
+        className="emotion-9"
       >
         <p
-          className="chakra-text css-1hyfx7x"
+          className="chakra-text emotion-10"
         >
           1870
         </p>
       </div>
       <div
-        className="css-15yyujv"
+        className="emotion-9"
       >
         <p
-          className="chakra-text css-1hyfx7x"
+          className="chakra-text emotion-10"
         >
           1880
         </p>
       </div>
       <div
-        className="css-15yyujv"
+        className="emotion-9"
       >
         <p
-          className="chakra-text css-1hyfx7x"
+          className="chakra-text emotion-10"
         >
           1890
         </p>
       </div>
       <div
-        className="css-15yyujv"
+        className="emotion-9"
       >
         <p
-          className="chakra-text css-1hyfx7x"
+          className="chakra-text emotion-10"
         >
           1900
         </p>
       </div>
       <div
-        className="css-15yyujv"
+        className="emotion-9"
       >
         <p
-          className="chakra-text css-1hyfx7x"
+          className="chakra-text emotion-10"
         >
           1910
         </p>
       </div>
       <div
-        className="css-15yyujv"
+        className="emotion-9"
       >
         <p
-          className="chakra-text css-1hyfx7x"
+          className="chakra-text emotion-10"
         >
           1920
         </p>
       </div>
       <div
-        className="css-15yyujv"
+        className="emotion-9"
       >
         <p
-          className="chakra-text css-1hyfx7x"
+          className="chakra-text emotion-10"
         >
           1930
         </p>
       </div>
       <div
-        className="css-15yyujv"
+        className="emotion-9"
       >
         <p
-          className="chakra-text css-1hyfx7x"
+          className="chakra-text emotion-10"
         >
           1940
         </p>
       </div>
       <div
-        className="css-15yyujv"
+        className="emotion-9"
       >
         <p
-          className="chakra-text css-1hyfx7x"
+          className="chakra-text emotion-10"
         >
           1950
         </p>
       </div>
       <div
-        className="css-15yyujv"
+        className="emotion-9"
       >
         <p
-          className="chakra-text css-1hyfx7x"
+          className="chakra-text emotion-10"
         >
           1960
         </p>
       </div>
       <div
-        className="css-15yyujv"
+        className="emotion-9"
       >
         <p
-          className="chakra-text css-1hyfx7x"
+          className="chakra-text emotion-10"
         >
           1970
         </p>
       </div>
       <div
-        className="css-15yyujv"
+        className="emotion-9"
       >
         <p
-          className="chakra-text css-1hyfx7x"
+          className="chakra-text emotion-10"
         >
           1980
         </p>
       </div>
       <div
-        className="css-15yyujv"
+        className="emotion-9"
       >
         <p
-          className="chakra-text css-1hyfx7x"
+          className="chakra-text emotion-10"
         >
           1990
         </p>
       </div>
       <div
-        className="css-15yyujv"
+        className="emotion-9"
       >
         <p
-          className="chakra-text css-1hyfx7x"
+          className="chakra-text emotion-10"
         >
           2000
         </p>
       </div>
       <div
-        className="css-15yyujv"
+        className="emotion-9"
       >
         <p
-          className="chakra-text css-1hyfx7x"
+          className="chakra-text emotion-10"
         >
           2010
         </p>
       </div>
       <div
-        className="css-15yyujv"
+        className="emotion-9"
       >
         <p
-          className="chakra-text css-1hyfx7x"
+          className="chakra-text emotion-10"
         >
           2020
         </p>
       </div>
       <div
-        className="css-15yyujv"
+        className="emotion-9"
       >
         <p
-          className="chakra-text css-1hyfx7x"
+          className="chakra-text emotion-10"
         >
           2030
         </p>
       </div>
       <div
-        className="css-15yyujv"
+        className="emotion-9"
       >
         <p
-          className="chakra-text css-1hyfx7x"
+          className="chakra-text emotion-10"
         >
           2040
         </p>
       </div>
     </div>
     <div
-      className="chakra-slider__track css-152to5v"
+      className="chakra-slider__track emotion-51"
       id="slider-track-3"
       style={
         Object {
@@ -280,7 +425,7 @@ exports[`Timeline matches snapshot 1`] = `
       }
     >
       <div
-        className="chakra-slider__filled-track css-p8tu8l"
+        className="chakra-slider__filled-track emotion-52"
         style={
           Object {
             "left": 0,
@@ -298,7 +443,7 @@ exports[`Timeline matches snapshot 1`] = `
       aria-valuemax={2050}
       aria-valuemin={1836}
       aria-valuenow={1950}
-      className="chakra-slider__thumb css-15m60qc"
+      className="chakra-slider__thumb emotion-53"
       id="slider-thumb-3"
       onBlur={[Function]}
       onFocus={[Function]}
