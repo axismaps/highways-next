@@ -16,7 +16,7 @@ const mapStyle = setStyleYear(config.startYear, originalStyle);
 
 const fetcher = url => axios.get(url).then(({ data }) => data);
 
-const Atlas = ({ year, activeBasemap, opacity, basemapHandler }) => {
+const Atlas = ({ size, year, activeBasemap, opacity, basemapHandler }) => {
   const mapRef = useRef(null);
   const debouncedYear = useDebounce(year, 500);
   const { data: documents } = useSWR(
@@ -62,6 +62,13 @@ const Atlas = ({ year, activeBasemap, opacity, basemapHandler }) => {
     }
   }, [documents]);
 
+  useEffect(() => {
+    setMapViewport({
+      ...mapViewport,
+      ...size,
+    });
+  }, [size]);
+
   const onViewportChange = nextViewport => {
     setMapViewport(nextViewport);
   };
@@ -71,8 +78,6 @@ const Atlas = ({ year, activeBasemap, opacity, basemapHandler }) => {
       ref={mapRef}
       mapboxApiAccessToken="pk.eyJ1IjoiYXhpc21hcHMiLCJhIjoieUlmVFRmRSJ9.CpIxovz1TUWe_ecNLFuHNg"
       mapStyle={mapStyle}
-      width="100%"
-      height="100%"
       onViewportChange={onViewportChange}
       {...mapViewport}
     >
@@ -120,11 +125,19 @@ Atlas.propTypes = {
   activeBasemap: PropTypes.string,
   opacity: PropTypes.number,
   basemapHandler: PropTypes.func.isRequired,
+  size: PropTypes.shape({
+    width: PropTypes.number,
+    height: PropTypes.number,
+  }),
 };
 
 Atlas.defaultProps = {
   activeBasemap: null,
   opacity: 0.75,
+  size: {
+    width: 800,
+    height: 600,
+  },
 };
 
 export default Atlas;

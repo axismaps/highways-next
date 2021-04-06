@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
+import { SizeMe } from 'react-sizeme';
 import { Grid, Box, Heading } from '@chakra-ui/react';
 
 import Atlas from '../components/Atlas';
@@ -10,7 +11,7 @@ import config from '../config';
 
 const { startYear } = config;
 
-export default function Home() {
+const Home = () => {
   const [year, setYear] = useState(startYear);
   const [activeBasemap, setActiveBasemap] = useState(null);
   const [opacity, setOpacity] = useState(1);
@@ -19,28 +20,33 @@ export default function Home() {
     setActiveBasemap(null);
   }, [year]);
 
+  const responsiveHeight = ['calc(100vh - 149px)', 'calc(100vh - 125px)'];
+
   return (
     <Box>
       <Head>
         <title>Highways + Waterways</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Heading fontSize={18} color="#002469" m={5} mb={0}>
+      <Heading fontSize={18} color="#002469" m={[2, 5]} mb={0} textAlign={['center', 'left']}>
         Highways + Waterways
       </Heading>
       <Timeline handler={setYear} />
-      <Grid
-        w="100%"
-        h={['calc(100vh - 160px)', 'calc(100vh - 125px)']}
-        templateColumns={['1fr', '320px 1fr']}
-      >
+      <Grid w="100%" h={responsiveHeight} templateColumns={['1fr', '320px 1fr']}>
         <Sidebar year={year} activeBasemap={activeBasemap} basemapHandler={setActiveBasemap} />
-        <Atlas
-          year={year}
-          activeBasemap={activeBasemap}
-          basemapHandler={setActiveBasemap}
-          opacity={opacity}
-        />
+        <SizeMe monitorHeight>
+          {({ size }) => (
+            <Box h={responsiveHeight} w={['100vw', 'calc(100vw - 320px)']}>
+              <Atlas
+                size={size}
+                year={year}
+                activeBasemap={activeBasemap}
+                basemapHandler={setActiveBasemap}
+                opacity={opacity}
+              />
+            </Box>
+          )}
+        </SizeMe>
       </Grid>
       {activeBasemap && (
         <Viewer
@@ -52,4 +58,6 @@ export default function Home() {
       )}
     </Box>
   );
-}
+};
+
+export default Home;
