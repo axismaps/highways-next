@@ -35,17 +35,9 @@ const Atlas = ({ size, year, activeBasemap, opacity, basemapHandler, highlighted
   useEffect(() => {
     const map = mapRef.current.getMap();
     if (map) {
-      map.setStyle(setStyleYear(year, mapStyle));
+      map.setStyle(setActiveLayer(setStyleYear(year, mapStyle), highlightedLayer));
     }
-  }, [year]);
-
-  useEffect(() => {
-    const map = mapRef.current.getMap();
-    if (map) {
-      const style = map.getStyle();
-      map.setStyle(setActiveLayer(style, highlightedLayer));
-    }
-  }, [highlightedLayer]);
+  }, [year, highlightedLayer]);
 
   useEffect(async () => {
     if (activeBasemap) {
