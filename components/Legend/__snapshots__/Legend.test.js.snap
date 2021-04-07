@@ -23,10 +23,20 @@ exports[`Legend matches snapshot 1`] = `
 }
 
 .emotion-5 {
-  display: grid;
-  grid-row-gap: 10px;
-  grid-column-gap: 10px;
-  grid-template-columns: 45px 1fr;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 5px;
+  padding-right: 10px;
+  border-radius: 5px;
+  line-height: 1.25;
+  background-color: none;
+  cursor: pointer;
 }
 
 .emotion-6 {
@@ -34,21 +44,43 @@ exports[`Legend matches snapshot 1`] = `
   background-color: #ded4cf;
   border-width: 2px;
   margin: 1px;
+  width: 40px;
+  height: 20px;
+  margin-right: 10px;
 }
 
-.emotion-27 {
+.emotion-8 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  justify-self: stretch;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+}
+
+.emotion-9 {
+  margin-left: 5px;
+  color: #666;
+}
+
+.emotion-53 {
   color: hsl(0, 0%, 100%);
-  width: 35px;
+  width: 40px;
   margin-left: 5px;
+  height: 20px;
+  margin-right: 10px;
 }
 
-.emotion-42 {
+.emotion-85 {
   color: #a1afc9;
-  width: 35px;
+  width: 40px;
   margin-left: 5px;
+  height: 20px;
+  margin-right: 10px;
 }
 
-.emotion-46 {
+.emotion-95 {
   color: interpolate;
   color: linear;
   color: zoom;
@@ -56,54 +88,77 @@ exports[`Legend matches snapshot 1`] = `
   color: hsl(0, 0%, 75%);
   color: 18px;
   color: hsl(0, 0%, 75%);
-  width: 35px;
+  width: 40px;
   margin-left: 5px;
+  height: 20px;
+  margin-right: 10px;
 }
 
-.emotion-60 {
+.emotion-119 {
   background-color: #b8cfaf;
   border-width: 2px;
   margin: 1px;
+  width: 40px;
+  height: 20px;
+  margin-right: 10px;
 }
 
-.emotion-64 {
+.emotion-129 {
   background-color: #dbdece;
   border-width: 2px;
   margin: 1px;
+  width: 40px;
+  height: 20px;
+  margin-right: 10px;
 }
 
-.emotion-68 {
+.emotion-139 {
   border-color: #b8cfaf;
   background-color: #dbdece;
   border-width: 2px;
   margin: 1px;
+  width: 40px;
+  height: 20px;
+  margin-right: 10px;
 }
 
-.emotion-73 {
+.emotion-146 {
   border-color: #a1afc9;
   background-color: #a1afc9;
   border-width: 2px;
   margin: 1px;
+  width: 40px;
+  height: 20px;
+  margin-right: 10px;
 }
 
-.emotion-75 {
+.emotion-151 {
   background-color: #a1afc9;
   border-width: 2px;
   margin: 1px;
+  width: 40px;
+  height: 20px;
+  margin-right: 10px;
 }
 
-.emotion-80 {
+.emotion-158 {
   border-color: #c9c0bb;
   background-color: #ebe7e5;
   border-width: 2px;
   margin: 1px;
+  width: 40px;
+  height: 20px;
+  margin-right: 10px;
 }
 
-.emotion-82 {
+.emotion-163 {
   border-color: #a99b93;
   background-color: #e9e4e2;
   border-width: 2px;
   margin: 1px;
+  width: 40px;
+  height: 20px;
+  margin-right: 10px;
 }
 
 <div
@@ -127,6 +182,7 @@ exports[`Legend matches snapshot 1`] = `
       </h2>
       <div
         className="emotion-5"
+        onClick={[Function]}
       >
         <div
           className="emotion-6"
@@ -137,6 +193,36 @@ exports[`Legend matches snapshot 1`] = `
           Commercial
         </p>
         <div
+          className="emotion-8"
+        />
+        <div
+          className="emotion-9"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-window-close fa-w-16 "
+            data-icon="window-close"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            visibility="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="emotion-5"
+        onClick={[Function]}
+      >
+        <div
           className="emotion-6"
         />
         <p
@@ -144,6 +230,36 @@ exports[`Legend matches snapshot 1`] = `
         >
           Corporate Office
         </p>
+        <div
+          className="emotion-8"
+        />
+        <div
+          className="emotion-9"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-window-close fa-w-16 "
+            data-icon="window-close"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            visibility="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="emotion-5"
+        onClick={[Function]}
+      >
         <div
           className="emotion-6"
         />
@@ -153,6 +269,36 @@ exports[`Legend matches snapshot 1`] = `
           Health
         </p>
         <div
+          className="emotion-8"
+        />
+        <div
+          className="emotion-9"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-window-close fa-w-16 "
+            data-icon="window-close"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            visibility="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="emotion-5"
+        onClick={[Function]}
+      >
+        <div
           className="emotion-6"
         />
         <p
@@ -160,6 +306,36 @@ exports[`Legend matches snapshot 1`] = `
         >
           Industrial
         </p>
+        <div
+          className="emotion-8"
+        />
+        <div
+          className="emotion-9"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-window-close fa-w-16 "
+            data-icon="window-close"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            visibility="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="emotion-5"
+        onClick={[Function]}
+      >
         <div
           className="emotion-6"
         />
@@ -169,6 +345,36 @@ exports[`Legend matches snapshot 1`] = `
           Park Facility
         </p>
         <div
+          className="emotion-8"
+        />
+        <div
+          className="emotion-9"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-window-close fa-w-16 "
+            data-icon="window-close"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            visibility="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="emotion-5"
+        onClick={[Function]}
+      >
+        <div
           className="emotion-6"
         />
         <p
@@ -176,6 +382,36 @@ exports[`Legend matches snapshot 1`] = `
         >
           Public and Institutional
         </p>
+        <div
+          className="emotion-8"
+        />
+        <div
+          className="emotion-9"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-window-close fa-w-16 "
+            data-icon="window-close"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            visibility="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="emotion-5"
+        onClick={[Function]}
+      >
         <div
           className="emotion-6"
         />
@@ -185,6 +421,36 @@ exports[`Legend matches snapshot 1`] = `
           Religious
         </p>
         <div
+          className="emotion-8"
+        />
+        <div
+          className="emotion-9"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-window-close fa-w-16 "
+            data-icon="window-close"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            visibility="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="emotion-5"
+        onClick={[Function]}
+      >
+        <div
           className="emotion-6"
         />
         <p
@@ -193,6 +459,36 @@ exports[`Legend matches snapshot 1`] = `
           Residential
         </p>
         <div
+          className="emotion-8"
+        />
+        <div
+          className="emotion-9"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-window-close fa-w-16 "
+            data-icon="window-close"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            visibility="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="emotion-5"
+        onClick={[Function]}
+      >
+        <div
           className="emotion-6"
         />
         <p
@@ -200,6 +496,31 @@ exports[`Legend matches snapshot 1`] = `
         >
           Transportantion and Utility
         </p>
+        <div
+          className="emotion-8"
+        />
+        <div
+          className="emotion-9"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-window-close fa-w-16 "
+            data-icon="window-close"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            visibility="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
       </div>
     </div>
     <div
@@ -212,55 +533,231 @@ exports[`Legend matches snapshot 1`] = `
       </h2>
       <div
         className="emotion-5"
+        onClick={[Function]}
       >
         <svg-mock
-          className="emotion-27"
+          className="emotion-53"
         />
         <p
           className="chakra-text emotion-0"
         >
           Highway
         </p>
+        <div
+          className="emotion-8"
+        />
+        <div
+          className="emotion-9"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-window-close fa-w-16 "
+            data-icon="window-close"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            visibility="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="emotion-5"
+        onClick={[Function]}
+      >
         <svg-mock
-          className="emotion-27"
+          className="emotion-53"
         />
         <p
           className="chakra-text emotion-0"
         >
           Other
         </p>
+        <div
+          className="emotion-8"
+        />
+        <div
+          className="emotion-9"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-window-close fa-w-16 "
+            data-icon="window-close"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            visibility="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="emotion-5"
+        onClick={[Function]}
+      >
         <svg-mock
-          className="emotion-27"
+          className="emotion-53"
         />
         <p
           className="chakra-text emotion-0"
         >
           Primary
         </p>
+        <div
+          className="emotion-8"
+        />
+        <div
+          className="emotion-9"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-window-close fa-w-16 "
+            data-icon="window-close"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            visibility="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="emotion-5"
+        onClick={[Function]}
+      >
         <svg-mock
-          className="emotion-27"
+          className="emotion-53"
         />
         <p
           className="chakra-text emotion-0"
         >
           Residential
         </p>
+        <div
+          className="emotion-8"
+        />
+        <div
+          className="emotion-9"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-window-close fa-w-16 "
+            data-icon="window-close"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            visibility="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="emotion-5"
+        onClick={[Function]}
+      >
         <svg-mock
-          className="emotion-27"
+          className="emotion-53"
         />
         <p
           className="chakra-text emotion-0"
         >
           Secondary
         </p>
+        <div
+          className="emotion-8"
+        />
+        <div
+          className="emotion-9"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-window-close fa-w-16 "
+            data-icon="window-close"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            visibility="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="emotion-5"
+        onClick={[Function]}
+      >
         <svg-mock
-          className="emotion-27"
+          className="emotion-53"
         />
         <p
           className="chakra-text emotion-0"
         >
           Tertiary
         </p>
+        <div
+          className="emotion-8"
+        />
+        <div
+          className="emotion-9"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-window-close fa-w-16 "
+            data-icon="window-close"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            visibility="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
       </div>
     </div>
     <div
@@ -273,31 +770,117 @@ exports[`Legend matches snapshot 1`] = `
       </h2>
       <div
         className="emotion-5"
+        onClick={[Function]}
       >
         <svg-mock
-          className="emotion-42"
+          className="emotion-85"
         />
         <p
           className="chakra-text emotion-0"
         >
           Canal
         </p>
+        <div
+          className="emotion-8"
+        />
+        <div
+          className="emotion-9"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-window-close fa-w-16 "
+            data-icon="window-close"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            visibility="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="emotion-5"
+        onClick={[Function]}
+      >
         <svg-mock
-          className="emotion-42"
+          className="emotion-85"
         />
         <p
           className="chakra-text emotion-0"
         >
           Drain
         </p>
+        <div
+          className="emotion-8"
+        />
+        <div
+          className="emotion-9"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-window-close fa-w-16 "
+            data-icon="window-close"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            visibility="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="emotion-5"
+        onClick={[Function]}
+      >
         <svg-mock
-          className="emotion-46"
+          className="emotion-95"
         />
         <p
           className="chakra-text emotion-0"
         >
           Railroad
         </p>
+        <div
+          className="emotion-8"
+        />
+        <div
+          className="emotion-9"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-window-close fa-w-16 "
+            data-icon="window-close"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            visibility="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
       </div>
     </div>
     <div
@@ -310,31 +893,117 @@ exports[`Legend matches snapshot 1`] = `
       </h2>
       <div
         className="emotion-5"
+        onClick={[Function]}
       >
         <svg-mock
-          className="emotion-42"
+          className="emotion-85"
         />
         <p
           className="chakra-text emotion-0"
         >
           Bayou
         </p>
+        <div
+          className="emotion-8"
+        />
+        <div
+          className="emotion-9"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-window-close fa-w-16 "
+            data-icon="window-close"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            visibility="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="emotion-5"
+        onClick={[Function]}
+      >
         <svg-mock
-          className="emotion-42"
+          className="emotion-85"
         />
         <p
           className="chakra-text emotion-0"
         >
           River
         </p>
+        <div
+          className="emotion-8"
+        />
+        <div
+          className="emotion-9"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-window-close fa-w-16 "
+            data-icon="window-close"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            visibility="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="emotion-5"
+        onClick={[Function]}
+      >
         <svg-mock
-          className="emotion-42"
+          className="emotion-85"
         />
         <p
           className="chakra-text emotion-0"
         >
           Stream
         </p>
+        <div
+          className="emotion-8"
+        />
+        <div
+          className="emotion-9"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-window-close fa-w-16 "
+            data-icon="window-close"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            visibility="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
       </div>
     </div>
     <div
@@ -347,9 +1016,10 @@ exports[`Legend matches snapshot 1`] = `
       </h2>
       <div
         className="emotion-5"
+        onClick={[Function]}
       >
         <div
-          className="emotion-60"
+          className="emotion-119"
         />
         <p
           className="chakra-text emotion-0"
@@ -357,7 +1027,37 @@ exports[`Legend matches snapshot 1`] = `
           Field
         </p>
         <div
-          className="emotion-60"
+          className="emotion-8"
+        />
+        <div
+          className="emotion-9"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-window-close fa-w-16 "
+            data-icon="window-close"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            visibility="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="emotion-5"
+        onClick={[Function]}
+      >
+        <div
+          className="emotion-119"
         />
         <p
           className="chakra-text emotion-0"
@@ -365,7 +1065,37 @@ exports[`Legend matches snapshot 1`] = `
           Golf Course
         </p>
         <div
-          className="emotion-64"
+          className="emotion-8"
+        />
+        <div
+          className="emotion-9"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-window-close fa-w-16 "
+            data-icon="window-close"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            visibility="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="emotion-5"
+        onClick={[Function]}
+      >
+        <div
+          className="emotion-129"
         />
         <p
           className="chakra-text emotion-0"
@@ -373,7 +1103,37 @@ exports[`Legend matches snapshot 1`] = `
           Graveyard
         </p>
         <div
-          className="emotion-64"
+          className="emotion-8"
+        />
+        <div
+          className="emotion-9"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-window-close fa-w-16 "
+            data-icon="window-close"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            visibility="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="emotion-5"
+        onClick={[Function]}
+      >
+        <div
+          className="emotion-129"
         />
         <p
           className="chakra-text emotion-0"
@@ -381,13 +1141,68 @@ exports[`Legend matches snapshot 1`] = `
           Park
         </p>
         <div
-          className="emotion-68"
+          className="emotion-8"
+        />
+        <div
+          className="emotion-9"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-window-close fa-w-16 "
+            data-icon="window-close"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            visibility="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="emotion-5"
+        onClick={[Function]}
+      >
+        <div
+          className="emotion-139"
         />
         <p
           className="chakra-text emotion-0"
         >
           Square
         </p>
+        <div
+          className="emotion-8"
+        />
+        <div
+          className="emotion-9"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-window-close fa-w-16 "
+            data-icon="window-close"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            visibility="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
       </div>
     </div>
     <div
@@ -400,9 +1215,10 @@ exports[`Legend matches snapshot 1`] = `
       </h2>
       <div
         className="emotion-5"
+        onClick={[Function]}
       >
         <div
-          className="emotion-73"
+          className="emotion-146"
         />
         <p
           className="chakra-text emotion-0"
@@ -410,13 +1226,68 @@ exports[`Legend matches snapshot 1`] = `
           Reservoir
         </p>
         <div
-          className="emotion-75"
+          className="emotion-8"
+        />
+        <div
+          className="emotion-9"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-window-close fa-w-16 "
+            data-icon="window-close"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            visibility="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="emotion-5"
+        onClick={[Function]}
+      >
+        <div
+          className="emotion-151"
         />
         <p
           className="chakra-text emotion-0"
         >
           Wetland
         </p>
+        <div
+          className="emotion-8"
+        />
+        <div
+          className="emotion-9"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-window-close fa-w-16 "
+            data-icon="window-close"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            visibility="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
       </div>
     </div>
     <div
@@ -429,9 +1300,10 @@ exports[`Legend matches snapshot 1`] = `
       </h2>
       <div
         className="emotion-5"
+        onClick={[Function]}
       >
         <div
-          className="emotion-80"
+          className="emotion-158"
         />
         <p
           className="chakra-text emotion-0"
@@ -439,7 +1311,37 @@ exports[`Legend matches snapshot 1`] = `
           City Limit
         </p>
         <div
-          className="emotion-82"
+          className="emotion-8"
+        />
+        <div
+          className="emotion-9"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-window-close fa-w-16 "
+            data-icon="window-close"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            visibility="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="emotion-5"
+        onClick={[Function]}
+      >
+        <div
+          className="emotion-163"
         />
         <p
           className="chakra-text emotion-0"
@@ -447,7 +1349,37 @@ exports[`Legend matches snapshot 1`] = `
           County Limit
         </p>
         <div
-          className="emotion-82"
+          className="emotion-8"
+        />
+        <div
+          className="emotion-9"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-window-close fa-w-16 "
+            data-icon="window-close"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            visibility="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="emotion-5"
+        onClick={[Function]}
+      >
+        <div
+          className="emotion-163"
         />
         <p
           className="chakra-text emotion-0"
@@ -455,7 +1387,37 @@ exports[`Legend matches snapshot 1`] = `
           County Limits
         </p>
         <div
-          className="emotion-82"
+          className="emotion-8"
+        />
+        <div
+          className="emotion-9"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-window-close fa-w-16 "
+            data-icon="window-close"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            visibility="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="emotion-5"
+        onClick={[Function]}
+      >
+        <div
+          className="emotion-163"
         />
         <p
           className="chakra-text emotion-0"
@@ -463,13 +1425,68 @@ exports[`Legend matches snapshot 1`] = `
           Subwatershed
         </p>
         <div
-          className="emotion-82"
+          className="emotion-8"
+        />
+        <div
+          className="emotion-9"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-window-close fa-w-16 "
+            data-icon="window-close"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            visibility="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="emotion-5"
+        onClick={[Function]}
+      >
+        <div
+          className="emotion-163"
         />
         <p
           className="chakra-text emotion-0"
         >
           Watershed
         </p>
+        <div
+          className="emotion-8"
+        />
+        <div
+          className="emotion-9"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-window-close fa-w-16 "
+            data-icon="window-close"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 512 512"
+            visibility="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
       </div>
     </div>
   </div>

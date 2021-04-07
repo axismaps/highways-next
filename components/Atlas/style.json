@@ -1690,7 +1690,7 @@
             }
         },
         {
-            "id": "buildingspoly",
+            "id": "commercial",
             "type": "fill",
             "source": "composite",
             "source-layer": "BuildingsPoly",
@@ -1698,7 +1698,224 @@
             "filter": [
                 "all",
                 ["<=", ["get", "firstyear"], 2012],
-                [">=", ["get", "lastyear"], 2012]
+                [">=", ["get", "lastyear"], 2012],
+                ["match", ["get", "type"], ["Commercial"], true, false]
+            ],
+            "layout": {},
+            "paint": {
+                "fill-color": "hsl(20, 18%, 84%)",
+                "fill-opacity": [
+                    "interpolate",
+                    ["linear"],
+                    ["zoom"],
+                    13,
+                    0,
+                    14.5,
+                    1
+                ],
+                "fill-outline-color": "hsl(20, 18%, 74%)"
+            }
+        },
+        {
+            "id": "corporate-office",
+            "type": "fill",
+            "source": "composite",
+            "source-layer": "BuildingsPoly",
+            "minzoom": 13,
+            "filter": [
+                "all",
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
+                ["match", ["get", "type"], ["Corporate Office"], true, false]
+            ],
+            "layout": {},
+            "paint": {
+                "fill-color": "hsl(20, 18%, 84%)",
+                "fill-opacity": [
+                    "interpolate",
+                    ["linear"],
+                    ["zoom"],
+                    13,
+                    0,
+                    14.5,
+                    1
+                ],
+                "fill-outline-color": "hsl(20, 18%, 74%)"
+            }
+        },
+        {
+            "id": "health",
+            "type": "fill",
+            "source": "composite",
+            "source-layer": "BuildingsPoly",
+            "minzoom": 13,
+            "filter": [
+                "all",
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
+                ["match", ["get", "type"], ["Health"], true, false]
+            ],
+            "layout": {},
+            "paint": {
+                "fill-color": "hsl(20, 18%, 84%)",
+                "fill-opacity": [
+                    "interpolate",
+                    ["linear"],
+                    ["zoom"],
+                    13,
+                    0,
+                    14.5,
+                    1
+                ],
+                "fill-outline-color": "hsl(20, 18%, 74%)"
+            }
+        },
+        {
+            "id": "industrial",
+            "type": "fill",
+            "source": "composite",
+            "source-layer": "BuildingsPoly",
+            "minzoom": 13,
+            "filter": [
+                "all",
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
+                ["match", ["get", "type"], ["Industrial"], true, false]
+            ],
+            "layout": {},
+            "paint": {
+                "fill-color": "hsl(20, 18%, 84%)",
+                "fill-opacity": [
+                    "interpolate",
+                    ["linear"],
+                    ["zoom"],
+                    13,
+                    0,
+                    14.5,
+                    1
+                ],
+                "fill-outline-color": "hsl(20, 18%, 74%)"
+            }
+        },
+        {
+            "id": "park-facility",
+            "type": "fill",
+            "source": "composite",
+            "source-layer": "BuildingsPoly",
+            "minzoom": 13,
+            "filter": [
+                "all",
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
+                ["match", ["get", "type"], ["Park Facility"], true, false]
+            ],
+            "layout": {},
+            "paint": {
+                "fill-color": "hsl(20, 18%, 84%)",
+                "fill-opacity": [
+                    "interpolate",
+                    ["linear"],
+                    ["zoom"],
+                    13,
+                    0,
+                    14.5,
+                    1
+                ],
+                "fill-outline-color": "hsl(20, 18%, 74%)"
+            }
+        },
+        {
+            "id": "public-and-institutional",
+            "type": "fill",
+            "source": "composite",
+            "source-layer": "BuildingsPoly",
+            "minzoom": 13,
+            "filter": [
+                "all",
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
+                ["match", ["get", "type"], ["Public and Institutional"], true, false]
+            ],
+            "layout": {},
+            "paint": {
+                "fill-color": "hsl(20, 18%, 84%)",
+                "fill-opacity": [
+                    "interpolate",
+                    ["linear"],
+                    ["zoom"],
+                    13,
+                    0,
+                    14.5,
+                    1
+                ],
+                "fill-outline-color": "hsl(20, 18%, 74%)"
+            }
+        },
+        {
+            "id": "religious",
+            "type": "fill",
+            "source": "composite",
+            "source-layer": "BuildingsPoly",
+            "minzoom": 13,
+            "filter": [
+                "all",
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
+                ["match", ["get", "type"], ["Religious"], true, false]
+            ],
+            "layout": {},
+            "paint": {
+                "fill-color": "hsl(20, 18%, 84%)",
+                "fill-opacity": [
+                    "interpolate",
+                    ["linear"],
+                    ["zoom"],
+                    13,
+                    0,
+                    14.5,
+                    1
+                ],
+                "fill-outline-color": "hsl(20, 18%, 74%)"
+            }
+        },
+        {
+            "id": "residential-buildings",
+            "type": "fill",
+            "source": "composite",
+            "source-layer": "BuildingsPoly",
+            "minzoom": 13,
+            "filter": [
+                "all",
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
+                ["match", ["get", "type"], ["Residential"], true, false]
+            ],
+            "layout": {},
+            "paint": {
+                "fill-color": "hsl(20, 18%, 84%)",
+                "fill-opacity": [
+                    "interpolate",
+                    ["linear"],
+                    ["zoom"],
+                    13,
+                    0,
+                    14.5,
+                    1
+                ],
+                "fill-outline-color": "hsl(20, 18%, 74%)"
+            }
+        },
+        {
+            "id": "transportation-and-utility",
+            "type": "fill",
+            "source": "composite",
+            "source-layer": "BuildingsPoly",
+            "minzoom": 13,
+            "filter": [
+                "all",
+                ["<=", ["get", "firstyear"], 2012],
+                [">=", ["get", "lastyear"], 2012],
+                ["match", ["get", "type"], ["Transportantion and Utility"], true, false]
             ],
             "layout": {},
             "paint": {
