@@ -14,6 +14,7 @@ const { startYear } = config;
 const Home = () => {
   const [year, setYear] = useState(startYear);
   const [activeBasemap, setActiveBasemap] = useState(null);
+  const [highlightedLayer, setHighlightedLayer] = useState(null);
   const [opacity, setOpacity] = useState(1);
 
   useEffect(() => {
@@ -28,12 +29,18 @@ const Home = () => {
         <title>Highways + Waterways</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Heading fontSize={18} color="#002469" m={[2, 5]} mb={0} textAlign={['center', 'left']}>
+      <Heading fontSize={18} color="#002469" m={[2, 5]} mb={[0, 0]} textAlign={['center', 'left']}>
         Highways + Waterways
       </Heading>
       <Timeline handler={setYear} />
       <Grid w="100%" h={responsiveHeight} templateColumns={['1fr', '320px 1fr']}>
-        <Sidebar year={year} activeBasemap={activeBasemap} basemapHandler={setActiveBasemap} />
+        <Sidebar
+          year={year}
+          activeBasemap={activeBasemap}
+          basemapHandler={setActiveBasemap}
+          layerHandler={setHighlightedLayer}
+          highlightedLayer={highlightedLayer}
+        />
         <SizeMe monitorHeight>
           {({ size }) => (
             <Box h={responsiveHeight} w={['100vw', 'calc(100vw - 320px)']}>
@@ -42,6 +49,7 @@ const Home = () => {
                 year={year}
                 activeBasemap={activeBasemap}
                 basemapHandler={setActiveBasemap}
+                highlightedLayer={highlightedLayer}
                 opacity={opacity}
               />
             </Box>

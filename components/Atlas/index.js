@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCamera } from '@fortawesome/free-solid-svg-icons';
 
 import useDebounce from '../../utils/useDebounce';
-import { setStyleYear, fitBounds } from './mapUtils';
+import { setStyleYear, fitBounds, setActiveLayer } from './mapUtils';
 import originalStyle from './style.json';
 import config from '../../config';
 
@@ -16,7 +16,7 @@ const mapStyle = setStyleYear(config.startYear, originalStyle);
 
 const fetcher = url => axios.get(url).then(({ data }) => data);
 
-const Atlas = ({ size, year, activeBasemap, opacity, basemapHandler }) => {
+const Atlas = ({ size, year, activeBasemap, opacity, basemapHandler, highlightedLayer }) => {
   const mapRef = useRef(null);
   const debouncedYear = useDebounce(year, 500);
   const { data: documents } = useSWR(
@@ -38,6 +38,14 @@ const Atlas = ({ size, year, activeBasemap, opacity, basemapHandler }) => {
       map.setStyle(setStyleYear(year, mapStyle));
     }
   }, [year]);
+
+  useEffect(() => {
+    const map = mapRef.current.getMap();
+    if (map) {
+      const style = map.getStyle();
+      map.setStyle(setActiveLayer(style, highlightedLayer));
+    }
+  }, [highlightedLayer]);
 
   useEffect(async () => {
     if (activeBasemap) {
@@ -125,6 +133,7 @@ Atlas.propTypes = {
   activeBasemap: PropTypes.string,
   opacity: PropTypes.number,
   basemapHandler: PropTypes.func.isRequired,
+  highlightedLayer: PropTypes.shape(),
   size: PropTypes.shape({
     width: PropTypes.number,
     height: PropTypes.number,
@@ -138,6 +147,7 @@ Atlas.defaultProps = {
     width: 800,
     height: 600,
   },
+  highlightedLayer: null,
 };
 
 export default Atlas;

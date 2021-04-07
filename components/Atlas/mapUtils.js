@@ -43,4 +43,35 @@ const fitBounds = (geom, mapViewport) => {
   };
 };
 
-export { setStyleYear, fitBounds };
+const setActiveLayer = (currentStyle, highlightedLayer) => {
+  const style = { ...currentStyle };
+  style.layers = style.layers.map(mapLayer => {
+    const newLayer = { ...mapLayer };
+    let opacityKey = ['fill-opacity'];
+    if (newLayer.type === 'line') opacityKey = ['line-opacity'];
+    if (newLayer.type === 'symbol') opacityKey = ['text-opacity', 'icon-opacity'];
+    if (newLayer.type === 'background') {
+      newLayer.paint['background-color'] = highlightedLayer ? '#eee' : 'hsl(20, 18%, 90%)';
+      return newLayer;
+    }
+    if (highlightedLayer) {
+      const { layer, type } = highlightedLayer;
+      const layerName = newLayer['source-layer'];
+      if (layerName) {
+        const layerType = newLayer.filter.find(l => l[1][1] === 'type')[2][0];
+        opacityKey.forEach(key => {
+          newLayer.paint[key] = layerName === layer && layerType === type ? 1 : 0.2;
+        });
+      }
+    } else {
+      opacityKey.forEach(key => {
+        newLayer.paint[key] = 1;
+      });
+    }
+    return newLayer;
+  });
+
+  return style;
+};
+
+export { setStyleYear, fitBounds, setActiveLayer };

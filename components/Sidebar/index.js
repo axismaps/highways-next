@@ -6,7 +6,7 @@ import { ChevronRightIcon, ChevronLeftIcon } from '@chakra-ui/icons';
 import Rasters from '../Rasters';
 import Legend from '../Legend';
 
-const Sidebar = ({ year, activeBasemap, basemapHandler }) => {
+const Sidebar = ({ year, activeBasemap, basemapHandler, layerHandler, highlightedLayer }) => {
   const [open, setOpen] = useState(false);
   useEffect(() => setOpen(false), [activeBasemap]);
 
@@ -40,7 +40,7 @@ const Sidebar = ({ year, activeBasemap, basemapHandler }) => {
         transition="all 250ms"
       >
         <Rasters year={year} basemapHandler={basemapHandler} activeBasemap={activeBasemap} />
-        <Legend year={year} />
+        <Legend year={year} layerHandler={layerHandler} highlightedLayer={highlightedLayer} />
       </Box>
     </>
   );
@@ -49,11 +49,14 @@ const Sidebar = ({ year, activeBasemap, basemapHandler }) => {
 Sidebar.propTypes = {
   year: PropTypes.number.isRequired,
   basemapHandler: PropTypes.func.isRequired,
+  layerHandler: PropTypes.func.isRequired,
+  highlightedLayer: PropTypes.shape(),
   activeBasemap: PropTypes.string,
 };
 
 Sidebar.defaultProps = {
   activeBasemap: null,
+  highlightedLayer: null,
 };
 
 export default Sidebar;
