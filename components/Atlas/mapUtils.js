@@ -49,10 +49,18 @@ const getOpacityKey = layer => {
   return ['fill-opacity'];
 };
 
+const updateOpacity = (layer, keys, opacity) => {
+  const newLayer = { ...layer };
+  keys.forEach(key => {
+    newLayer.paint[key] = opacity;
+  });
+  return newLayer;
+};
+
 const setActiveLayer = (currentStyle, highlightedLayer) => {
   const style = { ...currentStyle };
   style.layers = style.layers.map(mapLayer => {
-    const newLayer = { ...mapLayer };
+    let newLayer = { ...mapLayer };
     const opacityKey = getOpacityKey(newLayer);
     if (newLayer.type === 'background') {
       newLayer.paint['background-color'] = highlightedLayer ? '#eee' : 'hsl(20, 18%, 90%)';
@@ -61,13 +69,13 @@ const setActiveLayer = (currentStyle, highlightedLayer) => {
     if (highlightedLayer) {
       const { layer, type } = highlightedLayer;
       const layerType = newLayer.filter.find(l => l[1][1] === 'type')[2][0];
-      opacityKey.forEach(key => {
-        newLayer.paint[key] = newLayer['source-layer'] === layer && layerType === type ? 1 : 0.2;
-      });
+      newLayer = updateOpacity(
+        newLayer,
+        opacityKey,
+        newLayer['source-layer'] === layer && layerType === type ? 1 : 0.2
+      );
     } else {
-      opacityKey.forEach(key => {
-        newLayer.paint[key] = 1;
-      });
+      newLayer = updateOpacity(newLayer, opacityKey, 1);
     }
     return newLayer;
   });
