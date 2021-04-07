@@ -11,18 +11,23 @@ describe('Legend', () => {
   const mock = new MockAdapter(axios);
   mock.onGet(`${process.env.NEXT_PUBLIC_SEARCH_API}/layers?year=1950`).reply(200, layers);
 
+  const legendProps = {
+    year: 1950,
+    layerHandler: () => {},
+  };
+
   it('renders for 1950 without crashing', async () => {
-    render(<Legend year={1950} />);
+    render(<Legend {...legendProps} />);
     await screen.findByText('Legend');
     expect(screen.getByRole('heading', { name: 'Legend' })).toBeInTheDocument();
     expect(screen.getByText('Roads')).toBeInTheDocument();
   });
 
   it('matches snapshot', async () => {
-    render(<Legend year={1950} />);
+    render(<Legend {...legendProps} />);
     await screen.findByText('Legend');
 
-    const tree = renderer.create(<Legend year={1950} />).toJSON();
+    const tree = renderer.create(<Legend {...legendProps} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
