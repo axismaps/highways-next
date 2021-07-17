@@ -28,6 +28,12 @@ const Home = () => {
       <Head>
         <title>Highways + Waterways</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <script
+          async
+          defer
+          data-website-id="9725066c-8cf4-46ce-b73c-0ea97a93b825"
+          src="https://umami.axismaps.com/umami.js"
+        />
       </Head>
       <Heading fontSize={18} color="#002469" m={[2, 5]} mb={[0, 0]} textAlign={['center', 'left']}>
         Highways + Waterways
