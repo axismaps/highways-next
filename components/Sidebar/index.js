@@ -5,6 +5,7 @@ import { ChevronRightIcon, ChevronLeftIcon } from '@chakra-ui/icons';
 
 import Rasters from '../Rasters';
 import Legend from '../Legend';
+import Thematic from '../Thematic';
 
 const Sidebar = ({ year, activeBasemap, basemapHandler, layerHandler, highlightedLayer }) => {
   const [open, setOpen] = useState(false);
@@ -40,6 +41,7 @@ const Sidebar = ({ year, activeBasemap, basemapHandler, layerHandler, highlighte
         transition="all 250ms"
       >
         <Rasters year={year} basemapHandler={basemapHandler} activeBasemap={activeBasemap} />
+        <Thematic year={year} />
         <Legend year={year} layerHandler={layerHandler} highlightedLayer={highlightedLayer} />
       </Box>
     </>
