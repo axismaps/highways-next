@@ -9,7 +9,7 @@ import useDebounce from '../../utils/useDebounce';
 
 const fetcher = url => axios.get(url).then(({ data }) => data);
 
-const Thematic = ({ year }) => {
+const Thematic = ({ year, activeThematic, thematicHandler }) => {
   const debouncedYear = useDebounce(year, 500);
   const { data } = useSWR(
     debouncedYear ? `${process.env.NEXT_PUBLIC_SEARCH_API}/thematic?year=${debouncedYear}` : null,
@@ -26,7 +26,10 @@ const Thematic = ({ year }) => {
           {data &&
             data.map(layer => (
               <Grid key={layer.id} templateColumns="25px 1fr">
-                <Checkbox />
+                <Checkbox
+                  isChecked={activeThematic && activeThematic.id === layer.id}
+                  onChange={e => thematicHandler(e.target.checked ? layer : null)}
+                />
                 <Legend {...layer} />
               </Grid>
             ))}
@@ -38,6 +41,12 @@ const Thematic = ({ year }) => {
 
 Thematic.propTypes = {
   year: PropTypes.number.isRequired,
+  activeThematic: PropTypes.shape(),
+  thematicHandler: PropTypes.func.isRequired,
+};
+
+Thematic.defaultProps = {
+  activeThematic: null,
 };
 
 export default Thematic;

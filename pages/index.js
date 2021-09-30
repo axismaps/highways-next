@@ -15,6 +15,7 @@ const Home = () => {
   const [year, setYear] = useState(startYear);
   const [activeBasemap, setActiveBasemap] = useState(null);
   const [highlightedLayer, setHighlightedLayer] = useState(null);
+  const [activeThematic, setActiveThematic] = useState(null);
   const [opacity, setOpacity] = useState(1);
 
   useEffect(() => {
@@ -46,6 +47,8 @@ const Home = () => {
           basemapHandler={setActiveBasemap}
           layerHandler={setHighlightedLayer}
           highlightedLayer={highlightedLayer}
+          activeThematic={activeThematic}
+          thematicHandler={setActiveThematic}
         />
         <SizeMe monitorHeight>
           {({ size }) => (
@@ -57,6 +60,7 @@ const Home = () => {
                 basemapHandler={setActiveBasemap}
                 highlightedLayer={highlightedLayer}
                 opacity={opacity}
+                activeThematic={activeThematic}
               />
             </Box>
           )}

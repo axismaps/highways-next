@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import useSWR from 'swr';
 import axios from 'axios';
+import { flatten } from 'lodash';
 import ReactMapGL, { Source, Layer, Marker, NavigationControl } from 'react-map-gl';
 import { Box, IconButton } from '@chakra-ui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -16,7 +17,15 @@ const mapStyle = setStyleYear(config.startYear, originalStyle);
 
 const fetcher = url => axios.get(url).then(({ data }) => data);
 
-const Atlas = ({ size, year, activeBasemap, opacity, basemapHandler, highlightedLayer }) => {
+const Atlas = ({
+  size,
+  year,
+  activeBasemap,
+  opacity,
+  basemapHandler,
+  highlightedLayer,
+  activeThematic,
+}) => {
   const mapRef = useRef(null);
   const debouncedYear = useDebounce(year, 500);
   const { data: documents } = useSWR(
@@ -31,6 +40,7 @@ const Atlas = ({ size, year, activeBasemap, opacity, basemapHandler, highlighted
   });
   const [viewpoints, setViewpoints] = useState([]);
   const [viewcone, setViewcone] = useState(null);
+  const [thematicLayer, setThematicLayer] = useState(null);
 
   useEffect(() => {
     const map = mapRef.current.getMap();
@@ -53,6 +63,16 @@ const Atlas = ({ size, year, activeBasemap, opacity, basemapHandler, highlighted
       setViewcone(null);
     }
   }, [activeBasemap]);
+
+  useEffect(async () => {
+    setThematicLayer(null);
+    if (activeThematic) {
+      const { data } = await axios.get(
+        `${process.env.NEXT_PUBLIC_SEARCH_API}/thematic/${activeThematic.id}`
+      );
+      setThematicLayer(data);
+    }
+  }, [activeThematic]);
 
   useEffect(() => {
     if (documents) {
@@ -89,6 +109,26 @@ const Atlas = ({ size, year, activeBasemap, opacity, basemapHandler, highlighted
           scheme="tms"
         >
           <Layer id="overlay" type="raster" paint={{ 'raster-opacity': opacity }} />
+        </Source>
+      )}
+      {thematicLayer && (
+        <Source key={thematicLayer.id} type="geojson" data={thematicLayer}>
+          <Layer
+            id="thematic"
+            type="fill"
+            // beforeId="wetland-icon"
+            paint={{
+              'fill-color': [
+                'step',
+                ['get', 'value'],
+                ...flatten(
+                  activeThematic.colors.map((c, i) => [c, activeThematic.scale[i]]),
+                  true
+                ).filter(f => f),
+              ],
+              'fill-opacity': 0.5,
+            }}
+          />
         </Source>
       )}
       {viewcone && (
@@ -130,6 +170,7 @@ Atlas.propTypes = {
     width: PropTypes.number,
     height: PropTypes.number,
   }),
+  activeThematic: PropTypes.shape(),
 };
 
 Atlas.defaultProps = {
@@ -140,6 +181,7 @@ Atlas.defaultProps = {
     height: 600,
   },
   highlightedLayer: null,
+  activeThematic: null,
 };
 
 export default Atlas;

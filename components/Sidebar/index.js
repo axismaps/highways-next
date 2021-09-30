@@ -7,7 +7,15 @@ import Rasters from '../Rasters';
 import Legend from '../Legend';
 import Thematic from '../Thematic';
 
-const Sidebar = ({ year, activeBasemap, basemapHandler, layerHandler, highlightedLayer }) => {
+const Sidebar = ({
+  year,
+  activeBasemap,
+  basemapHandler,
+  layerHandler,
+  highlightedLayer,
+  activeThematic,
+  thematicHandler,
+}) => {
   const [open, setOpen] = useState(false);
   useEffect(() => setOpen(false), [activeBasemap]);
 
@@ -41,7 +49,7 @@ const Sidebar = ({ year, activeBasemap, basemapHandler, layerHandler, highlighte
         transition="all 250ms"
       >
         <Rasters year={year} basemapHandler={basemapHandler} activeBasemap={activeBasemap} />
-        <Thematic year={year} />
+        <Thematic year={year} activeThematic={activeThematic} thematicHandler={thematicHandler} />
         <Legend year={year} layerHandler={layerHandler} highlightedLayer={highlightedLayer} />
       </Box>
     </>
@@ -54,11 +62,14 @@ Sidebar.propTypes = {
   layerHandler: PropTypes.func.isRequired,
   highlightedLayer: PropTypes.shape(),
   activeBasemap: PropTypes.string,
+  activeThematic: PropTypes.shape(),
+  thematicHandler: PropTypes.func.isRequired,
 };
 
 Sidebar.defaultProps = {
   activeBasemap: null,
   highlightedLayer: null,
+  activeThematic: null,
 };
 
 export default Sidebar;
