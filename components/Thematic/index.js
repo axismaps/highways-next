@@ -17,25 +17,35 @@ const Thematic = ({ year, activeThematic, thematicHandler }) => {
   );
 
   return (
-    <Box mb={5}>
-      <Heading size="md" mb={2}>
-        Thematic
-      </Heading>
-      <Stack px="15px" pt="1px" pb={8} backgroundColor="white" borderRadius="5px" boxShadow="md">
-        <CheckboxGroup>
-          {data &&
-            data.map(layer => (
-              <Grid key={layer.id} templateColumns="25px 1fr">
-                <Checkbox
-                  isChecked={activeThematic && activeThematic.id === layer.id}
-                  onChange={e => thematicHandler(e.target.checked ? layer : null)}
-                />
-                <Legend {...layer} />
-              </Grid>
-            ))}
-        </CheckboxGroup>
-      </Stack>
-    </Box>
+    <>
+      {data && data.length ? (
+        <Box mb={5}>
+          <Heading size="md" mb={2}>
+            Thematic
+          </Heading>
+          <Stack
+            px="15px"
+            pt="1px"
+            pb={8}
+            backgroundColor="white"
+            borderRadius="5px"
+            boxShadow="md"
+          >
+            <CheckboxGroup>
+              {data.map(layer => (
+                <Grid key={layer.id} templateColumns="25px 1fr">
+                  <Checkbox
+                    isChecked={activeThematic && activeThematic.id === layer.id}
+                    onChange={e => thematicHandler(e.target.checked ? layer : null)}
+                  />
+                  <Legend {...layer} />
+                </Grid>
+              ))}
+            </CheckboxGroup>
+          </Stack>
+        </Box>
+      ) : null}
+    </>
   );
 };
 
