@@ -8,6 +8,7 @@ import { Box, IconButton } from '@chakra-ui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCamera } from '@fortawesome/free-solid-svg-icons';
 
+import DataProbe from './DataProbe';
 import useDebounce from '../../utils/useDebounce';
 import { setStyleYear, fitBounds, setActiveLayer } from './mapUtils';
 import originalStyle from './style.json';
@@ -41,6 +42,8 @@ const Atlas = ({
   const [viewpoints, setViewpoints] = useState([]);
   const [viewcone, setViewcone] = useState(null);
   const [thematicLayer, setThematicLayer] = useState(null);
+  const [hoveredStateId, setHoveredStateId] = useState(null);
+  const [probeData, setProbeData] = useState(null);
 
   useEffect(() => {
     const map = mapRef.current.getMap();
@@ -99,6 +102,28 @@ const Atlas = ({
       mapboxApiAccessToken="pk.eyJ1IjoiYXhpc21hcHMiLCJhIjoieUlmVFRmRSJ9.CpIxovz1TUWe_ecNLFuHNg"
       mapStyle={mapStyle}
       onViewportChange={onViewportChange}
+      interactiveLayerIds={thematicLayer ? ['thematic'] : null}
+      onHover={e => {
+        if (hoveredStateId !== null) {
+          mapRef.current
+            .getMap()
+            .setFeatureState({ source: 'thematic', id: hoveredStateId }, { hover: false });
+        }
+        if (thematicLayer && e.features.length > 0) {
+          mapRef.current
+            .getMap()
+            .setFeatureState({ source: 'thematic', id: e.features[0].id }, { hover: true });
+          setHoveredStateId(e.features[0].id);
+          setProbeData({
+            ...e.features[0].properties,
+            top: e.center.y - 100,
+            left: e.center.x - 300,
+          });
+        } else {
+          setHoveredStateId(null);
+          setProbeData(null);
+        }
+      }}
       {...mapViewport}
     >
       {activeBasemap && !viewcone && (
@@ -111,12 +136,11 @@ const Atlas = ({
           <Layer id="overlay" type="raster" paint={{ 'raster-opacity': opacity }} />
         </Source>
       )}
-      {thematicLayer && (
-        <Source key={thematicLayer.id} type="geojson" data={thematicLayer}>
+      {thematicLayer && activeThematic && (
+        <Source id="thematic" key={thematicLayer.id} type="geojson" data={thematicLayer}>
           <Layer
             id="thematic"
             type="fill"
-            // beforeId="wetland-icon"
             paint={{
               'fill-color': [
                 'step',
@@ -127,6 +151,15 @@ const Atlas = ({
                 ).filter(f => f),
               ],
               'fill-opacity': 0.5,
+            }}
+          />
+          <Layer
+            id="thematic-stroke"
+            type="line"
+            paint={{
+              'line-color': 'black',
+              'line-width': 2,
+              'line-opacity': ['case', ['boolean', ['feature-state', 'hover'], false], 1, 0],
             }}
           />
         </Source>
@@ -156,6 +189,7 @@ const Atlas = ({
       <Box pos="absolute" left={['auto', '15px']} right={['40px', 'auto']} top="15px">
         <NavigationControl />
       </Box>
+      {probeData && <DataProbe {...probeData} />}
     </ReactMapGL>
   );
 };
