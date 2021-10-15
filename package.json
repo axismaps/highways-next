@@ -22,7 +22,7 @@
     "@svgr/webpack": "^5.5.0",
     "@testing-library/jest-dom": "^5.11.10",
     "@turf/bbox": "^6.3.0",
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "d3": "^6.6.0",
     "dotenv-flow": "^3.2.0",
     "framer-motion": "^3.3.0",
