@@ -2,11 +2,13 @@ import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import useSWR from 'swr';
 import axios from 'axios';
+import { flatten } from 'lodash';
 import ReactMapGL, { Source, Layer, Marker, NavigationControl } from 'react-map-gl';
 import { Box, IconButton } from '@chakra-ui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCamera } from '@fortawesome/free-solid-svg-icons';
 
+import DataProbe from './DataProbe';
 import useDebounce from '../../utils/useDebounce';
 import { setStyleYear, fitBounds, setActiveLayer } from './mapUtils';
 import originalStyle from './style.json';
@@ -16,7 +18,15 @@ const mapStyle = setStyleYear(config.startYear, originalStyle);
 
 const fetcher = url => axios.get(url).then(({ data }) => data);
 
-const Atlas = ({ size, year, activeBasemap, opacity, basemapHandler, highlightedLayer }) => {
+const Atlas = ({
+  size,
+  year,
+  activeBasemap,
+  opacity,
+  basemapHandler,
+  highlightedLayer,
+  activeThematic,
+}) => {
   const mapRef = useRef(null);
   const debouncedYear = useDebounce(year, 500);
   const { data: documents } = useSWR(
@@ -31,6 +41,9 @@ const Atlas = ({ size, year, activeBasemap, opacity, basemapHandler, highlighted
   });
   const [viewpoints, setViewpoints] = useState([]);
   const [viewcone, setViewcone] = useState(null);
+  const [thematicLayer, setThematicLayer] = useState(null);
+  const [hoveredStateId, setHoveredStateId] = useState(null);
+  const [probeData, setProbeData] = useState(null);
 
   useEffect(() => {
     const map = mapRef.current.getMap();
@@ -53,6 +66,16 @@ const Atlas = ({ size, year, activeBasemap, opacity, basemapHandler, highlighted
       setViewcone(null);
     }
   }, [activeBasemap]);
+
+  useEffect(async () => {
+    setThematicLayer(null);
+    if (activeThematic) {
+      const { data } = await axios.get(
+        `${process.env.NEXT_PUBLIC_SEARCH_API}/thematic/${activeThematic.id}`
+      );
+      setThematicLayer(data);
+    }
+  }, [activeThematic]);
 
   useEffect(() => {
     if (documents) {
@@ -79,6 +102,28 @@ const Atlas = ({ size, year, activeBasemap, opacity, basemapHandler, highlighted
       mapboxApiAccessToken="pk.eyJ1IjoiYXhpc21hcHMiLCJhIjoieUlmVFRmRSJ9.CpIxovz1TUWe_ecNLFuHNg"
       mapStyle={mapStyle}
       onViewportChange={onViewportChange}
+      interactiveLayerIds={thematicLayer ? ['thematic'] : null}
+      onHover={e => {
+        if (hoveredStateId !== null) {
+          mapRef.current
+            .getMap()
+            .setFeatureState({ source: 'thematic', id: hoveredStateId }, { hover: false });
+        }
+        if (thematicLayer && e.features.length > 0) {
+          mapRef.current
+            .getMap()
+            .setFeatureState({ source: 'thematic', id: e.features[0].id }, { hover: true });
+          setHoveredStateId(e.features[0].id);
+          setProbeData({
+            ...e.features[0].properties,
+            top: e.center.y - 100,
+            left: e.center.x - 300,
+          });
+        } else {
+          setHoveredStateId(null);
+          setProbeData(null);
+        }
+      }}
       {...mapViewport}
     >
       {activeBasemap && !viewcone && (
@@ -89,6 +134,34 @@ const Atlas = ({ size, year, activeBasemap, opacity, basemapHandler, highlighted
           scheme="tms"
         >
           <Layer id="overlay" type="raster" paint={{ 'raster-opacity': opacity }} />
+        </Source>
+      )}
+      {thematicLayer && activeThematic && (
+        <Source id="thematic" key={thematicLayer.id} type="geojson" data={thematicLayer}>
+          <Layer
+            id="thematic"
+            type="fill"
+            paint={{
+              'fill-color': [
+                'step',
+                ['get', 'value'],
+                ...flatten(
+                  activeThematic.colors.map((c, i) => [c, activeThematic.scale[i]]),
+                  true
+                ).filter(f => f),
+              ],
+              'fill-opacity': 0.5,
+            }}
+          />
+          <Layer
+            id="thematic-stroke"
+            type="line"
+            paint={{
+              'line-color': 'black',
+              'line-width': 2,
+              'line-opacity': ['case', ['boolean', ['feature-state', 'hover'], false], 1, 0],
+            }}
+          />
         </Source>
       )}
       {viewcone && (
@@ -116,6 +189,7 @@ const Atlas = ({ size, year, activeBasemap, opacity, basemapHandler, highlighted
       <Box pos="absolute" left={['auto', '15px']} right={['40px', 'auto']} top="15px">
         <NavigationControl />
       </Box>
+      {probeData && <DataProbe {...probeData} />}
     </ReactMapGL>
   );
 };
@@ -130,6 +204,7 @@ Atlas.propTypes = {
     width: PropTypes.number,
     height: PropTypes.number,
   }),
+  activeThematic: PropTypes.shape(),
 };
 
 Atlas.defaultProps = {
@@ -140,6 +215,7 @@ Atlas.defaultProps = {
     height: 600,
   },
   highlightedLayer: null,
+  activeThematic: null,
 };
 
 export default Atlas;
