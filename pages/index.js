@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { SizeMe } from 'react-sizeme';
-import { Grid, Box, Heading } from '@chakra-ui/react';
+import { Grid, Box } from '@chakra-ui/react';
 
+import Title from '../components/Title';
 import Atlas from '../components/Atlas';
 import Timeline from '../components/Timeline';
 import Sidebar from '../components/Sidebar';
@@ -46,9 +47,7 @@ const Home = () => {
           src="https://umami.axismaps.com/umami.js"
         />
       </Head>
-      <Heading fontSize={18} color="#002469" m={[2, 5]} mb={[0, 0]} textAlign={['center', 'left']}>
-        Highways + Waterways
-      </Heading>
+      <Title title="Highways + Waterways" />
       <Timeline year={year} handler={setYear} />
       <Grid w="100%" h={responsiveHeight} templateColumns={['1fr', '320px 1fr']}>
         <Sidebar
