@@ -27,7 +27,7 @@ const Home = () => {
   }, [year]);
 
   useEffect(() => {
-    if (!Number.isNaN(query.year)) {
+    if (query.year && !Number.isNaN(query.year)) {
       setYear(Number(query.year));
     }
   }, [query.year]);
