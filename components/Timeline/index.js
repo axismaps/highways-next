@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { range } from 'lodash';
 import {
@@ -16,19 +16,14 @@ import { ArrowLeftIcon, ArrowRightIcon } from '@chakra-ui/icons';
 
 import config from '../../config';
 
-const { minYear, maxYear, startYear } = config;
+const { minYear, maxYear } = config;
 const roundedMinYear = Math.ceil(minYear / 10) * 10;
 const roundedMaxYear = Math.floor(maxYear / 10) * 10;
 const yearRange = range(roundedMinYear, roundedMaxYear, 10);
 
-const Timeline = ({ handler }) => {
-  const [year, setYear] = useState(startYear);
-  useEffect(() => {
-    handler(year);
-  }, [year]);
-
+const Timeline = ({ handler, year }) => {
   const TimelineButton = ({ icon, newYear }) => (
-    <IconButton icon={icon} mx={5} borderRadius="50%" onClick={() => setYear(newYear)} />
+    <IconButton icon={icon} mx={5} borderRadius="50%" onClick={() => handler(newYear)} />
   );
 
   TimelineButton.propTypes = {
@@ -65,7 +60,7 @@ const Timeline = ({ handler }) => {
         value={year}
         min={minYear}
         max={maxYear}
-        onChange={setYear}
+        onChange={handler}
         h="40px"
         mt={[2, 0]}
       >
@@ -106,6 +101,7 @@ const Timeline = ({ handler }) => {
 
 Timeline.propTypes = {
   handler: PropTypes.func.isRequired,
+  year: PropTypes.number.isRequired,
 };
 
 export default Timeline;

@@ -6,6 +6,7 @@ import { ChevronRightIcon, ChevronLeftIcon } from '@chakra-ui/icons';
 import Rasters from '../Rasters';
 import Legend from '../Legend';
 import Thematic from '../Thematic';
+import Animation from '../Animation';
 
 const Sidebar = ({
   year,
@@ -15,6 +16,10 @@ const Sidebar = ({
   highlightedLayer,
   activeThematic,
   thematicHandler,
+  activeAnimation,
+  animationHandler,
+  animationFrame,
+  animationFrameHandler,
 }) => {
   const [open, setOpen] = useState(false);
   useEffect(() => setOpen(false), [activeBasemap]);
@@ -50,6 +55,13 @@ const Sidebar = ({
       >
         <Rasters year={year} basemapHandler={basemapHandler} activeBasemap={activeBasemap} />
         <Thematic year={year} activeThematic={activeThematic} thematicHandler={thematicHandler} />
+        <Animation
+          year={year}
+          activeAnimation={activeAnimation}
+          animationHandler={animationHandler}
+          animationFrame={animationFrame}
+          animationFrameHandler={animationFrameHandler}
+        />
         <Legend year={year} layerHandler={layerHandler} highlightedLayer={highlightedLayer} />
       </Box>
     </>
@@ -64,12 +76,18 @@ Sidebar.propTypes = {
   activeBasemap: PropTypes.string,
   activeThematic: PropTypes.shape(),
   thematicHandler: PropTypes.func.isRequired,
+  activeAnimation: PropTypes.shape(),
+  animationHandler: PropTypes.func.isRequired,
+  animationFrame: PropTypes.number,
+  animationFrameHandler: PropTypes.func.isRequired,
 };
 
 Sidebar.defaultProps = {
   activeBasemap: null,
   highlightedLayer: null,
   activeThematic: null,
+  activeAnimation: null,
+  animationFrame: 0,
 };
 
 export default Sidebar;
