@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { SizeMe } from 'react-sizeme';
 import { Grid, Box } from '@chakra-ui/react';
@@ -13,15 +14,24 @@ import config from '../config';
 const { startYear } = config;
 
 const Home = () => {
+  const { query } = useRouter();
   const [year, setYear] = useState(startYear);
   const [activeBasemap, setActiveBasemap] = useState(null);
   const [highlightedLayer, setHighlightedLayer] = useState(null);
   const [activeThematic, setActiveThematic] = useState(null);
+  const [activeAnimation, setActiveAnimation] = useState(null);
+  const [activeAnimationFrame, setActiveAnimationFrame] = useState(0);
   const [opacity, setOpacity] = useState(1);
 
   useEffect(() => {
     setActiveBasemap(null);
   }, [year]);
+
+  useEffect(() => {
+    if (query.year && !Number.isNaN(query.year)) {
+      setYear(Number(query.year));
+    }
+  }, [query.year]);
 
   const responsiveHeight = ['calc(100vh - 149px)', 'calc(100vh - 125px)'];
 
@@ -38,7 +48,7 @@ const Home = () => {
         />
       </Head>
       <Title title="Highways + Waterways" />
-      <Timeline handler={setYear} />
+      <Timeline year={year} handler={setYear} />
       <Grid w="100%" h={responsiveHeight} templateColumns={['1fr', '320px 1fr']}>
         <Sidebar
           year={year}
@@ -48,6 +58,10 @@ const Home = () => {
           highlightedLayer={highlightedLayer}
           activeThematic={activeThematic}
           thematicHandler={setActiveThematic}
+          activeAnimation={activeAnimation}
+          animationHandler={setActiveAnimation}
+          animationFrame={activeAnimationFrame}
+          animationFrameHandler={setActiveAnimationFrame}
         />
         <SizeMe monitorHeight>
           {({ size }) => (
@@ -60,6 +74,8 @@ const Home = () => {
                 highlightedLayer={highlightedLayer}
                 opacity={opacity}
                 activeThematic={activeThematic}
+                activeAnimation={activeAnimation}
+                animationFrame={activeAnimationFrame}
               />
             </Box>
           )}

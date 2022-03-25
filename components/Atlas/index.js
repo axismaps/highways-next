@@ -26,6 +26,8 @@ const Atlas = ({
   basemapHandler,
   highlightedLayer,
   activeThematic,
+  activeAnimation,
+  animationFrame,
 }) => {
   const mapRef = useRef(null);
   const debouncedYear = useDebounce(year, 500);
@@ -164,6 +166,31 @@ const Atlas = ({
           />
         </Source>
       )}
+      {activeAnimation && (
+        <>
+          {activeAnimation.frames.map((frame, i) => (
+            <Source
+              key={[activeAnimation.name, frame.label].join('-')}
+              type="raster"
+              tiles={[
+                `${process.env.NEXT_PUBLIC_TILE_URL}/${activeAnimation.url}/${frame.directory}/{z}/{x}/{y}.png`,
+              ]}
+              scheme="tms"
+              minzoom={activeAnimation.minzoom}
+              maxzoom={activeAnimation.maxzoom}
+            >
+              <Layer
+                id={[activeAnimation.name, frame.label].join('-')}
+                type="raster"
+                paint={{
+                  'raster-opacity': animationFrame === i ? 0.75 : 0,
+                  'raster-resampling': 'nearest',
+                }}
+              />
+            </Source>
+          ))}
+        </>
+      )}
       {viewcone && (
         <Source key={`view${activeBasemap}`} type="geojson" data={viewcone}>
           <Layer id="viewcone" type="fill" paint={{ 'fill-color': 'rgba(0,0,0,0.25)' }} />
@@ -205,6 +232,8 @@ Atlas.propTypes = {
     height: PropTypes.number,
   }),
   activeThematic: PropTypes.shape(),
+  activeAnimation: PropTypes.shape(),
+  animationFrame: PropTypes.number,
 };
 
 Atlas.defaultProps = {
@@ -216,6 +245,8 @@ Atlas.defaultProps = {
   },
   highlightedLayer: null,
   activeThematic: null,
+  activeAnimation: null,
+  animationFrame: 0,
 };
 
 export default Atlas;
