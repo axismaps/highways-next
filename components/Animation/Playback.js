@@ -24,7 +24,14 @@ const Legend = ({ title, frames, isActive, animationFrame, animationFrameHandler
       isDisabled={!isActive}
     >
       {frames.map((frame, index) => (
-        <SliderMark key={frame.label} value={index} fontSize="sm" ml={-2.5} mt={2}>
+        <SliderMark
+          key={frame.label}
+          value={index}
+          fontSize="sm"
+          ml={-2.5}
+          mt={2}
+          userSelect="none"
+        >
           {frame.label}
         </SliderMark>
       ))}
