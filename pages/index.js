@@ -25,6 +25,11 @@ const Home = () => {
 
   useEffect(() => {
     setActiveBasemap(null);
+    setHighlightedLayer(null);
+    setActiveThematic(null);
+    setActiveAnimation(null);
+    setActiveAnimationFrame(0);
+    setOpacity(1);
   }, [year]);
 
   useEffect(() => {

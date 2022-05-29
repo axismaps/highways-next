@@ -73,7 +73,7 @@ const Atlas = ({
     setThematicLayer(null);
     if (activeThematic) {
       const { data } = await axios.get(
-        `${process.env.NEXT_PUBLIC_SEARCH_API}/thematic/${activeThematic.id}`
+        `${process.env.NEXT_PUBLIC_SEARCH_API}/thematic/${activeThematic.id}?year=${year}`
       );
       setThematicLayer(data);
     }
