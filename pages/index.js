@@ -33,7 +33,7 @@ const Home = () => {
     }
   }, [query.year]);
 
-  const responsiveHeight = ['calc(100vh - 149px)', 'calc(100vh - 125px)'];
+  const responsiveHeight = ['calc(100vh - 149px)', 'calc(100vh - 135px)'];
 
   return (
     <Box>

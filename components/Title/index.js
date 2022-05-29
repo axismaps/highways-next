@@ -7,7 +7,7 @@ import { Flex, Heading, IconButton } from '@chakra-ui/react';
 
 const Title = ({ title }) => {
   return (
-    <Flex m={[2, 5]} mb={0} alignItems="center" justifyContent="space-between">
+    <Flex m={[2, 5]} mb={[0, 0]} alignItems="center" justifyContent="space-between">
       <Heading fontSize={18} color="#002469">
         {title}
       </Heading>

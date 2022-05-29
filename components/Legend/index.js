@@ -20,7 +20,9 @@ const Legend = ({ year, layerHandler, highlightedLayer }) => {
   );
 
   const isLayerActive = (layer, type) =>
-    highlightedLayer && highlightedLayer.layer === layer.name && highlightedLayer.type === type;
+    highlightedLayer &&
+    highlightedLayer.layer === layer.name &&
+    highlightedLayer.type === type.name;
 
   if (!folders || error) return <Loading />;
 
@@ -44,7 +46,7 @@ const Legend = ({ year, layerHandler, highlightedLayer }) => {
                   const active = isLayerActive(layer, type);
                   return (
                     <Flex
-                      key={type}
+                      key={type.name}
                       alignItems="center"
                       p="5px"
                       pr="10px"
@@ -52,10 +54,12 @@ const Legend = ({ year, layerHandler, highlightedLayer }) => {
                       lineHeight={1.25}
                       backgroundColor={active ? '#eee' : 'none'}
                       cursor="pointer"
-                      onClick={() => layerHandler(active ? null : { layer: layer.name, type })}
+                      onClick={() =>
+                        layerHandler(active ? null : { layer: layer.name, type: type.name })
+                      }
                     >
                       <Box {...getColor(layer, type)} w="40px" h="20px" mr="10px" />
-                      <Text>{type}</Text>
+                      <Text>{type.title}</Text>
                       <Spacer />
                       <Box ml="5px" color="#666">
                         <FontAwesomeIcon
