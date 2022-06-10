@@ -15,7 +15,7 @@ const Title = ({ title }) => {
         size="sm"
         borderRadius="full"
         as="a"
-        href="https://spatialstudieslab.rice.edu/houstonproject/highwayswaterways/"
+        href="https://spatialstudieslab.rice.edu/highwayswaterways/"
         target="_blank"
         icon={<FontAwesomeIcon icon={faInfo} />}
       />
