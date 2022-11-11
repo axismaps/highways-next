@@ -19,7 +19,7 @@ const Legend = ({ title, frames, isActive, animationFrame, animationFrameHandler
       aria-label={`${title} Slider`}
       min={0}
       max={frames.length - 1}
-      value={animationFrame}
+      value={isActive ? animationFrame : 0}
       onChange={animationFrameHandler}
       isDisabled={!isActive}
     >
