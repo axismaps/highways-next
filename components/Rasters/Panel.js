@@ -26,7 +26,7 @@ const Panel = ({ title, documents, basemapHandler, activeBasemap }) => {
       >
         {documents.map((d, i) => (
           <Box
-            key={d.ssid}
+            key={[d.ssid, i].join()}
             w="70px"
             h="70px"
             pos="relative"

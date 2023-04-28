@@ -3,10 +3,8 @@ import PropTypes from 'prop-types';
 import useSWR from 'swr';
 import axios from 'axios';
 import { flatten } from 'lodash';
-import ReactMapGL, { Source, Layer, Marker, NavigationControl } from 'react-map-gl';
-import { Box, IconButton } from '@chakra-ui/react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCamera } from '@fortawesome/free-solid-svg-icons';
+import ReactMapGL, { Source, Layer, NavigationControl } from 'react-map-gl';
+import { Box } from '@chakra-ui/react';
 
 import DataProbe from './DataProbe';
 import useDebounce from '../../utils/useDebounce';
@@ -41,7 +39,7 @@ const Atlas = ({
     longitude: -95.36026,
     zoom: 11,
   });
-  const [viewpoints, setViewpoints] = useState([]);
+  const [viewpoints, setViewpoints] = useState(undefined);
   const [viewcone, setViewcone] = useState(null);
   const [thematicLayer, setThematicLayer] = useState(null);
   const [hoveredStateId, setHoveredStateId] = useState(null);
@@ -82,8 +80,24 @@ const Atlas = ({
   useEffect(() => {
     if (documents) {
       const views = documents.find(d => d.title.match(/view/gi));
-      if (views && views.Documents) setViewpoints(views.Documents);
-      else setViewpoints([]);
+      if (views && views.Documents) {
+        const geojson = {
+          type: 'FeatureCollection',
+          features: views.Documents.map(d => ({
+            type: 'Feature',
+            properties: {
+              id: d.ssid,
+            },
+            geometry: {
+              type: 'Point',
+              coordinates: [d.longitude, d.latitude],
+            },
+          })),
+        };
+        setViewpoints(geojson);
+      } else {
+        setViewpoints(undefined);
+      }
     }
   }, [documents]);
 
@@ -93,6 +107,16 @@ const Atlas = ({
       ...size,
     });
   }, [size]);
+
+  useEffect(() => {
+    const map = mapRef.current.getMap();
+    if (!map.hasImage('camera')) {
+      map.loadImage('/camera.png', (error, image) => {
+        if (error) throw error;
+        map.addImage('camera', image);
+      });
+    }
+  }, [mapRef]);
 
   const onViewportChange = nextViewport => {
     setMapViewport(nextViewport);
@@ -104,7 +128,14 @@ const Atlas = ({
       mapboxApiAccessToken="pk.eyJ1IjoiYXhpc21hcHMiLCJhIjoieUlmVFRmRSJ9.CpIxovz1TUWe_ecNLFuHNg"
       mapStyle={mapStyle}
       onViewportChange={onViewportChange}
-      interactiveLayerIds={thematicLayer ? ['thematic'] : null}
+      interactiveLayerIds={thematicLayer ? ['viewpoints', 'thematic'] : ['viewpoints']}
+      onClick={e => {
+        const { features } = e;
+        if (features.length > 0) {
+          const [feature] = features;
+          basemapHandler(feature.properties.id);
+        }
+      }}
       onHover={e => {
         if (hoveredStateId !== null) {
           mapRef.current
@@ -196,23 +227,36 @@ const Atlas = ({
           <Layer id="viewcone" type="fill" paint={{ 'fill-color': 'rgba(0,0,0,0.25)' }} />
         </Source>
       )}
-      {viewpoints.map(v => (
-        <Marker key={`marker${v.ssid}`} {...v} offsetLeft={-15} offsetTop={-15}>
-          <IconButton
-            icon={<FontAwesomeIcon icon={faCamera} />}
-            as="div"
-            w="30px"
-            h="30px"
-            minWidth="none"
-            borderRadius="50%"
-            backgroundColor="white"
-            boxShadow="md"
-            onClick={() => {
-              if (v.ssid !== activeBasemap) basemapHandler(v.ssid);
+      {viewpoints && (
+        <Source key={`viewpoints${year}`} type="geojson" data={viewpoints}>
+          <Layer
+            id="viewpoints"
+            type="symbol"
+            layout={{
+              'icon-image': 'camera',
+              'icon-size': 0.015,
+              'icon-allow-overlap': true,
+              'icon-ignore-placement': true,
             }}
           />
-        </Marker>
-      ))}
+        </Source>
+
+        // <Marker key={`marker${v.ssid}`} {...v} offsetLeft={-15} offsetTop={-15}>
+        //   <IconButton
+        //     icon={<FontAwesomeIcon icon={faCamera} />}
+        //     as="div"
+        //     w="30px"
+        //     h="30px"
+        //     minWidth="none"
+        //     borderRadius="50%"
+        //     backgroundColor="white"
+        //     boxShadow="md"
+        //     onClick={() => {
+        //       if (v.ssid !== activeBasemap) basemapHandler(v.ssid);
+        //     }}
+        //   />
+        // </Marker>
+      )}
       <Box pos="absolute" left={['auto', '15px']} right={['40px', 'auto']} top="15px">
         <NavigationControl />
       </Box>
